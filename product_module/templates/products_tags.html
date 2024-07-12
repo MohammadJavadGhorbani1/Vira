@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	تگ ها
+{% endblock %}
+
+{% block content %}
+	{% for tag in tags %}
+		<div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                            <div class="product-card">
+                                                <div class="product-image-area">
+                                                    <a href="#" class="product-image">
+                                                        <div class="product-label">
+                                                            <span>{{ product.off }}%</span>
+                                                        </div>
+                                                        <img src="/static/images/product/apple-iphone8.jpg" alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <div class="price">
+                                                        <del>
+                                                            <span class="price-amount">{{ product.price }}
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="price-amount">{{ product.price }}
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </ins>
+                                                    </div>
+                                                    <h3 class="product-name">
+                                                        <a href="{% url 'product_details' product.slug %}">{{ product.title }}</a>
+                                                    </h3>
+                                                    <div class="actions">
+                                                        <div class="star-rating">
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                        </div>
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
+                                                                        <i class="fal fa-heart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-compare">
+                                                                    <a href="#compare" title="مقایسه">
+                                                                        <i class="fal fa-random"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-cart">
+                                                                    <a href="#cart" title="افزودن به سبد">
+                                                                        <i class="fal fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+	{% endfor %}
+
+{% endblock %}

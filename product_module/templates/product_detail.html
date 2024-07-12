@@ -1,0 +1,1019 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	جزئیات محصول
+{% endblock %}
+
+{% block content %}
+	<main class="content">
+        <div class="single-product">
+            <div class="container">
+                <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">خانه</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">دیجیتال</li>
+                    </ol>
+                </nav>
+                <div class="product type-product">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-xs-12">
+                            <div class="product-gallery">
+                                <div class="gallery">
+                                    <div class="gallery-item mb-2">
+                                        <div class="single-countdown">
+                                            <div class="deal-title">
+                                                <span class="deal-title-main">پیشنـهاد شگفت انگیـز</span>
+                                                <span class="deal-title-sub">فرصت باقی مانده</span>
+                                            </div>
+                                            <div class="countdown countdown-style-3 h4" data-date-time="2025-10-31 20:29:59" data-labels="{&quot;label-second&quot;: &quot;ثانیه&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-day&quot;: &quot;روز&quot;}"><div class="countdown-item"><div class="countdown-value">483</div><div class="countdown-label">روز</div></div><div class="countdown-item"><div class="countdown-value">06</div><div class="countdown-label">ساعت</div></div><div class="countdown-item"><div class="countdown-value">46</div><div class="countdown-label">دقیقه</div></div><div class="countdown-item"><div class="countdown-value">50</div><div class="countdown-label">ثانیه</div></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <div class="products-gallery">
+                                            <div class="product-tools">
+                                                <ul>
+                                                    <li class="tools-item popup-image">
+                                                        <a href="/static/images/pageProduct/apple3-L.png" title="تصاویر بیشتر" class="image-popup-vertical-fit">
+                                                            <i class="fal fa-search"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tools-item popup-share">
+                                                        <a href="#" title="اشتراک گذاری" data-toggle="modal" data-target="#option-social">
+                                                            <i class="fal fa-share-alt"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tools-item popup-alarm">
+                                                        <a href="#" title="اطلاع رسانی" data-toggle="modal" data-target="#option-alarm">
+                                                            <i class="fal fa-bell"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tools-item popup-chart">
+                                                        <a href="#" title="نمودار قیمت" data-toggle="modal" data-target="#option-chart">
+                                                            <i class="fal fa-chart-area"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tools-item popup-compare">
+                                                        <a href="compare.html" title="مقایسه">
+                                                            <i class="fal fa-balance-scale"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="triangle">
+                                                <span>{{ product.off }}%</span>
+                                            </div>
+                                            <div class="swiper-container gallery-slider pb-md-0 pb-3 swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl">
+                                                <div class="swiper-wrapper" id="swiper-wrapper-dbe76366c99848d3" aria-live="polite" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" style="width: 231px;">
+                                                        <a href="/static/images/pageProduct/apple-L.webp" class="image-popup-vertical-fit">
+                                                            <img src="/static/images/pageProduct/apple-L.webp" data-large="/static/images/pageProduct/apple-L.webp" class="light-zoom" alt="gallery item">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" style="width: 231px;">
+                                                        <a href="/static/images/pageProduct/apple2-L.webp" class="image-popup-vertical-fit">
+                                                            <img src="/static/images/pageProduct/apple2-L.webp" data-large="/static/images/pageProduct/apple2-L.webp" class="light-zoom" alt="gallery item">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide" role="group" aria-label="3 / 4" style="width: 231px;">
+                                                        <a href="/static/images/pageProduct/apple3-L.png" class="image-popup-vertical-fit">
+                                                            <img src="/static/images/pageProduct/apple3-L.png" data-large="/static/images/pageProduct/apple3-L.png" class="light-zoom" alt="gallery item">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide" role="group" aria-label="4 / 4" style="width: 231px;">
+                                                        <a href="/static/images/pageProduct/apple4-L.png" class="image-popup-vertical-fit">
+                                                            <img src="/static/images/pageProduct/apple4-L.png" data-large="/static/images/pageProduct/apple4-L.png" class="light-zoom" alt="gallery item">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!-- Add Pagination -->
+                                                <div class="swiper-pagination d-md-none swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-bullets-dynamic" style="width: 40px;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main" tabindex="0" role="button" aria-label="Go to slide 1" style="right: 12px;"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next" tabindex="0" role="button" aria-label="Go to slide 2" style="right: 12px;"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next-next" tabindex="0" role="button" aria-label="Go to slide 3" style="right: 12px;"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4" style="right: 12px;"></span></div>
+                                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                                            <div class="swiper-container gallery-slider-thumbs mt-2 d-md-block d-none swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl">
+                                                <div class="swiper-wrapper" id="swiper-wrapper-656dd7b3ab631a5f" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-92.4px, 0px, 0px);">
+                                                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" style="width: 46.2px;">
+                                                        <img src="/static/images/pageProduct/apple-S.webp" alt="gallery item">
+                                                    </div>
+                                                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" style="width: 46.2px;">
+                                                        <img src="/static/images/pageProduct/apple2-S.webp" alt="gallery item">
+                                                    </div>
+                                                    <div class="swiper-slide" role="group" aria-label="3 / 4" style="width: 46.2px;">
+                                                        <img src="/static/images/pageProduct/apple3-S.png" alt="gallery item">
+                                                    </div>
+                                                    <div class="swiper-slide" role="group" aria-label="4 / 4" style="width: 46.2px;">
+                                                        <img src="/static/images/pageProduct/apple4-S.png" alt="gallery item">
+                                                    </div>
+                                                </div>
+                                                <!-- Add Arrows -->
+                                                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-656dd7b3ab631a5f" aria-disabled="false"></div>
+                                                <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-656dd7b3ab631a5f" aria-disabled="true"></div>
+                                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal-option-social -->
+                                    <div class="modal fade" id="option-social" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="title">با استفاده از روش‌های زیر
+                                                        می‌توانید این صفحه را با دوستان خود به
+                                                        اشتراک بگذارید.</div>
+                                                    <div class="share-options">
+                                                        <div class="share-social-buttons">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="#" class="share-social share-social-twitter">
+                                                                        <i class="fab fa-twitter"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="share-social share-social-facebook">
+                                                                        <i class="fab fa-facebook"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="share-social share-social-whatsapp">
+                                                                        <i class="fab fa-whatsapp"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="share-social share-social-telegram">
+                                                                        <i class="fab fa-telegram"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-shortlink">
+                                                        <input class="text-copy" type="url" value="https://demos.vira.net/vira/?p=963" readonly="">
+                                                        <i class="fal fa-copy"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal-option-alarm -->
+                                    <div class="modal fade" id="option-alarm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalCenterTitle">به من اطلاع بده
+                                                    </h5>
+                                                    <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-notification-title">از طریق:
+                                                    </div>
+                                                    <div class="form-auth-row">
+                                                        <label for="#" class="ui-checkbox mt-1">
+                                                            <input type="checkbox" value="1" name="login" id="remember">
+                                                            <span class="ui-checkbox-check"></span>
+                                                        </label>
+                                                        <label for="remember" class="remember-me mr-0">ایمیل به
+                                                            info@vira.com</label>
+                                                    </div>
+                                                    <div class="form-auth-row">
+                                                        <label for="#" class="ui-checkbox mt-1">
+                                                            <input type="checkbox" value="1" name="login" id="remember">
+                                                            <span class="ui-checkbox-check"></span>
+                                                        </label>
+                                                        <label for="remember" class="remember-me mr-0">پیامک به
+                                                            *******0991</label>
+                                                    </div>
+                                                    <div class="form-auth-row">
+                                                        <label for="#" class="ui-checkbox mt-1">
+                                                            <input type="checkbox" value="1" name="login" id="remember">
+                                                            <span class="ui-checkbox-check"></span>
+                                                        </label>
+                                                        <label for="remember" class="remember-me mr-0">سیستم پیام شخصی
+                                                            ویرا</label>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary ml-2">ثبت</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">بازگشت</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal-option-chart -->
+                                    <div class="modal fade" id="option-chart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalCenterTitle">نمودار قیمت
+                                                        فروش
+                                                    </h5>
+                                                    <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="product-headline">
+                                                        <h1 class="product-title">
+                                                            {{ product.title }}
+{#                                                            <span class="sub-head">Apple iPhone 12 A2404 Dual SIM 128GB#}
+{#                                                                Mobile Phone</span>#}
+                                                        </h1>
+                                                    </div>
+                                                    <div id="chart" style="min-height: 365px;"><div id="apexchartsf2w18xty" class="apexcharts-canvas apexchartsf2w18xty" style="width: 0px; height: 350px;"><svg id="SvgjsSvg1010" width="0" height="350" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1013" class="apexcharts-annotations"></g><g id="SvgjsG1012" class="apexcharts-inner apexcharts-graphical"><defs id="SvgjsDefs1011"></defs></g></svg><div class="apexcharts-legend"></div></div></div>
+                                                <div class="resize-triggers"><div class="expand-trigger"><div style="width: 1px; height: 1px;"></div></div><div class="contract-trigger"></div></div></div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary ml-2">ثبت</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">بازگشت</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-xs-12">
+                            <div class="product-info">
+                                <div class="product-headline">
+                                    <h1 class="product-title">
+                                        {{ product.title }}
+{#                                        <span class="sub-head">Apple iPhone 12 A2404 Dual SIM 128GB Mobile Phone</span>#}
+                                    </h1>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="posted">
+                                        <span class="detail-label">دسته : </span>
+                                        <span class="detail-content">
+                                            <a href="{% url 'product_category' %}">
+                                                {{ product.category.parent_category }}
+                                            </a>
+                                            ,
+                                            <a href="{% url 'product_category' %}">
+                                                {{ product.category }}
+                                            </a>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="product-params">
+                                    <ul data-title="ویژگی‌های محصول">
+                                        <li>
+                                            <span>سیستم عامل: </span>
+                                            <span>{{ product.category }}</span>
+                                        </li>
+                                        <li>
+                                            <span>توضیحات محصول: </span>
+                                            <span>{{ product.des }}</span>
+                                        </li>
+                                        <li>
+                                            <span>تگ های مربوطه: </span>
+                                            {% for tag in tags %}
+                                            	<span>{{ tag.title }}</span>
+                                            {% endfor %}
+{#                                            <span>2G 3G 4G</span>#}
+                                        </li>
+                                        <li>
+                                            <span>دسته بندی محصول: </span>
+                                            <span>{{ product.category.parent_category }}</span>
+                                        </li>
+{#                                        <li>#}
+{#                                            <span>رزولوشن عکس: </span>#}
+{#                                            <span>12.0 مگاپیکسل</span>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <span>ویژگی‌های خاص: </span>#}
+{#                                            <span>مقاوم در برابر آب مناسب عکاسی مناسب عکاسی سلفی مناسب بازی مجهز به#}
+{#                                                حس‌گر تشخیص چهره</span>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <span>بازه‌ی سایز صفحه نمایش: </span>#}
+{#                                            <span>5.5 تا 6.0 اینچ</span>#}
+{#                                        </li>#}
+                                    </ul>
+                                </div>
+                                <div class="price">
+                                    <del>
+                                        <span class="price-amount">{{ product.price }}
+                                            <span class="price-currencySymbol">تومان</span>
+                                        </span>
+                                    </del>
+                                    <ins>
+                                        <span class="price-amount">{{ product.price }}
+                                            <span class="price-currencySymbol">تومان</span>
+                                        </span>
+                                    </ins>
+                                </div>
+                                <div class="add-to-cart">
+                                    <div class="quantity">
+                                        <input type="number" min="1" max="100" step="1" value="1"><div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>
+                                        <div class="quantity-nav"></div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success add-to-cart-btn">
+                                        <i class="fal fa-cart-arrow-down"></i>
+                                        افزودن به سبد خرید
+                                    </button>
+                                </div>
+{#                                <div class="product-price-survey-question">#}
+{#                                    آیا قیمت مناسب‌تری سراغ دارید؟#}
+{#                                    <div class="answers">#}
+{#                                        <a href="#" class="product-price-survery-answer price-yes">بلی</a>#}
+{#                                        <a href="#" class="product-price-survery-answer price-no">خیر</a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="product-colors">#}
+{#                                    <span>رنگ :</span>#}
+{#                                    <div class="radio-color">#}
+{#                                        <div class="radio-color-list">#}
+{#                                            <label for="#" class="radio-color-item">#}
+{#                                                <span class="variant-shape" style="background-color: #2962ff;"></span>#}
+{#                                                <input type="radio" class="color-selector" name="color">#}
+{#                                                <span class="color-check"></span>#}
+{#                                            </label>#}
+{#                                        </div>#}
+{#                                        <div class="radio-color-list">#}
+{#                                            <label for="#" class="radio-color-item">#}
+{#                                                <span class="variant-shape" style="background-color: #f44336;"></span>#}
+{#                                                <input type="radio" class="color-selector" name="color">#}
+{#                                                <span class="color-check"></span>#}
+{#                                            </label>#}
+{#                                        </div>#}
+{#                                        <div class="radio-color-list">#}
+{#                                            <label for="#" class="radio-color-item">#}
+{#                                                <span class="variant-shape" style="background-color: #ffeb3b;"></span>#}
+{#                                                <input type="radio" class="color-selector" name="color">#}
+{#                                                <span class="color-check"></span>#}
+{#                                            </label>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-12">
+                            <div class="product-seller-info">
+                                <div class="product-brand">
+                                    <a href="#">
+                                        <img src="/static/images/pageProduct/brand/apple.png" alt="brand">
+                                        <span>{{ product.category.parent_category }}</span>
+                                    </a>
+                                </div>
+                                <div class="product-star-rating">
+                                    <div class="star-rating">
+                                        <span class="star active">
+                                            <i class="fal fa-star"></i>
+                                        </span>
+                                        <span class="star active">
+                                            <i class="fal fa-star"></i>
+                                        </span>
+                                        <span class="star active">
+                                            <i class="fal fa-star"></i>
+                                        </span>
+                                        <span class="star active">
+                                            <i class="fal fa-star"></i>
+                                        </span>
+                                        <span class="star active">
+                                            <i class="fal fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <a href="#" class="review-link">
+                                        (دیدگاه کاربر
+                                        <span class="count">2</span>
+                                        )
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="product-seller-row">
+                                    <div class="modified-date">
+                                        <i class="fal fa-calendar-check"></i>
+                                        تاریخ بروزرسانی :
+                                        <span>01 آذر 1400</span>
+                                    </div>
+                                </div>
+                                <div class="product-seller-row">
+                                    <div class="product-stock">
+                                        <i class="fal fa-check-square"></i>
+                                        <span>موجود است</span>
+                                    </div>
+                                </div>
+                                <div class="product-seller-row">
+                                    <span class="lead-time-ready">
+                                        <i class="fal fa-truck-loading"></i>
+                                        آماده ارسال
+                                    </span>
+                                </div>
+                                <div class="recommended">
+                                    <i class="fal fa-file-certificate"></i>
+                                    پیشنهاد شده توسط بیش از
+                                    <span>7</span>
+                                    نفر از خریداران
+                                </div>
+                                <div class="product-actions">
+                                    <div class="add-to-compare d-inline-block">
+                                        <a href="#" class="btn btn-light compare">
+                                            <i class="fal fa-random"></i>
+                                            مقایسه
+                                        </a>
+                                    </div>
+                                    <div class="add-to-wishlist fl">
+                                        <a href="#" class="btn btn-light wishlist">
+                                            <i class="fal fa-heart"></i>
+                                            مشاهده علاقه مندی ها
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-feature">
+                                    <div class="service-item">
+                                        <img src="/static/images/pageProduct/service/price-tag-1.png" alt="service">
+                                        تضمین بهترین قیمت
+                                    </div>
+                                    <div class="service-item">
+                                        <img src="/static/images/pageProduct/service/shield-1.png" alt="service">
+                                        ضمانت اصل بودن
+                                    </div>
+                                    <div class="service-item">
+                                        <img src="/static/images/pageProduct/service/delivery-truck-3.png" alt="service">
+                                        تحویل اکسپرس
+                                    </div>
+                                    <div class="service-item">
+                                        <img src="/static/images/pageProduct/service/gift-2.png" alt="service">
+                                        بسته بندی زیبا
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs">
+                        <div class="tab-box">
+                            <ul class="tab nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item description">
+                                    <a class="nav-link active" id="des-tab" data-toggle="tab" href="#des" role="tab" aria-controls="des" aria-selected="true">
+                                        توضیحات
+                                    </a>
+                                </li>
+                                <li class="nav-item additional-information">
+                                    <a class="nav-link" id="information-tab" data-toggle="tab" href="#information" role="tab" aria-controls="information" aria-selected="true">
+                                        توضیحات تکمیلی
+                                    </a>
+                                </li>
+                                <li class="nav-item comment-user">
+                                    <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="true">
+                                        نظرات کاربران
+                                    </a>
+                                </li>
+                                <li class="nav-item questions">
+                                    <a class="nav-link" id="question-tab" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">
+                                        سوالات کاربران
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tabs-content">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="des" role="tabpanel" aria-labelledby="des-tab">
+                                    <div class="content-heading">
+                                        <i class="fal fa-pen-alt"></i>
+                                        <div class="heading">
+                                            <span class="title">نقد و بررسی اجمالی</span>
+                                            <span class="desc">Apple iPhone 12 A2404 Dual SIM 128GB Mobile Phone</span>
+                                        </div>
+                                    </div>
+                                    <div class="entry-content-inner content-expert-summary">
+                                        <div class="mask pm-3">
+                                            <div class="mask-text">
+                                                <p>
+                                                    اپل در سالگرد ده‌سالگی <strong><a href="#">آیفون</a></strong>، از
+                                                    آیفونی سخن به میان­ آورد که آن را با نام آیفون 10 یا آیفون ایکس صدا
+                                                    می‌­زد. بسیاری از قسمت­‌های آیفون جدید، دست‌خوش تغییرات بزرگی
+                                                    شده‌­اند که طرف­‌داران اپل را هیجان­‌زده کرده است و آیفون 10 را به
+                                                    محصولی متفاوت تبدیل کرده­‌اند. نمایشگری که این بار با پنل­ اولد
+                                                    ساخته‌شده و اپل نام فناوری به‌کاررفته در آن را سوپر رتینا گذاشته است
+                                                    تابه‌حال در هیچ آیفون دیگری استفاده‌نشده بود. این نمایشگر رزولوشن
+                                                    بالایی در مقایسه با آیفون­‌های قبلی دارد به‌طوری‌که در اندازه­‌ی 5.8
+                                                    اینچ‌­اش در حدود 458 پیکسل را در هر اینچ جا داده است. این اولین بار
+                                                    است که این حجم از پیکسل در اینچ و همچنین ابعاد در نمایشگر آیفون­‌ها
+                                                    استفاده شده است. همچنین این نمایشگر تقریبا تمام قاب جلویی گوشی را پر
+                                                    کرده؛ این مورد در کنار لبه­‌های براق قاب اصلی جلوه­‌ای لوکس به آیفون
+                                                    10 داده است. قاب پشتی هم از جنس شیشه ساخته‌شده تا هم گوشی مشکل
+                                                    آنتن­‌دهی نداشته باشد و هم امکان شارژ بی­سیم باتری هم در این گوشی
+                                                    وجود داشته باشد. این بدنه­‌ی زیبا در مقابل خط‌­وخش مقاومت بالایی
+                                                    دارد و می­‌توانید از اینکه آب و گردوغبار به‌­راحتی روی آیفون ایکس
+                                                    تاثیر نمی­‌گذارد، خیال­‌تان راحت باشد. مورد دیگر مجهز شدن آیفون 10
+                                                    به حسگر تشخیص چهره است. این فناوری چهره­‌ی شما را با استفاده از
+                                                    فناوری جدید شناسایی می­‌کند؛ حتی اگر تغییری در چهره­‌ی شما ایجاد
+                                                    شود، آن را شناخته و تنها با صورت شما قفل گوشی را باز می­‌کند. به لطف
+                                                    این فناوری جدید دیگر خبری از حسگر اثرانگشت در آیفون 10 نیست. دو
+                                                    دوربین که هر دو سنسور­هایی 12 مگاپیکسلی دارند از دیگر مواردی هستند
+                                                    که این گوشی را از سایر آیفون­‌ها متمایز کرده است. قابلیت اتصال به
+                                                    شبکه­‌های 4G با سرعت دانلود تا یک گیگابیت بر ثانیه، بلوتوث نسخه­‌ی
+                                                    5، نسخه­‌ی 11 از iOS که مخصوص آیفون 10 شخصی­‌سازی شده و از همه
+                                                    مهم‌تر حذف کلید خانه که به نظر اپل دیگر نیازی به آن احساس نمی­‌شود
+                                                    از دیگر ویژگی­‌های جدید این گوشی هستند. از نظر سخت­‌افزاری هم این
+                                                    گوشی از تراشه­‌ی جدید A11 بهره می‌­برد که در آن پردازنده‌­ای شش
+                                                    هسته­‌ا‌ی و قدرتمند قرارگرفته تا بتواند علاوه بر کارهای معمول، از
+                                                    قابلیت­‌های جدید واقعیت مجازی که اپل این روزها روی آن تمرکز خاصی
+                                                    دارد، پشتیبانی کند. آیفون جدید تنها در دو رنگ خاکستری و نقره‌ای
+                                                    ارائه می­‌شود.
+                                                </p>
+                                            </div>
+                                            <a href="#" class="mask-handler">
+                                                <span class="show-more">+ ادامه مطلب</span>
+                                                <span class="show-less">- بستن</span>
+                                            </a>
+                                            <div class="shadow-box"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="review-progress">
+                                            <div class="comments-item-rating">
+                                                <ul>
+                                                    <li>
+                                                        <span class="cell-title">کیفیت ساخت:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">9.4</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="cell-title">ارزش خرید به نسبت قیمت:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">8.9</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="cell-title">نوآوری:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">9.2</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="cell-title">امکانات و قابلیت ها:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">9.8</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="cell-title">سهولت استفاده:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">9.5</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="information" role="tabpanel" aria-labelledby="information-tab">
+                                    <div class="content-heading">
+                                        <i class="fal fa-ballot"></i>
+                                        <div class="heading">
+                                            <span class="title">مشخصات کلی</span>
+                                            <span class="desc">Apple iPhone 12 A2404 Dual SIM 128GB Mobile Phone</span>
+                                        </div>
+                                    </div>
+                                    <table class="table shop-attributes">
+                                        <tbody>
+                                            <tr class="attribute-group-row attribute-group-row-defined">
+                                                <th class="attribute-group-name">
+                                                    <i class="fal fa-chevron-left"></i>
+                                                    پردازنده
+                                                </th>
+                                            </tr>
+                                            <tr class="attribute-row attribute-row-list">
+                                                <th class="attribute-name">مدل پردازنده گرافيکي</th>
+                                                <th class="attribute-value">GeForce GTX 950M GDDR5</th>
+                                            </tr>
+                                            <tr class="attribute-group-row attribute-group-row-defined">
+                                                <th class="attribute-group-name">
+                                                    <i class="fal fa-chevron-left"></i>
+                                                    حافظه
+                                                </th>
+                                            </tr>
+                                            <tr class="attribute-row attribute-row-list">
+                                                <th class="attribute-name">حافظه داخلي</th>
+                                                <th class="attribute-value">256 گیگا بایت</th>
+                                            </tr>
+                                            <tr class="attribute-row attribute-row-list">
+                                                <th class="attribute-name">ظرفيت حافظه RAM</th>
+                                                <th class="attribute-value">8 گيگابايت</th>
+                                            </tr>
+                                            <tr class="attribute-group-row attribute-group-row-defined">
+                                                <th class="attribute-group-name">
+                                                    <i class="fal fa-chevron-left"></i>
+                                                    صفحه نمایش
+                                                </th>
+                                            </tr>
+                                            <tr class="attribute-row attribute-row-list">
+                                                <th class="attribute-name">ابعاد</th>
+                                                <th class="attribute-value">
+                                                    129.5×99.1×137.2 ميلي متر</th>
+                                            </tr>
+                                            <tr class="attribute-row attribute-row-list">
+                                                <th class="attribute-name">نوع صفحه نمایش
+                                                </th>
+                                                <th class="attribute-value">
+                                                    OLED</th>
+                                            </tr>
+                                            <tr class="attribute-row attribute-row-list">
+                                                <th class="attribute-name">اندازه صفحه نمایش
+                                                </th>
+                                                <th class="attribute-value">
+                                                    5.0اينچ</th>
+                                            </tr>
+                                            <tr class="attribute-group-row attribute-group-row-defined">
+                                                <th class="attribute-group-name">
+                                                    <i class="fal fa-chevron-left"></i>
+                                                    دوربین
+                                                </th>
+                                            </tr>
+                                            <tr class="attribute-row attribute-row-list">
+                                                <th class="attribute-name">دوربين
+                                                </th>
+                                                <th class="attribute-value">
+                                                    20.0 مگاپيکسل
+                                                </th>
+                                            </tr>
+                                            <tr class="attribute-row attribute-row-list">
+                                                <th class="attribute-name">حداکثر رزولوشن عکس
+                                                </th>
+                                                <th class="attribute-value">
+                                                    5184 × 3888
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
+                                    <div class="content-heading">
+                                        <i class="fal fa-comment-alt-lines"></i>
+                                        <div class="heading">
+                                            <span class="title">نظرات کاربران</span>
+                                            <span class="desc">Apple iPhone 12 A2404 Dual SIM 128GB Mobile Phone</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-xs-12">
+                                            <div class="review-rules">
+                                                <p>
+                                                    لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:
+
+                                                    فارسی بنویسید و از کیبورد فارسی استفاده کنید. بهتر است از فضای خالی
+                                                    (Space) بیش‌از‌حدِ معمول، شکلک یا ایموجی استفاده نکنید و از کشیدن
+                                                    حروف یا کلمات با صفحه‌کلید بپرهیزید.
+
+                                                    نظرات خود را براساس تجربه و استفاده‌ی عملی و با دقت به نکات فنی
+                                                    ارسال کنید؛ بدون تعصب به محصول خاص، مزایا و معایب را بازگو کنید و
+                                                    بهتر است از ارسال نظرات چندکلمه‌‌ای خودداری کنید.
+
+                                                    بهتر است در نظرات خود از تمرکز روی عناصر متغیر مثل قیمت، پرهیز کنید.
+
+                                                    به کاربران و سایر اشخاص احترام بگذارید. پیام‌هایی که شامل محتوای
+                                                    توهین‌آمیز و کلمات نامناسب باشند، حذف می‌شوند.
+                                                </p>
+                                            </div>
+                                            <h2 class="based-title">امتیاز کاربران 4.9 از 2 دیدگاه</h2>
+                                            <div class="comments-item-rating">
+                                                <ul>
+                                                    <li>
+                                                        <span class="cell-title">کیفیت ساخت:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">خوب</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="cell-title">ارزش خرید به نسبت قیمت:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">خوب</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="cell-title">نوآوری:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">خوب</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="cell-title">امکانات و قابلیت ها:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">خوب</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="cell-title">سهولت استفاده:</span>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="cell-value">خوب</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xs-12">
+                                            <span class="comment-reply-title">دیدگاه خود را بنویسید </span>
+                                            <form action="rating" class="comment-form">
+                                                <div class="comment-form-rating">
+                                                    <label for="rating">امتیاز شما</label>
+                                                    <div class="stars">
+                                                        <a href="#star" class="star-1">
+                                                            <i class="fal fa-star"></i>
+                                                        </a>
+                                                        <a href="#star" class="star-2">
+                                                            <i class="fal fa-star"></i>
+                                                        </a>
+                                                        <a href="#star" class="star-3">
+                                                            <i class="fal fa-star"></i>
+                                                        </a>
+                                                        <a href="#star" class="star-4">
+                                                            <i class="fal fa-star"></i>
+                                                        </a>
+                                                        <a href="#star" class="star-5">
+                                                            <i class="fal fa-star"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="rating-wrap">
+                                                    <div class="col-12 mb-3">
+                                                        <div class="comments-product-attributes-title">کیفیت ساخت</div>
+                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <div class="comments-product-attributes-title">ارزش خرید به نسبت
+                                                            قیمت
+                                                        </div>
+                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <div class="comments-product-attributes-title">نوآوری</div>
+                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <div class="comments-product-attributes-title">امکانات و قابلیت
+                                                            ها
+                                                        </div>
+                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <div class="comments-product-attributes-title">سهولت استفاده
+                                                        </div>
+                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <div class="comments-product-attributes-title">طراحی و ظاهر
+                                                        </div>
+                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 col-sm-6 mt-3">
+                                                        <div class="form-row-title strengths">
+                                                            نقاط قوت
+                                                        </div>
+                                                        <div id="advantages">
+                                                            <div class="ui-input--add-point">
+                                                                <input class="input-ui pr-2 ui-input-field" type="text" id="advantage-input" autocomplete="off" value="">
+                                                                <button class="ui-input-point js-icon-form-add" type="button" style="display: none;">
+                                                                </button>
+                                                            </div>
+                                                            <div class="form-comment-dynamic-labels js-advantages-list">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-6 mt-3">
+                                                        <div class="form-row-title faint">
+                                                            نقاط ضعف
+                                                        </div>
+                                                        <div id="disadvantages">
+                                                            <div class="ui-input--add-point">
+                                                                <input class="input-ui pr-2 ui-input-field" type="text" id="disadvantage-input" autocomplete="off" value="">
+                                                                <button class="ui-input-point js-icon-form-add" type="button" style="display: none;"></button>
+                                                            </div>
+                                                            <div class="form-comment-dynamic-labels js-disadvantages-list">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <div class="comment-form-comment">
+                                                            <label for="comment">دیدگاه شما
+                                                                <span class="required">*</span>
+                                                            </label>
+                                                            <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <button type="submit" class="btn btn-dark record">ثبت</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="comment-override">
+                                        <h2 class="reviews-title">2 دیدگاه برای
+                                            <span>گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت ظرفیت 128
+                                                گیگابایت</span>
+                                        </h2>
+                                        <ol class="commentlist">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-12 col-sm-3">
+                                                        <div class="commenter-detail">
+                                                            <div class="recommend">
+                                                                <i class="fal fa-thumbs-up"></i>
+                                                                خرید این محصول را توصیه می‌کنم
+                                                            </div>
+                                                            <div class="average">
+                                                                <i class="fal fa-star"></i>
+                                                                میانگین امتیاز 4.8 از 5
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-9">
+                                                        <div class="comment-content">
+                                                            <div class="meta">
+                                                                توسط
+                                                                <strong class="author"> حسن </strong>
+                                                                <span class="dash">در تاریخ </span>
+                                                                <time class="published-date">01 آذر 1400</time>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-sm-6">
+                                                                    <div class="comment-positive">
+                                                                        <span>نقاط قوت</span>
+                                                                        <ul>
+                                                                            <li>صفحه نمایش با کیفیت</li>
+                                                                            <li>ظاهر زیبا و شکیل</li>
+                                                                            <li>مقاوم در برابر آب</li>
+                                                                            <li>دوربین با کیفیت</li>
+                                                                            <li>Face Id</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-sm-6">
+                                                                    <div class="comment-negative">
+                                                                        <span>نقاط قوت</span>
+                                                                        <ul>
+                                                                            <li>باگ داشتنIOS11 و نبود آداپتور شارژ سریع
+                                                                            </li>
+                                                                            <li>مشکل قرار گیری روی سطح صاف</li>
+                                                                            <li>عدم سازگاری برخی برنامه ها</li>
+                                                                            <li>حذف جک3.5 و اثر انگشت</li>
+                                                                            <li>قیمت بالا و عدم نشان دادن درصد شارژ</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="description">
+                                                                <p>گوشی عالی ایه ظاهر جلوش که فوق العادس فقط پشتش رو
+                                                                    شاید یکسری از دوستان نپسندند. سخت افزار خیلی قوی ای
+                                                                    داره و نرم افزار های سنگین خیلی روان اجرا میشه اگه
+                                                                    با قیمتش مشکلی ندارین خیلی گوشی خوبیه و از سامسونگ
+                                                                    خیلی بهتره(البته برای کسایی که قبلا از اپل استفاده
+                                                                    کرده باشن)</p>
+                                                            </div>
+                                                            <div class="like-dislike">
+                                                                <span>آیا این نظر برایتان مفید بود؟</span>
+                                                                <a href="#" class="like-btn" data-counter="45">بله</a>
+                                                                <a href="#" class="dislike-btn" data-counter="26">خیر</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-12 col-sm-3">
+                                                        <div class="commenter-detail">
+                                                            <div class="recommend">
+                                                                <i class="fal fa-thumbs-up"></i>
+                                                                خرید این محصول را توصیه می‌کنم
+                                                            </div>
+                                                            <div class="average">
+                                                                <i class="fal fa-star"></i>
+                                                                میانگین امتیاز 4.8 از 5
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-9">
+                                                        <div class="comment-content">
+                                                            <div class="meta">
+                                                                توسط
+                                                                <strong class="author"> علی </strong>
+                                                                <span class="dash">در تاریخ </span>
+                                                                <time class="published-date">01 آذر 1400</time>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-sm-6">
+                                                                    <div class="comment-positive">
+                                                                        <span>نقاط قوت</span>
+                                                                        <ul>
+                                                                            <li>صفحه نمایش با کیفیت</li>
+                                                                            <li>ظاهر زیبا و شکیل</li>
+                                                                            <li>مقاوم در برابر آب</li>
+                                                                            <li>دوربین با کیفیت</li>
+                                                                            <li>Face Id</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-sm-6">
+                                                                    <div class="comment-negative">
+                                                                        <span>نقاط قوت</span>
+                                                                        <ul>
+                                                                            <li>باگ داشتنIOS11 و نبود آداپتور شارژ سریع
+                                                                            </li>
+                                                                            <li>مشکل قرار گیری روی سطح صاف</li>
+                                                                            <li>عدم سازگاری برخی برنامه ها</li>
+                                                                            <li>حذف جک3.5 و اثر انگشت</li>
+                                                                            <li>قیمت بالا و عدم نشان دادن درصد شارژ</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="description">
+                                                                <p>گوشی عالی ایه ظاهر جلوش که فوق العادس فقط پشتش رو
+                                                                    شاید یکسری از دوستان نپسندند. سخت افزار خیلی قوی ای
+                                                                    داره و نرم افزار های سنگین خیلی روان اجرا میشه اگه
+                                                                    با قیمتش مشکلی ندارین خیلی گوشی خوبیه و از سامسونگ
+                                                                    خیلی بهتره(البته برای کسایی که قبلا از اپل استفاده
+                                                                    کرده باشن)</p>
+                                                            </div>
+                                                            <div class="like-dislike">
+                                                                <span>آیا این نظر برایتان مفید بود؟</span>
+                                                                <a href="#" class="like-btn" data-counter="45">بله</a>
+                                                                <a href="#" class="dislike-btn" data-counter="26">خیر</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="question" role="tabpanel" aria-labelledby="question-tab">
+                                    <div class="content-heading">
+                                        <i class="fal fa-question-square"></i>
+                                        <div class="heading">
+                                            <span class="title">پرسش و پاسخ</span>
+                                            <span class="desc">Apple iPhone 12 A2404 Dual SIM 128GB Mobile Phone</span>
+                                        </div>
+                                    </div>
+                                    <ul class="questionlist">
+                                        <li class="question-item">
+                                            <div class="question-body">
+                                                <div class="question-head">
+                                                    <span class="question-author">علی</span>
+                                                    <span class="question-date">01 آذر 1400</span>
+                                                </div>
+                                                <div class="question-text">
+                                                    <p>باسلام من X دارم میخوام بدونم با یکبار شارژ چند ساعت کار میکنه؟
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <ul class="children">
+                                                <li class="question-item">
+                                                    <div class="question-head">
+                                                        <span class="question-author">پاسخ :</span>
+                                                    </div>
+                                                    <div class="question-text">
+                                                        <p>حدود دو ساعت</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <div class="question-respond">
+                                        <div class="block-title">
+                                            <span class="title">ارسال پرسش </span>
+                                        </div>
+                                        <form action="#" class="questions-form">
+                                            <p class="logged-in-as">
+                                                <a href="#">
+                                                    با عنوان حسن شجاعی وارد شده‌اید
+                                                </a>
+                                                .
+                                                <a href="#">
+                                                    خارج می‌شوید؟
+                                                </a>
+                                            </p>
+                                            <div class="form-group">
+                                                <textarea id="comment" name="comment" class="form-control" cols="45" placeholder="پرسش خود را بنوسید" rows="7" required=""></textarea>
+                                                <button type="submit" class="btn btn-dark send-question">ارسال
+                                                    پرسش</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

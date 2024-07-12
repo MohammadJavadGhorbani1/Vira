@@ -1,0 +1,989 @@
+<header class="header">
+    <div class="top-page-header">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="top-header-menu">
+                    <ul>
+                        <li><a href="#">وبلاگ</a></li>
+                        <li><a href="{% url 'contact-us' %}">تماس باما</a></li>
+                        <li><a href="{% url 'product_list' %}">محصولات</a></li>
+                        <li><a href="#">پیگیری سفارش</a></li>
+                    </ul>
+                </div>
+                {% if request.user.is_authenticated %}
+                    <div class="user-items">
+                        <!-- items -->
+                        <div class="user-item account">
+                            <a href="#" class="user-login">
+                                <i class="fal fa-user"></i>
+                            </a>
+                            <div class="my-account">
+                                <div class="profile-detail">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar ml-3">
+                                            <img src="/static/images/avatar/avatar.jpg" class="img-fluid" alt="avatar">
+                                        </div>
+                                        <div class="profile-info text-right">
+                                            <a>{{ user.username }}</a>
+                                            <span>09911111111</span>
+                                        </div>
+                                    </div>
+                                    <div class="user-options">
+                                        <ul>
+                                            <li>
+                                                <span class="label">کیف پول</span>
+                                                <span class="detail">
+                                                    <span class="d-block">
+                                                        0
+                                                        <span class="currency">تومان</span>
+                                                        <a href="#" class="inventoryIncrease">
+                                                            <i class="fal fa-angle-left"></i>
+                                                        </a>
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="label">باشگاه مشتریان</span>
+                                                <span class="detail">
+                                                    <span class="d-block">
+                                                        0
+                                                        <span class="currency">تومان</span>
+                                                    </span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li class="account-item">
+                                        <a href="#">
+                                            <i class="fal fa-user-plus"></i>
+                                            حساب کاربری
+                                        </a>
+                                    </li>
+                                    <li class="account-item">
+                                        <a href="#">
+                                            <i class="fal fa-shopping-cart"></i>
+                                            سبد خرید
+                                        </a>
+                                    </li>
+                                    <li class="account-item">
+                                        <a href="#">
+                                            <i class="fal fa-sign-in"></i>
+                                            خروج
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- items -->
+                        <div class="user-item cart-list">
+                            <div class="top-icons shop-cart" id="offcanvas-trigger-cart">
+                                <a href="#">
+                                    <i class="fal fa-shopping-bag"></i>
+                                    <div class="cart-title">
+                                        <span>سبد خرید</span>
+                                        <div class="shop-badge header-cart-count">3</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <nav id="offcanvasCart" class="offcanvas offcanvas-cart">
+                        <div class="offcanvas-bar">
+                            <div class="offcanvas-header">
+                                <div class="d-flex align-items-center justify-content-between mb-12">
+                                    <strong>سبد خرید
+                                        <div class="cart-count">3</div>
+                                    </strong>
+                                    <div class="cart-sidebar-close close-sidebar" id="offcanvas-dismiss-cart">
+                                        <i class="fal fa-times"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offcanvas-shopping-cart-content">
+                                <div class="wrapper">
+                                    <div class="scrollbar" id="style-1">
+                                        <div class="force-overflow">
+                                            <div class="offcanvas-body">
+                                                <ul>
+                                                    <!-- item -->
+                                                    <li class="cart-item">
+                                                        <span class="d-flex align-items-center mb-2">
+                                                            <a href="#">
+                                                                <button type="submit"
+                                                                        class="remove remove-from-cart-button"><i
+                                                                        class="fal fa-times"></i></button>
+                                                                <img src="/static/images/sliderA/sliderA1.jpg"
+                                                                     alt="cart">
+                                                            </a>
+                                                            <a href="#">
+                                                                <span class="titleCart">
+                                                                    تلويزيون ال اي دي هوشمند خميده سامسونگ مدل 88KS9800
+                                                                    سايز 88 اينچ
+                                                                </span>
+                                                                <div class="quantityCart">
+                                                                    1 ×
+                                                                    <span class="price">69,000,000
+                                                                        <span class="amount">تومان</span>
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                    <!-- item -->
+                                                    <li class="cart-item">
+                                                        <span class="d-flex align-items-center mb-2">
+                                                            <a href="#">
+                                                                <button type="submit"
+                                                                        class="remove remove-from-cart-button"><i
+                                                                        class="fal fa-times"></i></button>
+                                                                <img src="/static/images/sliderP/galaxys8-plus.jpg"
+                                                                     alt="cart">
+                                                            </a>
+                                                            <a href="#">
+                                                                <span class="titleCart">گوشی موبایل اپل مدل iPhone 12
+                                                                    A2404 دو سیم‌ کارت ظرفیت
+                                                                    128 گیگابایت</span>
+                                                                <div class="quantityCart">
+                                                                    1 ×
+                                                                    <span class="price">69,000,000
+                                                                        <span class="amount">تومان</span>
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                    <!-- item -->
+                                                    <li class="cart-item">
+                                                        <span class="d-flex align-items-center mb-2">
+                                                            <a href="#">
+                                                                <button type="submit"
+                                                                        class="remove remove-from-cart-button"><i
+                                                                        class="fal fa-times"></i></button>
+                                                                <img src="/static/images/sliderP/camera.jpg" alt="cart">
+                                                            </a>
+                                                            <a href="#">
+                                                                <span class="titleCart">گوشی موبایل اپل مدل iPhone 12
+                                                                    A2404 دو سیم‌ کارت
+                                                                    ظرفیت 128 گیگابایت</span>
+                                                                <div class="quantityCart">
+                                                                    1 ×
+                                                                    <span class="price">69,000,000
+                                                                        <span class="amount">تومان</span>
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offcanvas-footer">
+                                <div class="mini-cart-total total">
+                                    <strong>جمع كل سبد خريد:</strong>
+                                    <span class="price fl">690,000
+                                        <span class="amount">تومان</span>
+                                    </span>
+                                </div>
+                                <div class="mini-cart-actions">
+                                    <a href="#" class="forward">مشاهده سبد خرید</a>
+                                    <a href="#" class="checkout">تسویه حساب</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="offcanvas-overlay"></div>
+                {% else %}
+                    <a href="/login" rel="nofollow"
+                       class="btn btn-outline-primary btn-sm d-none d-md-flex align-items-center align-self-stretch rounded-lg mr-1 px-xl-4">
+                        <span>ورود / ثبت نام</span>
+                    </a>
+                {% endif %}
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="bottom-page-header">
+        <div class="container">
+            <div class="page-header">
+                <div class="d-flex align-items-center">
+                    <!-- logo -->
+                    <div class="logo">
+                        <a href="{% url 'home_page' %}">
+                            <img src="/static/images/logo.png" class="img-fluid" alt="logo">
+                        </a>
+                    </div>
+                    <!-- search -->
+                    <div class="search-box">
+                        <form action="#">
+                            <input type="search" id="search-form-text" class="search-field"
+                                   placeholder="کلید واژه مورد نظر ...">
+                            <button class="btn btn-light btn-search" type="submit">
+                                <i class="fal fa-search"></i>
+                            </button>
+                            <div class="search-category">
+                                <div class="custom-select-ui">
+                                    <select class="category">
+                                        <option>کالای دیجیتال</option>
+                                        <option>لوازم آرایشی</option>
+                                        <option>لوازم بهداشتی</option>
+                                        <option>عطر،ادکلن و اسپری</option>
+                                        <option>طلا، نقره و زیورآلات</option>
+                                        <option>خانه آشپز خانه</option>
+                                        <option>لوازم تحریر و هنر</option>
+                                        <option>کودک و نوزاد</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="search-result">
+                            <ul class="search-result-list">
+                                <li>
+                                    <a href="#">موبایل</a>
+                                </li>
+                                <li>
+                                    <a href="#">لپ تاپ</a>
+                                </li>
+                                <li>
+                                    <a href="#">مودم</a>
+                                </li>
+                                <li>
+                                    <a href="#">شیائومی</a>
+                                </li>
+                                <li>
+                                    <a href="#">دوربین</a>
+                                </li>
+                            </ul>
+                            <ul class="search-result-most-view">
+                                <li><a href="#">موبایل <i class="fa fa-angle-left"></i></a></li>
+                                <li><a href="#">لپ تاپ <i class="fa fa-angle-left"></i></a></li>
+                                <li><a href="#">مودم <i class="fa fa-angle-left"></i></a></li>
+                                <li><a href="#">شیائومی <i class="fa fa-angle-left"></i></a></li>
+                                <li><a href="#">دوربین <i class="fa fa-angle-left"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="call-number">
+                    <div class="call-number-item">
+                        <strong>12345678</strong>
+                        <span>021</span>
+                        <i class="fal fa-phone"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="menuMain">
+            <div class="container">
+                <ul>
+                    <li class="level-0 menuItem">
+                        <a href="#">
+                            <i class="fal fa-home"></i> خانه
+                        </a>
+                    </li>
+                    <li class="level-0 menuItem">
+                        <a href="#" class="iconUnderMenu">
+                            <i class="fal fa-tv"></i> کالای دیجیتال
+                        </a>
+                        <ul class="subMenu">
+                            <li>
+                                <ul class="subMenu-two">
+                                    <li class="see-all-item">
+                                        <a href="#" class="sublist-see-all-cats">موبایل</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اپل
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            سامسونگ
+                                        </a>
+                                    </li>
+                                    <li class="see-all-item">
+                                        <a href="#" class="sublist-see-all-cats">موبایل</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            نوکیا
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            ایسوس
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            هواوی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            الجی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اچ تی سی
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="subMenu-two">
+                                    <li class="see-all-item">
+                                        <a href="#" class="sublist-see-all-cats">موبایل</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اپل
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            سامسونگ
+                                        </a>
+                                    </li>
+                                    <li class="see-all-item">
+                                        <a href="#" class="sublist-see-all-cats">تبلت</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            نوکیا
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            ایسوس
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            هواوی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            الجی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اچ تی سی
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="subMenu-two">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اپل
+                                        </a>
+                                    </li>
+                                    <li class="see-all-item">
+                                        <a href="#" class="sublist-see-all-cats">کامپیوتر</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اپل
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            سامسونگ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            نوکیا
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            ایسوس
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            هواوی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            الجی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اچ تی سی
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="subMenu-two">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            هواوی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اپل
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            سامسونگ
+                                        </a>
+                                    </li>
+                                    <li class="see-all-item">
+                                        <a href="#" class="sublist-see-all-cats">لپ تاپ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            نوکیا
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            ایسوس
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            هواوی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            الجی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اچ تی سی
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="subMenu-two">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            هواوی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اپل
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            سامسونگ
+                                        </a>
+                                    </li>
+                                    <li class="see-all-item">
+                                        <a href="#" class="sublist-see-all-cats">لپ تاپ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            نوکیا
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            ایسوس
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            هواوی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            الجی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اچ تی سی
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="subMenu-two">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            سامسونگ
+                                        </a>
+                                    </li>
+                                    <li class="see-all-item">
+                                        <a href="#" class="sublist-see-all-cats">دوربین</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اپل
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            سامسونگ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            نوکیا
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            ایسوس
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            هواوی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            الجی
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-angle-left"></i>
+                                            اچ تی سی
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="level-0 menuItem">
+                        <a href="#" class="iconUnderMenu">
+                            <i class="fal fa-pencil-paintbrush"></i> لوازم آرایشی
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    آرایش چشم و ابرو
+                                </a>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    آرایش لب
+                                </a>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    آرایش صورت
+                                </a>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    مواد آرایش مو
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="level-0 menuItem">
+                        <a href="#" class="iconUnderMenu">
+                            <i class="fal fa-hands-heart"></i> لوازم بهداشتی
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="level-1 menuItem">
+                                <a href="#" class="iconUnderMenu">
+                                    کرم و مراقبت پوست
+                                </a>
+                                <ul>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#" class="iconUnderMenu">
+                                    بهداشت دهان ودندان
+                                </a>
+                                <ul>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#" class="iconUnderMenu">
+                                    بهداشت و مراقبت بدن
+                                </a>
+                                <ul>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#" class="iconUnderMenu">
+                                    شامپو و مراقبت مو
+                                </a>
+                                <ul>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                    <li class="level-2 menuItem">
+                                        <a href="#">
+                                            آرایش چشم و ابرو
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="level-0 menuItem">
+                        <a href="#" class="iconUnderMenu">
+                            <i class="fal fa-spray-can"></i> عطر،ادکلن و اسپری
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    مردانه
+                                </a>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    زنانه
+                                </a>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    جیبی
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="level-0 menuItem">
+                        <a href="#" class="iconUnderMenu">
+                            <i class="fal fa-medal"></i> طلا، نقره و زیورآلات
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    زیورآلات طلا
+                                </a>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    زیورآلات نقره
+                                </a>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    حلقه و انگشتر
+                                </a>
+                            </li>
+                            <li class="level-1 menuItem">
+                                <a href="#">
+                                    دستبند
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="level-0 menuItem">
+                        <a href="#">
+                            <i class="fal fa-certificate"></i> پیشنهادهای شگفت انگیز
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- responsiveMenu -->
+        <nav class="sidebar">
+            <div class="nav-header">
+                <div class="header-cover"></div>
+                <div class="logo-wrap">
+                    <a class="logo-icon" href="#">
+                        <img alt="logo-icon" src="/static/images/logo.png" width="40">
+                    </a>
+                </div>
+            </div>
+            <ul class="list-top">
+                <li><a href="#">وبلاگ</a></li>
+                <li><a href="#">تماس باما</a></li>
+                <li><a href="#">شورتکد</a></li>
+                <li><a href="#">پیگیری سفارش</a></li>
+            </ul>
+            <ul class="nav-categories ul-base">
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#headingOne" aria-expanded="false"
+                       aria-controls="headingOne">
+                        کالای دیجیتال
+                        <i class="fal fa-angle-left"></i>
+                    </a>
+                    <div class="collapse" id="headingOne">
+                        <ul>
+                            <li class="has-sub">
+                                <a href="#" data-toggle="collapse" data-target="#headingOne-one"
+                                   aria-expanded="false" aria-controls="headingOne-one">
+                                    لوازم جانبی گوشی
+                                    <i class="fal fa-angle-left"></i>
+                                </a>
+                                <div class="collapse" id="headingOne-one">
+                                    <ul>
+                                        <li class="has-sub"><a href="#">گوشی موبایل</a></li>
+                                        <li class="has-sub"><a href="#">دوربین</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="has-sub"><a href="#">گوشی موبایل</a></li>
+                            <li class="has-sub"><a href="#">دوربین</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#headingTwo" aria-expanded="false"
+                       aria-controls="headingTwo">
+                        زیبایی و سلامت
+                        <i class="fal fa-angle-left"></i>
+                    </a>
+                    <div class="collapse" id="headingTwo">
+                        <ul>
+                            <li class="has-sub">
+                                <a href="#" data-toggle="collapse" data-target="#headingOne-one"
+                                   aria-expanded="false" aria-controls="headingOne-one">
+                                    لوازم جانبی گوشی
+                                    <i class="fal fa-angle-left"></i>
+                                </a>
+                                <div class="collapse" id="headingOne-one">
+                                    <ul>
+                                        <li class="has-sub"><a href="#">گوشی موبایل</a></li>
+                                        <li class="has-sub"><a href="#">دوربین</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="has-sub"><a href="#">گوشی موبایل</a></li>
+                            <li class="has-sub"><a href="#">دوربین</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#headingThree" aria-expanded="false"
+                       aria-controls="headingThree">
+                        لوازم خانگی
+                        <i class="fal fa-angle-left"></i>
+                    </a>
+                    <div class="collapse" id="headingThree">
+                        <ul>
+                            <li class="has-sub"><a href="#">لوازم جانبی گوشی</a></li>
+                            <li class="has-sub"><a href="#">گوشی موبایل</a></li>
+                            <li class="has-sub"><a href="#">دوربین</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#headingFour" aria-expanded="false"
+                       aria-controls="headingFour">
+                        مادر و کودک
+                        <i class="fal fa-angle-left"></i>
+                    </a>
+                    <div class="collapse" id="headingFour">
+                        <ul>
+                            <li class="has-sub"><a href="#">لوازم جانبی گوشی</a></li>
+                            <li class="has-sub"><a href="#">گوشی موبایل</a></li>
+                            <li class="has-sub"><a href="#">دوربین</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#headingFive" aria-expanded="false"
+                       aria-controls="headingFive">
+                        ورزش و سرگرمی
+                        <i class="fal fa-angle-left"></i>
+                    </a>
+                    <div class="collapse" id="headingFive">
+                        <ul>
+                            <li class="has-sub"><a href="#">لوازم جانبی گوشی</a></li>
+                            <li class="has-sub"><a href="#">گوشی موبایل</a></li>
+                            <li class="has-sub"><a href="#">دوربین</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#headingSix" aria-expanded="false"
+                       aria-controls="headingSix">
+                        ابزار و الکترونیک
+                        <i class="fal fa-angle-left"></i>
+                    </a>
+                    <div class="collapse" id="headingSix">
+                        <ul>
+                            <li class="has-sub"><a href="#">لوازم جانبی گوشی</a></li>
+                            <li class="has-sub"><a href="#">گوشی موبایل</a></li>
+                            <li class="has-sub"><a href="#">دوربین</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="nav-btn nav-slider">
+            <span class="linee1"></span>
+            <span class="linee2"></span>
+            <span class="linee3"></span>
+        </div>
+        <div class="overlay"></div>
+    </div>
+    <div class="sticky-toolbar-footer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="82" height="50" viewBox="0 0 82 50">
+            <path
+                    d="M0,50V45H82v5H0ZM0,0.025C0.167,0.017.331,0,.5,0A9.494,9.494,0,0,1,9.87,8h0.138A32.013,32.013,0,0,0,41,32,32.013,32.013,0,0,0,71.992,8H72.13A9.494,9.494,0,0,1,81.5,0c0.169,0,.333.017,0.5,0.025V45H0V0.025Z">
+            </path>
+        </svg>
+        <div class="toolbar-mobile">
+            <div class="toolbar-col scroll-sticky">
+                <div class="toolbar-item">
+                    <i class="fal fa-arrow-up"></i>
+                </div>
+            </div>
+            <div class="toolbar-col product">
+                <a href="#" class="toolbar-item">
+                    <i class="fal fa-store"></i>
+                </a>
+            </div>
+            <div class="toolbar-col cart">
+                <a href="#" class="toolbar-item">
+                    <i class="fal fa-shopping-bag"></i>
+                    <span class="count-cart">3</span>
+                </a>
+            </div>
+            <div class="toolbar-col nav-slider">
+                <a href="#" class="toolbar-item">
+                    <i class="fal fa-folder-tree"></i>
+                </a>
+            </div>
+            <div class="toolbar-col account">
+                <a href="#" class="toolbar-item">
+                    <i class="fal fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="overlay-search-box"></div>
