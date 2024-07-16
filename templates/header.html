@@ -198,13 +198,13 @@
                     </nav>
                     <div class="offcanvas-overlay"></div>
                 {% else %}
-                    <a href="/login" rel="nofollow"
+                    <a href="{% url 'login_page' %}" rel="nofollow"
                        class="btn btn-outline-primary btn-sm d-none d-md-flex align-items-center align-self-stretch rounded-lg mr-1 px-xl-4">
                         <span>ورود / ثبت نام</span>
                     </a>
                 {% endif %}
 
-                
+
             </div>
         </div>
     </div>
@@ -282,532 +282,523 @@
             <div class="container">
                 <ul>
                     <li class="level-0 menuItem">
-                        <a href="#">
+                        <a href="{% url 'home_page' %}">
                             <i class="fal fa-home"></i> خانه
                         </a>
                     </li>
-                    <li class="level-0 menuItem">
-                        <a href="#" class="iconUnderMenu">
-                            <i class="fal fa-tv"></i> کالای دیجیتال
-                        </a>
-                        <ul class="subMenu">
-                            <li>
-                                <ul class="subMenu-two">
-                                    <li class="see-all-item">
-                                        <a href="#" class="sublist-see-all-cats">موبایل</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اپل
+                    {#                    <li class="level-0 menuItem">#}
+                    {#                        <a href="#" class="iconUnderMenu">#}
+                    {#                            <i class="fal fa-tv"></i> کالای دیجیتال#}
+                    {#                        </a>#}
+                    {#                        <ul class="subMenu">#}
+                    {#                            <li>#}
+                    {#                                <ul class="subMenu-two">#}
+                    {#                                    <li class="see-all-item">#}
+                    {#                                        <a href="#" class="sublist-see-all-cats">موبایل</a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اپل#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            سامسونگ#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="see-all-item">#}
+                    {#                                        <a href="#" class="sublist-see-all-cats">موبایل</a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            نوکیا#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            ایسوس#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            هواوی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            الجی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اچ تی سی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                            <li>#}
+                    {#                                <ul class="subMenu-two">#}
+                    {#                                    <li class="see-all-item">#}
+                    {#                                        <a href="#" class="sublist-see-all-cats">موبایل</a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اپل#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            سامسونگ#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="see-all-item">#}
+                    {#                                        <a href="#" class="sublist-see-all-cats">تبلت</a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            نوکیا#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            ایسوس#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            هواوی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            الجی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اچ تی سی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                            <li>#}
+                    {#                                <ul class="subMenu-two">#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اپل#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="see-all-item">#}
+                    {#                                        <a href="#" class="sublist-see-all-cats">کامپیوتر</a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اپل#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            سامسونگ#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            نوکیا#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            ایسوس#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            هواوی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            الجی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اچ تی سی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                            <li>#}
+                    {#                                <ul class="subMenu-two">#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            هواوی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اپل#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            سامسونگ#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="see-all-item">#}
+                    {#                                        <a href="#" class="sublist-see-all-cats">لپ تاپ</a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            نوکیا#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            ایسوس#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            هواوی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            الجی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اچ تی سی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                            <li>#}
+                    {#                                <ul class="subMenu-two">#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            هواوی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اپل#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            سامسونگ#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="see-all-item">#}
+                    {#                                        <a href="#" class="sublist-see-all-cats">لپ تاپ</a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            نوکیا#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            ایسوس#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            هواوی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            الجی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اچ تی سی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                            <li>#}
+                    {#                                <ul class="subMenu-two">#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            سامسونگ#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="see-all-item">#}
+                    {#                                        <a href="#" class="sublist-see-all-cats">دوربین</a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اپل#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            سامسونگ#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            نوکیا#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            ایسوس#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            هواوی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            الجی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li>#}
+                    {#                                        <a href="#">#}
+                    {#                                            <i class="fal fa-angle-left"></i>#}
+                    {#                                            اچ تی سی#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                        </ul>#}
+                    {#                    </li>#}
+                    {% for category in categories %}
+                        <li class="level-0 menuItem">
+                            <a href="#" class="iconUnderMenu">
+                                <i class="{{ category.icon }}"></i> {{ category.title }}
+                            </a>
+                            <ul class="sub-menu">
+                                {% for part in category.productcategory_set.all %}
+                                    <li class="level-1 menuItem">
+                                        <a href="{% url 'category_detail' part.slug %}">
+                                            {{ part.title }}
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            سامسونگ
-                                        </a>
-                                    </li>
-                                    <li class="see-all-item">
-                                        <a href="#" class="sublist-see-all-cats">موبایل</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            نوکیا
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            ایسوس
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            هواوی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            الجی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اچ تی سی
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <ul class="subMenu-two">
-                                    <li class="see-all-item">
-                                        <a href="#" class="sublist-see-all-cats">موبایل</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اپل
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            سامسونگ
-                                        </a>
-                                    </li>
-                                    <li class="see-all-item">
-                                        <a href="#" class="sublist-see-all-cats">تبلت</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            نوکیا
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            ایسوس
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            هواوی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            الجی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اچ تی سی
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <ul class="subMenu-two">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اپل
-                                        </a>
-                                    </li>
-                                    <li class="see-all-item">
-                                        <a href="#" class="sublist-see-all-cats">کامپیوتر</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اپل
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            سامسونگ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            نوکیا
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            ایسوس
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            هواوی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            الجی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اچ تی سی
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <ul class="subMenu-two">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            هواوی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اپل
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            سامسونگ
-                                        </a>
-                                    </li>
-                                    <li class="see-all-item">
-                                        <a href="#" class="sublist-see-all-cats">لپ تاپ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            نوکیا
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            ایسوس
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            هواوی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            الجی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اچ تی سی
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <ul class="subMenu-two">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            هواوی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اپل
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            سامسونگ
-                                        </a>
-                                    </li>
-                                    <li class="see-all-item">
-                                        <a href="#" class="sublist-see-all-cats">لپ تاپ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            نوکیا
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            ایسوس
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            هواوی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            الجی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اچ تی سی
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <ul class="subMenu-two">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            سامسونگ
-                                        </a>
-                                    </li>
-                                    <li class="see-all-item">
-                                        <a href="#" class="sublist-see-all-cats">دوربین</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اپل
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            سامسونگ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            نوکیا
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            ایسوس
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            هواوی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            الجی
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fal fa-angle-left"></i>
-                                            اچ تی سی
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="level-0 menuItem">
-                        <a href="#" class="iconUnderMenu">
-                            <i class="fal fa-pencil-paintbrush"></i> لوازم آرایشی
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    آرایش چشم و ابرو
-                                </a>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    آرایش لب
-                                </a>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    آرایش صورت
-                                </a>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    مواد آرایش مو
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="level-0 menuItem">
-                        <a href="#" class="iconUnderMenu">
-                            <i class="fal fa-hands-heart"></i> لوازم بهداشتی
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="level-1 menuItem">
-                                <a href="#" class="iconUnderMenu">
-                                    کرم و مراقبت پوست
-                                </a>
-                                <ul>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#" class="iconUnderMenu">
-                                    بهداشت دهان ودندان
-                                </a>
-                                <ul>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#" class="iconUnderMenu">
-                                    بهداشت و مراقبت بدن
-                                </a>
-                                <ul>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#" class="iconUnderMenu">
-                                    شامپو و مراقبت مو
-                                </a>
-                                <ul>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                    <li class="level-2 menuItem">
-                                        <a href="#">
-                                            آرایش چشم و ابرو
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="level-0 menuItem">
-                        <a href="#" class="iconUnderMenu">
-                            <i class="fal fa-spray-can"></i> عطر،ادکلن و اسپری
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    مردانه
-                                </a>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    زنانه
-                                </a>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    جیبی
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="level-0 menuItem">
-                        <a href="#" class="iconUnderMenu">
-                            <i class="fal fa-medal"></i> طلا، نقره و زیورآلات
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    زیورآلات طلا
-                                </a>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    زیورآلات نقره
-                                </a>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    حلقه و انگشتر
-                                </a>
-                            </li>
-                            <li class="level-1 menuItem">
-                                <a href="#">
-                                    دستبند
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </li>
+                    {% endfor %}
+
+                    {#                    <li class="level-0 menuItem">#}
+                    {#                        <a href="#" class="iconUnderMenu">#}
+                    {#                            <i class="fal fa-hands-heart"></i> لوازم بهداشتی#}
+                    {#                        </a>#}
+                    {#                        <ul class="sub-menu">#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#" class="iconUnderMenu">#}
+                    {#                                    کرم و مراقبت پوست#}
+                    {#                                </a>#}
+                    {#                                <ul>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#" class="iconUnderMenu">#}
+                    {#                                    بهداشت دهان ودندان#}
+                    {#                                </a>#}
+                    {#                                <ul>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#" class="iconUnderMenu">#}
+                    {#                                    بهداشت و مراقبت بدن#}
+                    {#                                </a>#}
+                    {#                                <ul>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#" class="iconUnderMenu">#}
+                    {#                                    شامپو و مراقبت مو#}
+                    {#                                </a>#}
+                    {#                                <ul>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                    <li class="level-2 menuItem">#}
+                    {#                                        <a href="#">#}
+                    {#                                            آرایش چشم و ابرو#}
+                    {#                                        </a>#}
+                    {#                                    </li>#}
+                    {#                                </ul>#}
+                    {#                            </li>#}
+                    {#                        </ul>#}
+                    {#                    </li>#}
+                    {#                    <li class="level-0 menuItem">#}
+                    {#                        <a href="#" class="iconUnderMenu">#}
+                    {#                            <i class="fal fa-spray-can"></i> عطر،ادکلن و اسپری#}
+                    {#                        </a>#}
+                    {#                        <ul class="sub-menu">#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#">#}
+                    {#                                    مردانه#}
+                    {#                                </a>#}
+                    {#                            </li>#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#">#}
+                    {#                                    زنانه#}
+                    {#                                </a>#}
+                    {#                            </li>#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#">#}
+                    {#                                    جیبی#}
+                    {#                                </a>#}
+                    {#                            </li>#}
+                    {#                        </ul>#}
+                    {#                    </li>#}
+                    {#                    <li class="level-0 menuItem">#}
+                    {#                        <a href="#" class="iconUnderMenu">#}
+                    {#                            <i class="fal fa-medal"></i> طلا، نقره و زیورآلات#}
+                    {#                        </a>#}
+                    {#                        <ul class="sub-menu">#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#">#}
+                    {#                                    زیورآلات طلا#}
+                    {#                                </a>#}
+                    {#                            </li>#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#">#}
+                    {#                                    زیورآلات نقره#}
+                    {#                                </a>#}
+                    {#                            </li>#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#">#}
+                    {#                                    حلقه و انگشتر#}
+                    {#                                </a>#}
+                    {#                            </li>#}
+                    {#                            <li class="level-1 menuItem">#}
+                    {#                                <a href="#">#}
+                    {#                                    دستبند#}
+                    {#                                </a>#}
+                    {#                            </li>#}
+                    {#                        </ul>#}
+                    {#                    </li>#}
                     <li class="level-0 menuItem">
                         <a href="#">
                             <i class="fal fa-certificate"></i> پیشنهادهای شگفت انگیز

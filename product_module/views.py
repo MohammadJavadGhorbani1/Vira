@@ -9,6 +9,7 @@ class ProductList(ListView):
     template_name = 'products_list.html'
     model = Products
     context_object_name = 'products'
+    paginate_by = 2
     def get_queryset(self):
         query = super(ProductList , self).get_queryset()
         context = query.filter(is_active=True)
@@ -40,23 +41,36 @@ class ProductDetails(View):
         'tags': tags
         })
 
-class ProductCategories(View):
-    def get(self , request):
-        categories = ParentProductCategory.objects.all()
-        child_categories = ChildProductCategory.objects.all()
-        return render(request, 'category_list.html', {
-            'categories': categories,
-            'child_categories': child_categories
-        })
+# class ProductCategories(View):
+#     def get(self , request):
+#         categories = ParentProductCategory.objects.all()
+#         child_categories = ChildProductCategory.objects.all()
+#         return render(request, 'category_list.html', {
+#             'categories': categories,
+#             'child_categories': child_categories
+#         })
 
 class CategoryDetails(View):
-    def get(self , request , url_title):
-        child_categories = ChildProductCategory.objects.filter(url_title=url_title)
-        product = Products.objects.all()
-        return render(request, 'category_detail.html', {
-            'child_categories': child_categories,
-            'product':product
+    def get(self , request , category_slug):
+        products = Products.objects.filter(category__slug=category_slug)
+        return render(request, 'products_list.html', {
+            'products': products,
         })
+        # def discount(self):
+        #     gheimat = int(price)
+        #     takhfif = int(off)
+        #     if takhfif > 1:
+        #         price_with_off = int(gheimat - (gheimat / 100) * takhfif)
+        #         return price_with_off
+        #     else:
+        #         return gheimat
+    # def discount(self):
+    #     gheimat = int(price)
+    #     takhfif = int(off)
+    #     if takhfif > 1:
+    #         return int(gheimat - (gheimat / 100) * takhfif)
+    #     else:
+    #         return gheimat
 
 # def Product_List(request):
 #     products = Products.objects.filter(is_active=True)

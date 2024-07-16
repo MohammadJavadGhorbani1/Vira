@@ -1,11 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-	جزئیات محصول
+    جزئیات محصول
 {% endblock %}
 
 {% block content %}
-	<main class="content">
+    <main class="content">
         <div class="single-product">
             <div class="container">
                 <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -25,7 +25,26 @@
                                                 <span class="deal-title-main">پیشنـهاد شگفت انگیـز</span>
                                                 <span class="deal-title-sub">فرصت باقی مانده</span>
                                             </div>
-                                            <div class="countdown countdown-style-3 h4" data-date-time="2025-10-31 20:29:59" data-labels="{&quot;label-second&quot;: &quot;ثانیه&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-day&quot;: &quot;روز&quot;}"><div class="countdown-item"><div class="countdown-value">483</div><div class="countdown-label">روز</div></div><div class="countdown-item"><div class="countdown-value">06</div><div class="countdown-label">ساعت</div></div><div class="countdown-item"><div class="countdown-value">46</div><div class="countdown-label">دقیقه</div></div><div class="countdown-item"><div class="countdown-value">50</div><div class="countdown-label">ثانیه</div></div></div>
+                                            <div class="countdown countdown-style-3 h4"
+                                                 data-date-time="2025-10-31 20:29:59"
+                                                 data-labels="{&quot;label-second&quot;: &quot;ثانیه&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-day&quot;: &quot;روز&quot;}">
+                                                <div class="countdown-item">
+                                                    <div class="countdown-value">483</div>
+                                                    <div class="countdown-label">روز</div>
+                                                </div>
+                                                <div class="countdown-item">
+                                                    <div class="countdown-value">06</div>
+                                                    <div class="countdown-label">ساعت</div>
+                                                </div>
+                                                <div class="countdown-item">
+                                                    <div class="countdown-value">46</div>
+                                                    <div class="countdown-label">دقیقه</div>
+                                                </div>
+                                                <div class="countdown-item">
+                                                    <div class="countdown-value">50</div>
+                                                    <div class="countdown-label">ثانیه</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="gallery-item">
@@ -33,22 +52,26 @@
                                             <div class="product-tools">
                                                 <ul>
                                                     <li class="tools-item popup-image">
-                                                        <a href="/static/images/pageProduct/apple3-L.png" title="تصاویر بیشتر" class="image-popup-vertical-fit">
+                                                        <a href="/static/images/pageProduct/apple3-L.png"
+                                                           title="تصاویر بیشتر" class="image-popup-vertical-fit">
                                                             <i class="fal fa-search"></i>
                                                         </a>
                                                     </li>
                                                     <li class="tools-item popup-share">
-                                                        <a href="#" title="اشتراک گذاری" data-toggle="modal" data-target="#option-social">
+                                                        <a href="#" title="اشتراک گذاری" data-toggle="modal"
+                                                           data-target="#option-social">
                                                             <i class="fal fa-share-alt"></i>
                                                         </a>
                                                     </li>
                                                     <li class="tools-item popup-alarm">
-                                                        <a href="#" title="اطلاع رسانی" data-toggle="modal" data-target="#option-alarm">
+                                                        <a href="#" title="اطلاع رسانی" data-toggle="modal"
+                                                           data-target="#option-alarm">
                                                             <i class="fal fa-bell"></i>
                                                         </a>
                                                     </li>
                                                     <li class="tools-item popup-chart">
-                                                        <a href="#" title="نمودار قیمت" data-toggle="modal" data-target="#option-chart">
+                                                        <a href="#" title="نمودار قیمت" data-toggle="modal"
+                                                           data-target="#option-chart">
                                                             <i class="fal fa-chart-area"></i>
                                                         </a>
                                                     </li>
@@ -63,85 +86,94 @@
                                                 <span>{{ product.off }}%</span>
                                             </div>
                                             <div class="swiper-container gallery-slider pb-md-0 pb-3 swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl">
-                                                <div class="swiper-wrapper" id="swiper-wrapper-dbe76366c99848d3" aria-live="polite" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                                                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" style="width: 231px;">
-                                                        <a href="/static/images/pageProduct/apple-L.webp" class="image-popup-vertical-fit">
-                                                            <img src="/static/images/pageProduct/apple-L.webp" data-large="/static/images/pageProduct/apple-L.webp" class="light-zoom" alt="gallery item">
-                                                        </a>
+                                                <div class="swiper-wrapper" id="swiper-wrapper-dbe76366c99848d3"
+                                                     aria-live="polite"
+                                                     style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                                    {#                                                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" style="width: 231px;">#}
+                                                    {#                                                            <img src="{{ product.image.url }}" data-large="{{ product.image.url }}" class="light-zoom" alt="gallery item">#}
+                                                    {#                                                    </div>#}
+                                                    <div class="swiper-slide swiper-slide-next" role="group"
+                                                         aria-label="2 / 4" style="width: 231px;">
+                                                        <img src="{{ product.image.url }}"
+                                                             data-large="{{ product.image.url }}" class="light-zoom"
+                                                             alt="gallery item">
                                                     </div>
-                                                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" style="width: 231px;">
-                                                        <a href="/static/images/pageProduct/apple2-L.webp" class="image-popup-vertical-fit">
-                                                            <img src="/static/images/pageProduct/apple2-L.webp" data-large="/static/images/pageProduct/apple2-L.webp" class="light-zoom" alt="gallery item">
-                                                        </a>
-                                                    </div>
-                                                    <div class="swiper-slide" role="group" aria-label="3 / 4" style="width: 231px;">
-                                                        <a href="/static/images/pageProduct/apple3-L.png" class="image-popup-vertical-fit">
-                                                            <img src="/static/images/pageProduct/apple3-L.png" data-large="/static/images/pageProduct/apple3-L.png" class="light-zoom" alt="gallery item">
-                                                        </a>
-                                                    </div>
-                                                    <div class="swiper-slide" role="group" aria-label="4 / 4" style="width: 231px;">
-                                                        <a href="/static/images/pageProduct/apple4-L.png" class="image-popup-vertical-fit">
-                                                            <img src="/static/images/pageProduct/apple4-L.png" data-large="/static/images/pageProduct/apple4-L.png" class="light-zoom" alt="gallery item">
-                                                        </a>
-                                                    </div>
+                                                    {#                                                    <div class="swiper-slide" role="group" aria-label="3 / 4" style="width: 231px;">#}
+                                                    {#                                                        <a href="/static/images/pageProduct/apple3-L.png" class="image-popup-vertical-fit">#}
+                                                    {#                                                            <img src="/static/images/pageProduct/apple3-L.png" data-large="/static/images/pageProduct/apple3-L.png" class="light-zoom" alt="gallery item">#}
+                                                    {#                                                        </a>#}
+                                                    {#                                                    </div>#}
+                                                    {#                                                    <div class="swiper-slide" role="group" aria-label="4 / 4" style="width: 231px;">#}
+                                                    {#                                                        <a href="/static/images/pageProduct/apple4-L.png" class="image-popup-vertical-fit">#}
+                                                    {#                                                            <img src="/static/images/pageProduct/apple4-L.png" data-large="/static/images/pageProduct/apple4-L.png" class="light-zoom" alt="gallery item">#}
+                                                    {#                                                        </a>#}
+                                                    {#                                                    </div>#}
                                                 </div>
                                                 <!-- Add Pagination -->
-                                                <div class="swiper-pagination d-md-none swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-bullets-dynamic" style="width: 40px;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main" tabindex="0" role="button" aria-label="Go to slide 1" style="right: 12px;"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next" tabindex="0" role="button" aria-label="Go to slide 2" style="right: 12px;"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next-next" tabindex="0" role="button" aria-label="Go to slide 3" style="right: 12px;"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4" style="right: 12px;"></span></div>
-                                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-                                            <div class="swiper-container gallery-slider-thumbs mt-2 d-md-block d-none swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl">
-                                                <div class="swiper-wrapper" id="swiper-wrapper-656dd7b3ab631a5f" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-92.4px, 0px, 0px);">
-                                                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" style="width: 46.2px;">
-                                                        <img src="/static/images/pageProduct/apple-S.webp" alt="gallery item">
-                                                    </div>
-                                                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" style="width: 46.2px;">
-                                                        <img src="/static/images/pageProduct/apple2-S.webp" alt="gallery item">
-                                                    </div>
-                                                    <div class="swiper-slide" role="group" aria-label="3 / 4" style="width: 46.2px;">
-                                                        <img src="/static/images/pageProduct/apple3-S.png" alt="gallery item">
-                                                    </div>
-                                                    <div class="swiper-slide" role="group" aria-label="4 / 4" style="width: 46.2px;">
-                                                        <img src="/static/images/pageProduct/apple4-S.png" alt="gallery item">
-                                                    </div>
-                                                </div>
+                                                {#                                                <div class="swiper-pagination d-md-none swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-bullets-dynamic" style="width: 40px;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main" tabindex="0" role="button" aria-label="Go to slide 1" style="right: 12px;"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next" tabindex="0" role="button" aria-label="Go to slide 2" style="right: 12px;"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next-next" tabindex="0" role="button" aria-label="Go to slide 3" style="right: 12px;"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4" style="right: 12px;"></span></div>#}
+                                                {#                                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>#}
+                                                {#                                            <div class="swiper-container gallery-slider-thumbs mt-2 d-md-block d-none swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl">#}
+                                                {#                                                <div class="swiper-wrapper" id="swiper-wrapper-656dd7b3ab631a5f" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-92.4px, 0px, 0px);">#}
+                                                {#                                                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" style="width: 46.2px;">#}
+                                                {#                                                        <img src="/static/images/pageProduct/apple-S.webp" alt="gallery item">#}
+                                                {#                                                    </div>#}
+                                                {#                                                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" style="width: 46.2px;">#}
+                                                {#                                                        <img src="/static/images/pageProduct/apple2-S.webp" alt="gallery item">#}
+                                                {#                                                    </div>#}
+                                                {#                                                    <div class="swiper-slide" role="group" aria-label="3 / 4" style="width: 46.2px;">#}
+                                                {#                                                        <img src="/static/images/pageProduct/apple3-S.png" alt="gallery item">#}
+                                                {#                                                    </div>#}
+                                                {#                                                    <div class="swiper-slide" role="group" aria-label="4 / 4" style="width: 46.2px;">#}
+                                                {#                                                        <img src="/static/images/pageProduct/apple4-S.png" alt="gallery item">#}
+                                                {#                                                    </div>#}
+                                                {#                                                </div>#}
                                                 <!-- Add Arrows -->
-                                                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-656dd7b3ab631a5f" aria-disabled="false"></div>
-                                                <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-656dd7b3ab631a5f" aria-disabled="true"></div>
-                                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                                                {#                                                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-656dd7b3ab631a5f" aria-disabled="false"></div>#}
+                                                {#                                                <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-656dd7b3ab631a5f" aria-disabled="true"></div>#}
+                                                <span class="swiper-notification" aria-live="assertive"
+                                                      aria-atomic="true"></span></div>
                                         </div>
                                     </div>
                                     <!-- Modal-option-social -->
-                                    <div class="modal fade" id="option-social" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal fade" id="option-social" tabindex="-1" role="dialog"
+                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
                                                         <span aria-hidden="true">×</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="title">با استفاده از روش‌های زیر
                                                         می‌توانید این صفحه را با دوستان خود به
-                                                        اشتراک بگذارید.</div>
+                                                        اشتراک بگذارید.
+                                                    </div>
                                                     <div class="share-options">
                                                         <div class="share-social-buttons">
                                                             <ul>
                                                                 <li>
-                                                                    <a href="#" class="share-social share-social-twitter">
+                                                                    <a href="#"
+                                                                       class="share-social share-social-twitter">
                                                                         <i class="fab fa-twitter"></i>
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="#" class="share-social share-social-facebook">
+                                                                    <a href="#"
+                                                                       class="share-social share-social-facebook">
                                                                         <i class="fab fa-facebook"></i>
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="#" class="share-social share-social-whatsapp">
+                                                                    <a href="#"
+                                                                       class="share-social share-social-whatsapp">
                                                                         <i class="fab fa-whatsapp"></i>
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="#" class="share-social share-social-telegram">
+                                                                    <a href="#"
+                                                                       class="share-social share-social-telegram">
                                                                         <i class="fab fa-telegram"></i>
                                                                     </a>
                                                                 </li>
@@ -149,7 +181,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-shortlink">
-                                                        <input class="text-copy" type="url" value="https://demos.vira.net/vira/?p=963" readonly="">
+                                                        <input class="text-copy" type="url"
+                                                               value="https://demos.vira.net/vira/?p=963" readonly="">
                                                         <i class="fal fa-copy"></i>
                                                     </div>
                                                 </div>
@@ -157,13 +190,15 @@
                                         </div>
                                     </div>
                                     <!-- Modal-option-alarm -->
-                                    <div class="modal fade" id="option-alarm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal fade" id="option-alarm" tabindex="-1" role="dialog"
+                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalCenterTitle">به من اطلاع بده
                                                     </h5>
-                                                    <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
+                                                    <button type="button" class="close p-0 m-0" data-dismiss="modal"
+                                                            aria-label="Close">
                                                         <span aria-hidden="true">×</span>
                                                     </button>
                                                 </div>
@@ -197,20 +232,24 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-primary ml-2">ثبت</button>
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">بازگشت</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                                        بازگشت
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Modal-option-chart -->
-                                    <div class="modal fade" id="option-chart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal fade" id="option-chart" tabindex="-1" role="dialog"
+                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalCenterTitle">نمودار قیمت
                                                         فروش
                                                     </h5>
-                                                    <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
+                                                    <button type="button" class="close p-0 m-0" data-dismiss="modal"
+                                                            aria-label="Close">
                                                         <span aria-hidden="true">×</span>
                                                     </button>
                                                 </div>
@@ -218,15 +257,42 @@
                                                     <div class="product-headline">
                                                         <h1 class="product-title">
                                                             {{ product.title }}
-{#                                                            <span class="sub-head">Apple iPhone 12 A2404 Dual SIM 128GB#}
-{#                                                                Mobile Phone</span>#}
+                                                            {#                                                            <span class="sub-head">Apple iPhone 12 A2404 Dual SIM 128GB#}
+                                                            {#                                                                Mobile Phone</span>#}
                                                         </h1>
                                                     </div>
-                                                    <div id="chart" style="min-height: 365px;"><div id="apexchartsf2w18xty" class="apexcharts-canvas apexchartsf2w18xty" style="width: 0px; height: 350px;"><svg id="SvgjsSvg1010" width="0" height="350" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1013" class="apexcharts-annotations"></g><g id="SvgjsG1012" class="apexcharts-inner apexcharts-graphical"><defs id="SvgjsDefs1011"></defs></g></svg><div class="apexcharts-legend"></div></div></div>
-                                                <div class="resize-triggers"><div class="expand-trigger"><div style="width: 1px; height: 1px;"></div></div><div class="contract-trigger"></div></div></div>
+                                                    <div id="chart" style="min-height: 365px;">
+                                                        <div id="apexchartsf2w18xty"
+                                                             class="apexcharts-canvas apexchartsf2w18xty"
+                                                             style="width: 0px; height: 350px;">
+                                                            <svg id="SvgjsSvg1010" width="0" height="350"
+                                                                 xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                 xmlns:svgjs="http://svgjs.com/svgjs"
+                                                                 class="apexcharts-svg" xmlns:data="ApexChartsNS"
+                                                                 transform="translate(0, 0)"
+                                                                 style="background: transparent;">
+                                                                <g id="SvgjsG1013" class="apexcharts-annotations"></g>
+                                                                <g id="SvgjsG1012"
+                                                                   class="apexcharts-inner apexcharts-graphical">
+                                                                    <defs id="SvgjsDefs1011"></defs>
+                                                                </g>
+                                                            </svg>
+                                                            <div class="apexcharts-legend"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="resize-triggers">
+                                                        <div class="expand-trigger">
+                                                            <div style="width: 1px; height: 1px;"></div>
+                                                        </div>
+                                                        <div class="contract-trigger"></div>
+                                                    </div>
+                                                </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-primary ml-2">ثبت</button>
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">بازگشت</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                                        بازگشت
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -239,18 +305,18 @@
                                 <div class="product-headline">
                                     <h1 class="product-title">
                                         {{ product.title }}
-{#                                        <span class="sub-head">Apple iPhone 12 A2404 Dual SIM 128GB Mobile Phone</span>#}
+                                        {#                                        <span class="sub-head">Apple iPhone 12 A2404 Dual SIM 128GB Mobile Phone</span>#}
                                     </h1>
                                 </div>
                                 <div class="product-meta">
                                     <span class="posted">
                                         <span class="detail-label">دسته : </span>
                                         <span class="detail-content">
-                                            <a href="{% url 'product_category' %}">
+                                            <a href="#">
                                                 {{ product.category.parent_category }}
                                             </a>
                                             ,
-                                            <a href="{% url 'product_category' %}">
+                                            <a href="{% url 'category_detail' product.category.slug %}">
                                                 {{ product.category }}
                                             </a>
                                         </span>
@@ -269,27 +335,27 @@
                                         <li>
                                             <span>تگ های مربوطه: </span>
                                             {% for tag in tags %}
-                                            	<span>{{ tag.title }}</span>
+                                                <span>{{ tag.title }}</span>
                                             {% endfor %}
-{#                                            <span>2G 3G 4G</span>#}
+                                            {#                                            <span>2G 3G 4G</span>#}
                                         </li>
                                         <li>
                                             <span>دسته بندی محصول: </span>
                                             <span>{{ product.category.parent_category }}</span>
                                         </li>
-{#                                        <li>#}
-{#                                            <span>رزولوشن عکس: </span>#}
-{#                                            <span>12.0 مگاپیکسل</span>#}
-{#                                        </li>#}
-{#                                        <li>#}
-{#                                            <span>ویژگی‌های خاص: </span>#}
-{#                                            <span>مقاوم در برابر آب مناسب عکاسی مناسب عکاسی سلفی مناسب بازی مجهز به#}
-{#                                                حس‌گر تشخیص چهره</span>#}
-{#                                        </li>#}
-{#                                        <li>#}
-{#                                            <span>بازه‌ی سایز صفحه نمایش: </span>#}
-{#                                            <span>5.5 تا 6.0 اینچ</span>#}
-{#                                        </li>#}
+                                        {#                                        <li>#}
+                                        {#                                            <span>رزولوشن عکس: </span>#}
+                                        {#                                            <span>12.0 مگاپیکسل</span>#}
+                                        {#                                        </li>#}
+                                        {#                                        <li>#}
+                                        {#                                            <span>ویژگی‌های خاص: </span>#}
+                                        {#                                            <span>مقاوم در برابر آب مناسب عکاسی مناسب عکاسی سلفی مناسب بازی مجهز به#}
+                                        {#                                                حس‌گر تشخیص چهره</span>#}
+                                        {#                                        </li>#}
+                                        {#                                        <li>#}
+                                        {#                                            <span>بازه‌ی سایز صفحه نمایش: </span>#}
+                                        {#                                            <span>5.5 تا 6.0 اینچ</span>#}
+                                        {#                                        </li>#}
                                     </ul>
                                 </div>
                                 <div class="price">
@@ -299,14 +365,21 @@
                                         </span>
                                     </del>
                                     <ins>
-                                        <span class="price-amount">{{ product.price }}
-                                            <span class="price-currencySymbol">تومان</span>
-                                        </span>
+                                         <span class="price-amount">{{ product.price }}
+                                             <span class="price-currencySymbol">تومان</span>
+                                         </span>
+                                        {#                                        <span class="price-amount">{{ product.price }}#}
+                                        {#                                            <span class="price-currencySymbol">تومان</span>#}
+                                        {#                                        </span>#}
                                     </ins>
                                 </div>
                                 <div class="add-to-cart">
                                     <div class="quantity">
-                                        <input type="number" min="1" max="100" step="1" value="1"><div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>
+                                        <input type="number" min="1" max="100" step="1" value="1">
+                                        <div class="quantity-nav">
+                                            <div class="quantity-button quantity-up">+</div>
+                                            <div class="quantity-button quantity-down">-</div>
+                                        </div>
                                         <div class="quantity-nav"></div>
                                     </div>
                                     <button type="submit" class="btn btn-success add-to-cart-btn">
@@ -314,39 +387,39 @@
                                         افزودن به سبد خرید
                                     </button>
                                 </div>
-{#                                <div class="product-price-survey-question">#}
-{#                                    آیا قیمت مناسب‌تری سراغ دارید؟#}
-{#                                    <div class="answers">#}
-{#                                        <a href="#" class="product-price-survery-answer price-yes">بلی</a>#}
-{#                                        <a href="#" class="product-price-survery-answer price-no">خیر</a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="product-colors">#}
-{#                                    <span>رنگ :</span>#}
-{#                                    <div class="radio-color">#}
-{#                                        <div class="radio-color-list">#}
-{#                                            <label for="#" class="radio-color-item">#}
-{#                                                <span class="variant-shape" style="background-color: #2962ff;"></span>#}
-{#                                                <input type="radio" class="color-selector" name="color">#}
-{#                                                <span class="color-check"></span>#}
-{#                                            </label>#}
-{#                                        </div>#}
-{#                                        <div class="radio-color-list">#}
-{#                                            <label for="#" class="radio-color-item">#}
-{#                                                <span class="variant-shape" style="background-color: #f44336;"></span>#}
-{#                                                <input type="radio" class="color-selector" name="color">#}
-{#                                                <span class="color-check"></span>#}
-{#                                            </label>#}
-{#                                        </div>#}
-{#                                        <div class="radio-color-list">#}
-{#                                            <label for="#" class="radio-color-item">#}
-{#                                                <span class="variant-shape" style="background-color: #ffeb3b;"></span>#}
-{#                                                <input type="radio" class="color-selector" name="color">#}
-{#                                                <span class="color-check"></span>#}
-{#                                            </label>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
+                                {#                                <div class="product-price-survey-question">#}
+                                {#                                    آیا قیمت مناسب‌تری سراغ دارید؟#}
+                                {#                                    <div class="answers">#}
+                                {#                                        <a href="#" class="product-price-survery-answer price-yes">بلی</a>#}
+                                {#                                        <a href="#" class="product-price-survery-answer price-no">خیر</a>#}
+                                {#                                    </div>#}
+                                {#                                </div>#}
+                                {#                                <div class="product-colors">#}
+                                {#                                    <span>رنگ :</span>#}
+                                {#                                    <div class="radio-color">#}
+                                {#                                        <div class="radio-color-list">#}
+                                {#                                            <label for="#" class="radio-color-item">#}
+                                {#                                                <span class="variant-shape" style="background-color: #2962ff;"></span>#}
+                                {#                                                <input type="radio" class="color-selector" name="color">#}
+                                {#                                                <span class="color-check"></span>#}
+                                {#                                            </label>#}
+                                {#                                        </div>#}
+                                {#                                        <div class="radio-color-list">#}
+                                {#                                            <label for="#" class="radio-color-item">#}
+                                {#                                                <span class="variant-shape" style="background-color: #f44336;"></span>#}
+                                {#                                                <input type="radio" class="color-selector" name="color">#}
+                                {#                                                <span class="color-check"></span>#}
+                                {#                                            </label>#}
+                                {#                                        </div>#}
+                                {#                                        <div class="radio-color-list">#}
+                                {#                                            <label for="#" class="radio-color-item">#}
+                                {#                                                <span class="variant-shape" style="background-color: #ffeb3b;"></span>#}
+                                {#                                                <input type="radio" class="color-selector" name="color">#}
+                                {#                                                <span class="color-check"></span>#}
+                                {#                                            </label>#}
+                                {#                                        </div>#}
+                                {#                                    </div>#}
+                                {#                                </div>#}
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-xs-12">
@@ -431,7 +504,8 @@
                                         ضمانت اصل بودن
                                     </div>
                                     <div class="service-item">
-                                        <img src="/static/images/pageProduct/service/delivery-truck-3.png" alt="service">
+                                        <img src="/static/images/pageProduct/service/delivery-truck-3.png"
+                                             alt="service">
                                         تحویل اکسپرس
                                     </div>
                                     <div class="service-item">
@@ -446,22 +520,26 @@
                         <div class="tab-box">
                             <ul class="tab nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item description">
-                                    <a class="nav-link active" id="des-tab" data-toggle="tab" href="#des" role="tab" aria-controls="des" aria-selected="true">
+                                    <a class="nav-link active" id="des-tab" data-toggle="tab" href="#des" role="tab"
+                                       aria-controls="des" aria-selected="true">
                                         توضیحات
                                     </a>
                                 </li>
                                 <li class="nav-item additional-information">
-                                    <a class="nav-link" id="information-tab" data-toggle="tab" href="#information" role="tab" aria-controls="information" aria-selected="true">
+                                    <a class="nav-link" id="information-tab" data-toggle="tab" href="#information"
+                                       role="tab" aria-controls="information" aria-selected="true">
                                         توضیحات تکمیلی
                                     </a>
                                 </li>
                                 <li class="nav-item comment-user">
-                                    <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="true">
+                                    <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" role="tab"
+                                       aria-controls="user" aria-selected="true">
                                         نظرات کاربران
                                     </a>
                                 </li>
                                 <li class="nav-item questions">
-                                    <a class="nav-link" id="question-tab" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">
+                                    <a class="nav-link" id="question-tab" data-toggle="tab" href="#question" role="tab"
+                                       aria-controls="question" aria-selected="true">
                                         سوالات کاربران
                                     </a>
                                 </li>
@@ -469,7 +547,8 @@
                         </div>
                         <div class="tabs-content">
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="des" role="tabpanel" aria-labelledby="des-tab">
+                                <div class="tab-pane fade show active" id="des" role="tabpanel"
+                                     aria-labelledby="des-tab">
                                     <div class="content-heading">
                                         <i class="fal fa-pen-alt"></i>
                                         <div class="heading">
@@ -529,35 +608,45 @@
                                                     <li>
                                                         <span class="cell-title">کیفیت ساخت:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">9.4</span>
                                                     </li>
                                                     <li>
                                                         <span class="cell-title">ارزش خرید به نسبت قیمت:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 45%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">8.9</span>
                                                     </li>
                                                     <li>
                                                         <span class="cell-title">نوآوری:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 50%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">9.2</span>
                                                     </li>
                                                     <li>
                                                         <span class="cell-title">امکانات و قابلیت ها:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 70%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">9.8</span>
                                                     </li>
                                                     <li>
                                                         <span class="cell-title">سهولت استفاده:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 90%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">9.5</span>
                                                     </li>
@@ -566,7 +655,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="information" role="tabpanel" aria-labelledby="information-tab">
+                                <div class="tab-pane fade" id="information" role="tabpanel"
+                                     aria-labelledby="information-tab">
                                     <div class="content-heading">
                                         <i class="fal fa-ballot"></i>
                                         <div class="heading">
@@ -576,73 +666,76 @@
                                     </div>
                                     <table class="table shop-attributes">
                                         <tbody>
-                                            <tr class="attribute-group-row attribute-group-row-defined">
-                                                <th class="attribute-group-name">
-                                                    <i class="fal fa-chevron-left"></i>
-                                                    پردازنده
-                                                </th>
-                                            </tr>
-                                            <tr class="attribute-row attribute-row-list">
-                                                <th class="attribute-name">مدل پردازنده گرافيکي</th>
-                                                <th class="attribute-value">GeForce GTX 950M GDDR5</th>
-                                            </tr>
-                                            <tr class="attribute-group-row attribute-group-row-defined">
-                                                <th class="attribute-group-name">
-                                                    <i class="fal fa-chevron-left"></i>
-                                                    حافظه
-                                                </th>
-                                            </tr>
-                                            <tr class="attribute-row attribute-row-list">
-                                                <th class="attribute-name">حافظه داخلي</th>
-                                                <th class="attribute-value">256 گیگا بایت</th>
-                                            </tr>
-                                            <tr class="attribute-row attribute-row-list">
-                                                <th class="attribute-name">ظرفيت حافظه RAM</th>
-                                                <th class="attribute-value">8 گيگابايت</th>
-                                            </tr>
-                                            <tr class="attribute-group-row attribute-group-row-defined">
-                                                <th class="attribute-group-name">
-                                                    <i class="fal fa-chevron-left"></i>
-                                                    صفحه نمایش
-                                                </th>
-                                            </tr>
-                                            <tr class="attribute-row attribute-row-list">
-                                                <th class="attribute-name">ابعاد</th>
-                                                <th class="attribute-value">
-                                                    129.5×99.1×137.2 ميلي متر</th>
-                                            </tr>
-                                            <tr class="attribute-row attribute-row-list">
-                                                <th class="attribute-name">نوع صفحه نمایش
-                                                </th>
-                                                <th class="attribute-value">
-                                                    OLED</th>
-                                            </tr>
-                                            <tr class="attribute-row attribute-row-list">
-                                                <th class="attribute-name">اندازه صفحه نمایش
-                                                </th>
-                                                <th class="attribute-value">
-                                                    5.0اينچ</th>
-                                            </tr>
-                                            <tr class="attribute-group-row attribute-group-row-defined">
-                                                <th class="attribute-group-name">
-                                                    <i class="fal fa-chevron-left"></i>
-                                                    دوربین
-                                                </th>
-                                            </tr>
-                                            <tr class="attribute-row attribute-row-list">
-                                                <th class="attribute-name">دوربين
-                                                </th>
-                                                <th class="attribute-value">
-                                                    20.0 مگاپيکسل
-                                                </th>
-                                            </tr>
-                                            <tr class="attribute-row attribute-row-list">
-                                                <th class="attribute-name">حداکثر رزولوشن عکس
-                                                </th>
-                                                <th class="attribute-value">
-                                                    5184 × 3888
-                                                </th>
-                                            </tr>
+                                        <tr class="attribute-group-row attribute-group-row-defined">
+                                            <th class="attribute-group-name">
+                                                <i class="fal fa-chevron-left"></i>
+                                                پردازنده
+                                            </th>
+                                        </tr>
+                                        <tr class="attribute-row attribute-row-list">
+                                            <th class="attribute-name">مدل پردازنده گرافيکي</th>
+                                            <th class="attribute-value">GeForce GTX 950M GDDR5</th>
+                                        </tr>
+                                        <tr class="attribute-group-row attribute-group-row-defined">
+                                            <th class="attribute-group-name">
+                                                <i class="fal fa-chevron-left"></i>
+                                                حافظه
+                                            </th>
+                                        </tr>
+                                        <tr class="attribute-row attribute-row-list">
+                                            <th class="attribute-name">حافظه داخلي</th>
+                                            <th class="attribute-value">256 گیگا بایت</th>
+                                        </tr>
+                                        <tr class="attribute-row attribute-row-list">
+                                            <th class="attribute-name">ظرفيت حافظه RAM</th>
+                                            <th class="attribute-value">8 گيگابايت</th>
+                                        </tr>
+                                        <tr class="attribute-group-row attribute-group-row-defined">
+                                            <th class="attribute-group-name">
+                                                <i class="fal fa-chevron-left"></i>
+                                                صفحه نمایش
+                                            </th>
+                                        </tr>
+                                        <tr class="attribute-row attribute-row-list">
+                                            <th class="attribute-name">ابعاد</th>
+                                            <th class="attribute-value">
+                                                129.5×99.1×137.2 ميلي متر
+                                            </th>
+                                        </tr>
+                                        <tr class="attribute-row attribute-row-list">
+                                            <th class="attribute-name">نوع صفحه نمایش
+                                            </th>
+                                            <th class="attribute-value">
+                                                OLED
+                                            </th>
+                                        </tr>
+                                        <tr class="attribute-row attribute-row-list">
+                                            <th class="attribute-name">اندازه صفحه نمایش
+                                            </th>
+                                            <th class="attribute-value">
+                                                5.0اينچ
+                                            </th>
+                                        </tr>
+                                        <tr class="attribute-group-row attribute-group-row-defined">
+                                            <th class="attribute-group-name">
+                                                <i class="fal fa-chevron-left"></i>
+                                                دوربین
+                                            </th>
+                                        </tr>
+                                        <tr class="attribute-row attribute-row-list">
+                                            <th class="attribute-name">دوربين
+                                            </th>
+                                            <th class="attribute-value">
+                                                20.0 مگاپيکسل
+                                            </th>
+                                        </tr>
+                                        <tr class="attribute-row attribute-row-list">
+                                            <th class="attribute-name">حداکثر رزولوشن عکس
+                                            </th>
+                                            <th class="attribute-value">
+                                                5184 × 3888
+                                            </th>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -680,35 +773,45 @@
                                                     <li>
                                                         <span class="cell-title">کیفیت ساخت:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">خوب</span>
                                                     </li>
                                                     <li>
                                                         <span class="cell-title">ارزش خرید به نسبت قیمت:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 45%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">خوب</span>
                                                     </li>
                                                     <li>
                                                         <span class="cell-title">نوآوری:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 50%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">خوب</span>
                                                     </li>
                                                     <li>
                                                         <span class="cell-title">امکانات و قابلیت ها:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 70%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">خوب</span>
                                                     </li>
                                                     <li>
                                                         <span class="cell-title">سهولت استفاده:</span>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                 style="width: 90%" aria-valuenow="25" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
                                                         </div>
                                                         <span class="cell-value">خوب</span>
                                                     </li>
@@ -741,33 +844,483 @@
                                                 <div class="rating-wrap">
                                                     <div class="col-12 mb-3">
                                                         <div class="comments-product-attributes-title">کیفیت ساخت</div>
-                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                        <div class="slider slider-horizontal slider-rtl" id=""
+                                                             style="margin-bottom: 0px;">
+                                                            <div class="slider-track">
+                                                                <div class="slider-track-low"
+                                                                     style="right: 0px; width: 0%;"></div>
+                                                                <div class="slider-selection tick-slider-selection"
+                                                                     style="right: 0%; width: 50%;"></div>
+                                                                <div class="slider-track-high"
+                                                                     style="left: 0px; width: 50%;"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-main bs-tooltip-top hide"
+                                                                 role="presentation" style="right: 50%;">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner">3</div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-min bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-max bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="slider-tick-label-container">
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">
+                                                                    خیلی بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">
+                                                                    بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection label-is-selection"
+                                                                     style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">
+                                                                    معمولی
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">
+                                                                    خوب
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">
+                                                                    عالی
+                                                                </div>
+                                                            </div>
+                                                            <div class="slider-tick-container">
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 0%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 25%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 50%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 75%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 100%;"></div>
+                                                            </div>
+                                                            <div class="slider-handle min-slider-handle round"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="3" tabindex="0"
+                                                                 style="right: 50%;"></div>
+                                                            <div class="slider-handle max-slider-handle round hide"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="1" tabindex="0"
+                                                                 style="right: 0%;"></div>
+                                                        </div>
+                                                        <input id="ex19" type="text" data-provide="slider"
+                                                               data-slider-ticks="[1, 2, 3, 4, 5]"
+                                                               data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]"
+                                                               data-slider-ticks-positions="[0,25,50,75,100]"
+                                                               data-slider-min="1" data-slider-max="5"
+                                                               data-slider-step="1" data-slider-value="3"
+                                                               data-slider-tooltip="hide" data-value="3" value="3"
+                                                               style="display: none;">
                                                     </div>
                                                     <div class="col-12 mb-3">
                                                         <div class="comments-product-attributes-title">ارزش خرید به نسبت
                                                             قیمت
                                                         </div>
-                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                        <div class="slider slider-horizontal slider-rtl" id=""
+                                                             style="margin-bottom: 0px;">
+                                                            <div class="slider-track">
+                                                                <div class="slider-track-low"
+                                                                     style="right: 0px; width: 0%;"></div>
+                                                                <div class="slider-selection tick-slider-selection"
+                                                                     style="right: 0%; width: 50%;"></div>
+                                                                <div class="slider-track-high"
+                                                                     style="left: 0px; width: 50%;"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-main bs-tooltip-top hide"
+                                                                 role="presentation" style="right: 50%;">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner">3</div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-min bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-max bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="slider-tick-label-container">
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">
+                                                                    خیلی بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">
+                                                                    بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection label-is-selection"
+                                                                     style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">
+                                                                    معمولی
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">
+                                                                    خوب
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">
+                                                                    عالی
+                                                                </div>
+                                                            </div>
+                                                            <div class="slider-tick-container">
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 0%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 25%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 50%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 75%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 100%;"></div>
+                                                            </div>
+                                                            <div class="slider-handle min-slider-handle round"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="3" tabindex="0"
+                                                                 style="right: 50%;"></div>
+                                                            <div class="slider-handle max-slider-handle round hide"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="1" tabindex="0"
+                                                                 style="right: 0%;"></div>
+                                                        </div>
+                                                        <input id="ex19" type="text" data-provide="slider"
+                                                               data-slider-ticks="[1, 2, 3, 4, 5]"
+                                                               data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]"
+                                                               data-slider-ticks-positions="[0,25,50,75,100]"
+                                                               data-slider-min="1" data-slider-max="5"
+                                                               data-slider-step="1" data-slider-value="3"
+                                                               data-slider-tooltip="hide" data-value="3" value="3"
+                                                               style="display: none;">
                                                     </div>
                                                     <div class="col-12 mb-3">
                                                         <div class="comments-product-attributes-title">نوآوری</div>
-                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                        <div class="slider slider-horizontal slider-rtl" id=""
+                                                             style="margin-bottom: 0px;">
+                                                            <div class="slider-track">
+                                                                <div class="slider-track-low"
+                                                                     style="right: 0px; width: 0%;"></div>
+                                                                <div class="slider-selection tick-slider-selection"
+                                                                     style="right: 0%; width: 50%;"></div>
+                                                                <div class="slider-track-high"
+                                                                     style="left: 0px; width: 50%;"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-main bs-tooltip-top hide"
+                                                                 role="presentation" style="right: 50%;">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner">3</div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-min bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-max bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="slider-tick-label-container">
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">
+                                                                    خیلی بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">
+                                                                    بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection label-is-selection"
+                                                                     style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">
+                                                                    معمولی
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">
+                                                                    خوب
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">
+                                                                    عالی
+                                                                </div>
+                                                            </div>
+                                                            <div class="slider-tick-container">
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 0%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 25%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 50%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 75%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 100%;"></div>
+                                                            </div>
+                                                            <div class="slider-handle min-slider-handle round"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="3" tabindex="0"
+                                                                 style="right: 50%;"></div>
+                                                            <div class="slider-handle max-slider-handle round hide"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="1" tabindex="0"
+                                                                 style="right: 0%;"></div>
+                                                        </div>
+                                                        <input id="ex19" type="text" data-provide="slider"
+                                                               data-slider-ticks="[1, 2, 3, 4, 5]"
+                                                               data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]"
+                                                               data-slider-ticks-positions="[0,25,50,75,100]"
+                                                               data-slider-min="1" data-slider-max="5"
+                                                               data-slider-step="1" data-slider-value="3"
+                                                               data-slider-tooltip="hide" data-value="3" value="3"
+                                                               style="display: none;">
                                                     </div>
                                                     <div class="col-12 mb-3">
                                                         <div class="comments-product-attributes-title">امکانات و قابلیت
                                                             ها
                                                         </div>
-                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                        <div class="slider slider-horizontal slider-rtl" id=""
+                                                             style="margin-bottom: 0px;">
+                                                            <div class="slider-track">
+                                                                <div class="slider-track-low"
+                                                                     style="right: 0px; width: 0%;"></div>
+                                                                <div class="slider-selection tick-slider-selection"
+                                                                     style="right: 0%; width: 50%;"></div>
+                                                                <div class="slider-track-high"
+                                                                     style="left: 0px; width: 50%;"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-main bs-tooltip-top hide"
+                                                                 role="presentation" style="right: 50%;">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner">3</div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-min bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-max bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="slider-tick-label-container">
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">
+                                                                    خیلی بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">
+                                                                    بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection label-is-selection"
+                                                                     style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">
+                                                                    معمولی
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">
+                                                                    خوب
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">
+                                                                    عالی
+                                                                </div>
+                                                            </div>
+                                                            <div class="slider-tick-container">
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 0%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 25%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 50%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 75%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 100%;"></div>
+                                                            </div>
+                                                            <div class="slider-handle min-slider-handle round"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="3" tabindex="0"
+                                                                 style="right: 50%;"></div>
+                                                            <div class="slider-handle max-slider-handle round hide"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="1" tabindex="0"
+                                                                 style="right: 0%;"></div>
+                                                        </div>
+                                                        <input id="ex19" type="text" data-provide="slider"
+                                                               data-slider-ticks="[1, 2, 3, 4, 5]"
+                                                               data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]"
+                                                               data-slider-ticks-positions="[0,25,50,75,100]"
+                                                               data-slider-min="1" data-slider-max="5"
+                                                               data-slider-step="1" data-slider-value="3"
+                                                               data-slider-tooltip="hide" data-value="3" value="3"
+                                                               style="display: none;">
                                                     </div>
                                                     <div class="col-12 mb-3">
                                                         <div class="comments-product-attributes-title">سهولت استفاده
                                                         </div>
-                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                        <div class="slider slider-horizontal slider-rtl" id=""
+                                                             style="margin-bottom: 0px;">
+                                                            <div class="slider-track">
+                                                                <div class="slider-track-low"
+                                                                     style="right: 0px; width: 0%;"></div>
+                                                                <div class="slider-selection tick-slider-selection"
+                                                                     style="right: 0%; width: 50%;"></div>
+                                                                <div class="slider-track-high"
+                                                                     style="left: 0px; width: 50%;"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-main bs-tooltip-top hide"
+                                                                 role="presentation" style="right: 50%;">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner">3</div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-min bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-max bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="slider-tick-label-container">
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">
+                                                                    خیلی بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">
+                                                                    بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection label-is-selection"
+                                                                     style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">
+                                                                    معمولی
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">
+                                                                    خوب
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">
+                                                                    عالی
+                                                                </div>
+                                                            </div>
+                                                            <div class="slider-tick-container">
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 0%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 25%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 50%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 75%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 100%;"></div>
+                                                            </div>
+                                                            <div class="slider-handle min-slider-handle round"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="3" tabindex="0"
+                                                                 style="right: 50%;"></div>
+                                                            <div class="slider-handle max-slider-handle round hide"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="1" tabindex="0"
+                                                                 style="right: 0%;"></div>
+                                                        </div>
+                                                        <input id="ex19" type="text" data-provide="slider"
+                                                               data-slider-ticks="[1, 2, 3, 4, 5]"
+                                                               data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]"
+                                                               data-slider-ticks-positions="[0,25,50,75,100]"
+                                                               data-slider-min="1" data-slider-max="5"
+                                                               data-slider-step="1" data-slider-value="3"
+                                                               data-slider-tooltip="hide" data-value="3" value="3"
+                                                               style="display: none;">
                                                     </div>
                                                     <div class="col-12 mb-3">
                                                         <div class="comments-product-attributes-title">طراحی و ظاهر
                                                         </div>
-                                                        <div class="slider slider-horizontal slider-rtl" id="" style="margin-bottom: 0px;"><div class="slider-track"><div class="slider-track-low" style="right: 0px; width: 0%;"></div><div class="slider-selection tick-slider-selection" style="right: 0%; width: 50%;"></div><div class="slider-track-high" style="left: 0px; width: 50%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top hide" role="presentation" style="right: 50%;"><div class="arrow"></div><div class="tooltip-inner">3</div></div><div class="tooltip tooltip-min bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top hide" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-tick-label-container"><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">خیلی بد</div><div class="slider-tick-label label-in-selection" style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">بد</div><div class="slider-tick-label label-in-selection label-is-selection" style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">معمولی</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">خوب</div><div class="slider-tick-label" style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">عالی</div></div><div class="slider-tick-container"><div class="slider-tick round in-selection" style="right: 0%;"></div><div class="slider-tick round in-selection" style="right: 25%;"></div><div class="slider-tick round in-selection" style="right: 50%;"></div><div class="slider-tick round" style="right: 75%;"></div><div class="slider-tick round" style="right: 100%;"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" tabindex="0" style="right: 50%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" tabindex="0" style="right: 0%;"></div></div><input id="ex19" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]" data-slider-ticks-positions="[0,25,50,75,100]" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide" data-value="3" value="3" style="display: none;">
+                                                        <div class="slider slider-horizontal slider-rtl" id=""
+                                                             style="margin-bottom: 0px;">
+                                                            <div class="slider-track">
+                                                                <div class="slider-track-low"
+                                                                     style="right: 0px; width: 0%;"></div>
+                                                                <div class="slider-selection tick-slider-selection"
+                                                                     style="right: 0%; width: 50%;"></div>
+                                                                <div class="slider-track-high"
+                                                                     style="left: 0px; width: 50%;"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-main bs-tooltip-top hide"
+                                                                 role="presentation" style="right: 50%;">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner">3</div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-min bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="tooltip tooltip-max bs-tooltip-top hide"
+                                                                 role="presentation">
+                                                                <div class="arrow"></div>
+                                                                <div class="tooltip-inner"></div>
+                                                            </div>
+                                                            <div class="slider-tick-label-container">
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 0%; margin-right: 0px;">
+                                                                    خیلی بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection"
+                                                                     style="width: 0px; position: absolute; right: 25%; margin-right: 0px;">
+                                                                    بد
+                                                                </div>
+                                                                <div class="slider-tick-label label-in-selection label-is-selection"
+                                                                     style="width: 0px; position: absolute; right: 50%; margin-right: 0px;">
+                                                                    معمولی
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 75%; margin-right: 0px;">
+                                                                    خوب
+                                                                </div>
+                                                                <div class="slider-tick-label"
+                                                                     style="width: 0px; position: absolute; right: 100%; margin-right: 0px;">
+                                                                    عالی
+                                                                </div>
+                                                            </div>
+                                                            <div class="slider-tick-container">
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 0%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 25%;"></div>
+                                                                <div class="slider-tick round in-selection"
+                                                                     style="right: 50%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 75%;"></div>
+                                                                <div class="slider-tick round"
+                                                                     style="right: 100%;"></div>
+                                                            </div>
+                                                            <div class="slider-handle min-slider-handle round"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="3" tabindex="0"
+                                                                 style="right: 50%;"></div>
+                                                            <div class="slider-handle max-slider-handle round hide"
+                                                                 role="slider" aria-valuemin="1" aria-valuemax="5"
+                                                                 aria-valuenow="1" tabindex="0"
+                                                                 style="right: 0%;"></div>
+                                                        </div>
+                                                        <input id="ex19" type="text" data-provide="slider"
+                                                               data-slider-ticks="[1, 2, 3, 4, 5]"
+                                                               data-slider-ticks-labels="[&quot;خیلی بد&quot;, &quot;بد&quot;, &quot;معمولی&quot;,&quot;خوب&quot;,&quot;عالی&quot;]"
+                                                               data-slider-ticks-positions="[0,25,50,75,100]"
+                                                               data-slider-min="1" data-slider-max="5"
+                                                               data-slider-step="1" data-slider-value="3"
+                                                               data-slider-tooltip="hide" data-value="3" value="3"
+                                                               style="display: none;">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -777,8 +1330,10 @@
                                                         </div>
                                                         <div id="advantages">
                                                             <div class="ui-input--add-point">
-                                                                <input class="input-ui pr-2 ui-input-field" type="text" id="advantage-input" autocomplete="off" value="">
-                                                                <button class="ui-input-point js-icon-form-add" type="button" style="display: none;">
+                                                                <input class="input-ui pr-2 ui-input-field" type="text"
+                                                                       id="advantage-input" autocomplete="off" value="">
+                                                                <button class="ui-input-point js-icon-form-add"
+                                                                        type="button" style="display: none;">
                                                                 </button>
                                                             </div>
                                                             <div class="form-comment-dynamic-labels js-advantages-list">
@@ -791,8 +1346,11 @@
                                                         </div>
                                                         <div id="disadvantages">
                                                             <div class="ui-input--add-point">
-                                                                <input class="input-ui pr-2 ui-input-field" type="text" id="disadvantage-input" autocomplete="off" value="">
-                                                                <button class="ui-input-point js-icon-form-add" type="button" style="display: none;"></button>
+                                                                <input class="input-ui pr-2 ui-input-field" type="text"
+                                                                       id="disadvantage-input" autocomplete="off"
+                                                                       value="">
+                                                                <button class="ui-input-point js-icon-form-add"
+                                                                        type="button" style="display: none;"></button>
                                                             </div>
                                                             <div class="form-comment-dynamic-labels js-disadvantages-list">
                                                             </div>
@@ -803,7 +1361,8 @@
                                                             <label for="comment">دیدگاه شما
                                                                 <span class="required">*</span>
                                                             </label>
-                                                            <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required=""></textarea>
+                                                            <textarea id="comment" name="comment" cols="45" rows="8"
+                                                                      aria-required="true" required=""></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-12 mt-3">
@@ -879,7 +1438,8 @@
                                                             <div class="like-dislike">
                                                                 <span>آیا این نظر برایتان مفید بود؟</span>
                                                                 <a href="#" class="like-btn" data-counter="45">بله</a>
-                                                                <a href="#" class="dislike-btn" data-counter="26">خیر</a>
+                                                                <a href="#" class="dislike-btn"
+                                                                   data-counter="26">خیر</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -946,7 +1506,8 @@
                                                             <div class="like-dislike">
                                                                 <span>آیا این نظر برایتان مفید بود؟</span>
                                                                 <a href="#" class="like-btn" data-counter="45">بله</a>
-                                                                <a href="#" class="dislike-btn" data-counter="26">خیر</a>
+                                                                <a href="#" class="dislike-btn"
+                                                                   data-counter="26">خیر</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1002,9 +1563,12 @@
                                                 </a>
                                             </p>
                                             <div class="form-group">
-                                                <textarea id="comment" name="comment" class="form-control" cols="45" placeholder="پرسش خود را بنوسید" rows="7" required=""></textarea>
+                                                <textarea id="comment" name="comment" class="form-control" cols="45"
+                                                          placeholder="پرسش خود را بنوسید" rows="7"
+                                                          required=""></textarea>
                                                 <button type="submit" class="btn btn-dark send-question">ارسال
-                                                    پرسش</button>
+                                                    پرسش
+                                                </button>
                                             </div>
                                         </form>
                                     </div>

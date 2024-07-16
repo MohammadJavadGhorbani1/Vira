@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'home_module.apps.HomeModuleConfig',
     'product_module.apps.ProductModuleConfig',
     'contact_module.apps.ContactModuleConfig',
+    'user_module.apps.UserModuleConfig',
 ]
 
 MIDDLEWARE = [
@@ -74,9 +75,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Vira.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+AUTH_USER_MODEL = 'user_module.User'
 
 DATABASES = {
     'default': {

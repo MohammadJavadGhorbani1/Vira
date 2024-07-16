@@ -29,12 +29,22 @@ class Products(models.Model):
     price = models.IntegerField(verbose_name='قیمت محصول')
     des = models.TextField(max_length= 1000 , null=True , verbose_name='توضیحات')
     off = models.IntegerField(verbose_name='مقدار تخفیف')
+    price_with_off = models.IntegerField(verbose_name='قیمت با تخفیف' , null=True)
     is_active = models.BooleanField(verbose_name='فعال باشد/نباشد')
     category = models.ForeignKey(ProductCategory , on_delete= models.CASCADE , verbose_name='دسته بندی')
     tags = models.ManyToManyField(ProductTags , verbose_name='تگ های مربوطه')
     slug = models.SlugField(unique=True, allow_unicode=True, verbose_name='آدرس محصول در مرورگر')
     def __str__(self):
         return self.title
+    def Discount(self):
+        gheimat = int(self.price)
+        takhfif = int(self.off)
+        if takhfif > 1:
+            discount_price = int(gheimat - (gheimat / 100) * takhfif)
+            self.price_with_off = discount_price
+            return self.price_with_off
+        else:
+            return gheimat
     class Meta:
         verbose_name = 'محصول'
         verbose_name_plural = 'محصولات'

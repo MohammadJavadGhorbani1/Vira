@@ -1,0 +1,58 @@
+{% extends 'user_layout.html' %}
+
+{% block title %}
+    ثبت نام
+{% endblock %}
+
+{% block content %}
+    <main class="content mt-3">
+        <div class="container">
+            <div class="my-account-login">
+                <div class="col-lg-4 col-md-5 mx-auto">
+                    <div class="account-box">
+                        <section class="account-login-logo">
+                            <a href="#">
+                                <img src="/static/images/logo.png" alt="فروشگاه اینترنتی ویرا" class="img-fluid">
+                            </a>
+                        </section>
+                        <ul>
+                            <li>
+                                <a href="{% url 'login_page' %}">
+                                    <i class="fal fa-user"></i>
+                                    ورود
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="{% url 'register_page' %}">
+                                    <i class="fal fa-sign-in"></i>
+                                    ثبت نام
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="title">حساب کاربری</div>
+                        <div class="login-wrap">
+                            <form action="#">
+                                <div class="item-account username">
+                                    <input id="email-user" name="email" type="email"
+                                           placeholder="نام کاربری" required="">
+                                </div>
+                                <div class="item-account mobile">
+                                    <input type="text" name="phone" id="phone-number"
+                                           placeholder="شماره موبایل - 09xxxxxxxxx" maxlength="11" required="">
+                                </div>
+                                <div class="item-account password">
+                                    <input id="password-user" name="password" type="password" placeholder="گذرواژه"
+                                           required="">
+                                    <p class="help-block">حداقل 8 کاراکتر</p>
+                                </div>
+                                <div class="action-account">
+                                    <button type="submit" class="registerBtn">عضویت</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

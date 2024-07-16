@@ -1,0 +1,61 @@
+{% extends 'user_layout.html' %}
+
+{% block title %}
+    ورود
+{% endblock %}
+
+{% block content %}
+    <main class="content mt-3">
+        <div class="container">
+            <div class="my-account-login">
+                <div class="col-lg-4 col-md-5 mx-auto">
+                    <div class="account-box">
+                        <section class="account-login-logo">
+                            <a href="#">
+                                <img src="/static/images/logo.png" alt="فروشگاه اینترنتی ویرا" class="img-fluid">
+                            </a>
+                        </section>
+                        <ul>
+                            <li class="active">
+                                <a href="{% url 'login_page' %}">
+                                    <i class="fal fa-user"></i>
+                                    ورود
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'register_page' %}">
+                                    <i class="fal fa-sign-in"></i>
+                                    ثبت نام
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="title">حساب کاربری</div>
+                        <div class="login-wrap">
+                            <form action="#">
+                                <div class="item-account username">
+                                    <input id="email-user" name="email" type="email"
+                                           placeholder="نام کاربری یا شماره موبایل" required="">
+                                </div>
+                                <div class="item-account password">
+                                    <input id="password-user" name="password" type="password" placeholder="گذرواژه"
+                                           required="">
+                                </div>
+{#                                <div class="form-auth-row">#}
+{#                                    <label for="#" class="ui-checkbox">#}
+{#                                        <input type="checkbox" value="1" name="login" id="remember">#}
+{#                                        <span class="ui-checkbox-check"></span>#}
+{#                                    </label>#}
+{#                                    <label class="remember-me">مرا به خاطر بسپار</label>#}
+{#                                </div>#}
+                                <div class="action-account">
+                                    <button type="submit" class="loginBtn">ورود به حساب کاربری</button>
+                                    <a class="lost" href="#">گذرواژه خود را فراموش کرده اید؟</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
