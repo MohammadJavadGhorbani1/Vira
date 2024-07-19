@@ -215,7 +215,7 @@
                     <!-- logo -->
                     <div class="logo">
                         <a href="{% url 'home_page' %}">
-                            <img src="/static/images/logo.png" class="img-fluid" alt="logo">
+                            <img src="{{ settings.logo.url }}" class="img-fluid" alt="logo">
                         </a>
                     </div>
                     <!-- search -->
@@ -271,8 +271,7 @@
                 </div>
                 <div class="call-number">
                     <div class="call-number-item">
-                        <strong>12345678</strong>
-                        <span>021</span>
+                        <strong>{{ settings.phone }}</strong>
                         <i class="fal fa-phone"></i>
                     </div>
                 </div>
@@ -317,7 +316,7 @@
                 <div class="header-cover"></div>
                 <div class="logo-wrap">
                     <a class="logo-icon" href="#">
-                        <img alt="logo-icon" src="/static/images/logo.png" width="40">
+                        <img alt="logo-icon" src="{{ settings.logo.url }}" width="40">
                     </a>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-	خانه
+    خانه
 {% endblock %}
 
 {% block content %}
@@ -11,8 +11,8 @@
             <div class="row d-sm-block">
                 <div class="col-12">
                     <div class="banner">
-                        <a href="#">
-                            <img src="/static/images/banner/banner1.jpg" alt="banner">
+                        <a href="{{ ads.link }}">
+                            <img src="{{ ads.image.url }}" alt="banner" style="height: 70px">
                         </a>
                     </div>
                 </div>
@@ -22,36 +22,44 @@
                     <div class="main-slider">
                         <div class="swiper mySwiper mainSlider">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a href="#">
-                                        <img src="/static/images/sliderM/sliderM1.jpg" class="img-fluid"
-                                             alt="sliderMain">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#">
-                                        <img src="/static/images/sliderM/sliderM2.jpg" class="img-fluid"
-                                             alt="sliderMain">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#">
-                                        <img src="/static/images/sliderM/sliderM3.jpg" class="img-fluid"
-                                             alt="sliderMain">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#">
-                                        <img src="/static/images/sliderM/sliderM4.jpg" class="img-fluid"
-                                             alt="sliderMain">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#">
-                                        <img src="/static/images/sliderM/sliderM5.jpg" class="img-fluid"
-                                             alt="sliderMain">
-                                    </a>
-                                </div>
+                                {% for slider in sliders %}
+                                    <div class="swiper-slide">
+                                        <a href="{{ slider.link }}">
+                                            <img src="{{ slider.image.url }}" class="img-fluid"
+                                                 alt="sliderMain">
+                                        </a>
+                                    </div>
+                                {% endfor %}
+{#                                <div class="swiper-slide">#}
+{#                                    <a href="#">#}
+{#                                        <img src="/static/images/sliderM/sliderM1.jpg" class="img-fluid"#}
+{#                                             alt="sliderMain">#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="swiper-slide">#}
+{#                                    <a href="#">#}
+{#                                        <img src="/static/images/sliderM/sliderM2.jpg" class="img-fluid"#}
+{#                                             alt="sliderMain">#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="swiper-slide">#}
+{#                                    <a href="#">#}
+{#                                        <img src="/static/images/sliderM/sliderM3.jpg" class="img-fluid"#}
+{#                                             alt="sliderMain">#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="swiper-slide">#}
+{#                                    <a href="#">#}
+{#                                        <img src="/static/images/sliderM/sliderM4.jpg" class="img-fluid"#}
+{#                                             alt="sliderMain">#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="swiper-slide">#}
+{#                                    <a href="#">#}
+{#                                        <img src="/static/images/sliderM/sliderM5.jpg" class="img-fluid"#}
+{#                                             alt="sliderMain">#}
+{#                                    </a>#}
+{#                                </div>#}
                             </div>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
