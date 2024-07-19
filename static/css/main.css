@@ -7708,7 +7708,8 @@ footer.main-footer .widget-text-editor .copy-right p {
   font-size: 20px;
   text-align: center;
   border: 1px solid #000000;
-  background-color: #ff000a;
+  background-color: #ffffff;
+  text-decoration-color: black;
 }
 
 .successq{

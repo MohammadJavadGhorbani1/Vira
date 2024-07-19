@@ -105,3 +105,10 @@ class CategoryDetails(View):
 #      return render(request , 'products_tags.html' , {
 #         'tags':tags
 #      })
+
+# class ProductTags(View):
+#     def get(self , request , tag_slug):
+#         products = Products.objects.filter(tags__products__slug=tag_slug)
+#         return render(request, 'products_list.html', {
+#             'products': products,
+#         })

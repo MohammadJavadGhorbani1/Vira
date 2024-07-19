@@ -1,0 +1,71 @@
+{% extends 'user_layout.html' %}
+
+{% block title %}
+    کد تایید
+{% endblock %}
+
+{% block content %}
+    <main class="content mt-3">
+        <div class="container">
+            <div class="my-account-login">
+                <div class="col-lg-4 col-md-5 mx-auto">
+                    <div class="account-box">
+                        <section class="account-login-logo">
+                            <a href="#">
+                                <img src="/static/images/logo.png" alt="فروشگاه اینترنتی ویرا" class="img-fluid">
+                            </a>
+                        </section>
+                        <ul>
+                            <li>
+                                <a href="{% url 'login_page' %}">
+                                    <i class="fal fa-user"></i>
+                                    ورود
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="{% url 'register_page' %}">
+                                    <i class="fal fa-sign-in"></i>
+                                    ثبت نام
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="title">کد فعالسازی</div>
+                        <div class="login-wrap">
+                            <form method="post">
+                                {% csrf_token %}
+                                {% if errors %}
+                                	<div class="errorq">{{ forget_confirm.active_code.errors }}</div>
+                                {% endif %}
+                                <div class="item-account username">
+                                    {{ forget_confirm.active_code }}
+                                </div>
+{#                                <div class="item-account username">#}
+{#                                    {{ register.lastname }}#}
+{#                                </div>#}
+{#                                <div class="item-account username">#}
+{#                                    {{ register.username }}#}
+{#                                </div>#}
+{#                                <div class="item-account mobile">#}
+{#                                    {{ register.phone_number }}#}
+{#                                </div>#}
+{#                                <div class="item-account password">#}
+{#                                    {{ register.password }}#}
+{#                                    <p class="help-block">حداقل 8 کاراکتر</p>#}
+{#                                </div>#}
+{#                                <div style="display: flex">#}
+{#                                    <div style="width: 24%;height: 30px;border: 1px solid;margin-bottom: 10px">#}
+{#                                        <h3 style="text-align: center;font-size: 20px">{{ captcha }}</h3>#}
+{#                                    </div>#}
+{#                                    <input type="text" dir="ltr" name="capcha" id="email-user" style="width: 24%;height: 30px;border: 1px solid #817b7b;margin-right: 10px">#}
+{#                                </div>#}
+                                <div class="action-account">
+                                    <button type="submit" class="registerBtn">تایید کد</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

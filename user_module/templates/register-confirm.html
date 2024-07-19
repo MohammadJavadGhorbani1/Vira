@@ -1,7 +1,7 @@
 {% extends 'user_layout.html' %}
 
 {% block title %}
-    ثبت نام
+    کد تایید
 {% endblock %}
 
 {% block content %}
@@ -29,39 +29,35 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="title">حساب کاربری</div>
+                        <div class="title">کد فعالسازی</div>
                         <div class="login-wrap">
                             <form method="post">
                                 {% csrf_token %}
                                 {% if errors %}
-                                    <div class="errorq">{{ register.firstname.errors }}</div>
+                                	<div class="errorq">{{ register_confirm.active_code.errors }}</div>
                                 {% endif %}
                                 <div class="item-account username">
-                                    {{ register.firstname }}
+                                    {{ register_confirm.active_code }}
                                 </div>
-                                <div class="item-account username">
-                                    {{ register.lastname }}
-                                </div>
-                                <div class="item-account username">
-                                    {{ register.username }}
-                                </div>
-                                <div class="item-account mobile">
-                                    {{ register.phone_number }}
-                                </div>
-                                <div class="item-account password">
-                                    {{ register.password }}
-                                </div>
-                                <div class="item-account password">
-                                    {{ register.re_password }}
-                                    <p class="help-block">حداقل 8 کاراکتر</p>
-                                </div>
-                                <div style="display: flex">
-                                    <div style="width: 24%;height: 30px;border: 1px solid;margin-bottom: 10px">
-                                        <h3 style="text-align: center;font-size: 20px">{{ captcha }}</h3>
-                                    </div>
-                                    <input autocomplete="off" type="text" dir="ltr" name="capcha" id="email-user"
-                                           style="width: 24%;height: 30px;border: 1px solid #817b7b;margin-right: 10px">
-                                </div>
+{#                                <div class="item-account username">#}
+{#                                    {{ register.lastname }}#}
+{#                                </div>#}
+{#                                <div class="item-account username">#}
+{#                                    {{ register.username }}#}
+{#                                </div>#}
+{#                                <div class="item-account mobile">#}
+{#                                    {{ register.phone_number }}#}
+{#                                </div>#}
+{#                                <div class="item-account password">#}
+{#                                    {{ register.password }}#}
+{#                                    <p class="help-block">حداقل 8 کاراکتر</p>#}
+{#                                </div>#}
+{#                                <div style="display: flex">#}
+{#                                    <div style="width: 24%;height: 30px;border: 1px solid;margin-bottom: 10px">#}
+{#                                        <h3 style="text-align: center;font-size: 20px">{{ captcha }}</h3>#}
+{#                                    </div>#}
+{#                                    <input type="text" dir="ltr" name="capcha" id="email-user" style="width: 24%;height: 30px;border: 1px solid #817b7b;margin-right: 10px">#}
+{#                                </div>#}
                                 <div class="action-account">
                                     <button type="submit" class="registerBtn">ثبت نام</button>
                                 </div>

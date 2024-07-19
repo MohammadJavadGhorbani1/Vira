@@ -10,7 +10,7 @@
                         <li><a href="#">پیگیری سفارش</a></li>
                     </ul>
                 </div>
-                {% if request.user.is_authenticated %}
+                {% if request.user.is_authenticated and request.user.is_active == True %}
                     <div class="user-items">
                         <!-- items -->
                         <div class="user-item account">
@@ -25,7 +25,7 @@
                                         </div>
                                         <div class="profile-info text-right">
                                             <a>{{ user.username }}</a>
-                                            <span>09911111111</span>
+                                            <span>{{ user.phone_number }}</span>
                                         </div>
                                     </div>
                                     <div class="user-options">
@@ -68,7 +68,7 @@
                                         </a>
                                     </li>
                                     <li class="account-item">
-                                        <a href="#">
+                                        <a href="{% url 'logout-page' %}">
                                             <i class="fal fa-sign-in"></i>
                                             خروج
                                         </a>

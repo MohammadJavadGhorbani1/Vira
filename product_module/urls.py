@@ -6,5 +6,5 @@ urlpatterns = [
     path('details/<slug>' , ProductDetails.as_view() , name= 'product_details'),
     # path('products/categories/' , ProductCategories.as_view() , name= 'product_category'),
     path('categories/<category_slug>' , CategoryDetails.as_view() , name= 'category_detail'),
-    # path('products/tags/<url_tag>' , Product_Tags , name='product_tag'),
+    # path('tags/<tag_slug>' , ProductTags.as_view() , name='product_tag'),
 ]
