@@ -335,27 +335,13 @@
                                         <li>
                                             <span>تگ های مربوطه: </span>
                                             {% for tag in tags %}
-                                                <span>{{ tag.title }}</span>
+                                                <a href="{% url 'product_tag' tag.slug %}">{{ tag.title }}</a>
                                             {% endfor %}
-                                            {#                                            <span>2G 3G 4G</span>#}
                                         </li>
                                         <li>
                                             <span>دسته بندی محصول: </span>
                                             <span>{{ product.category.parent_category }}</span>
                                         </li>
-                                        {#                                        <li>#}
-                                        {#                                            <span>رزولوشن عکس: </span>#}
-                                        {#                                            <span>12.0 مگاپیکسل</span>#}
-                                        {#                                        </li>#}
-                                        {#                                        <li>#}
-                                        {#                                            <span>ویژگی‌های خاص: </span>#}
-                                        {#                                            <span>مقاوم در برابر آب مناسب عکاسی مناسب عکاسی سلفی مناسب بازی مجهز به#}
-                                        {#                                                حس‌گر تشخیص چهره</span>#}
-                                        {#                                        </li>#}
-                                        {#                                        <li>#}
-                                        {#                                            <span>بازه‌ی سایز صفحه نمایش: </span>#}
-                                        {#                                            <span>5.5 تا 6.0 اینچ</span>#}
-                                        {#                                        </li>#}
                                     </ul>
                                 </div>
                                 <div class="price">
@@ -365,7 +351,7 @@
                                         </span>
                                     </del>
                                     <ins>
-                                         <span class="price-amount">{{ product.price }}
+                                         <span class="price-amount">{{ product.Discount }}
                                              <span class="price-currencySymbol">تومان</span>
                                          </span>
                                         {#                                        <span class="price-amount">{{ product.price }}#}

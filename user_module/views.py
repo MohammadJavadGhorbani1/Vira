@@ -43,6 +43,7 @@ class RegisterView(View):
                                 register.add_error('firstname', 'شما قبلا ثبت نام کرده اید لطفا وارد شوید')
                                 return render(request, 'register.html', {
                                     'register': register,
+                                    'captcha':captcha,
                                     'errors':True
                                 })
                             else:
@@ -55,30 +56,35 @@ class RegisterView(View):
                             register.add_error('firstname', 'لطفا در تکرار رمز عبور دقت کنید')
                             return render(request, 'register.html', {
                                 'register': register,
+                                'captcha': captcha,
                                 'errors':True
                             })
                     else:
                         register.add_error('firstname', 'رمز عبور شما باید حداقل شامل 8 کاراکتر باشد')
                         return render(request, 'register.html', {
                             'register': register,
+                            'captcha': captcha,
                             'errors':True
                         })
                 else:
                     register.add_error('firstname', 'لطفا در وارد کردن کاراکترهای تصویر دقت کنید')
                     return render(request, 'register.html', {
                         'register': register,
+                        'captcha': captcha,
                         'errors':True
                     })
             else:
                 register.add_error('firstname', 'لطفا یک شماره تلفن معتبر وارد کنید')
                 return render(request, 'register.html', {
                     'register': register,
+                    'captcha': captcha,
                     'errors':True
                 })
         else:
             register.add_error('firstname', 'لطفا تمامی مشخصات را وارد کنید')
             return render(request, 'register.html', {
                 'register': register,
+                'captcha': captcha,
                 'errors':True
             })
 
