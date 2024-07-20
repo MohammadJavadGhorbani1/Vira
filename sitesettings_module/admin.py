@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(SiteSettingsModel)
 admin.site.register(SliderSettingsModel)
 admin.site.register(AdsSettingsModel)
+admin.site.register(AskandAnwserModel)

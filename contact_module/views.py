@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 from django.views import View
+from sitesettings_module.models import *
 
 # Create your views here.
 
@@ -35,6 +36,14 @@ class ContactUsView(View):
                 'error': True,
                 'success': False
             })
+
+class AskandAnwserView(View):
+    def get(self , request):
+        divs = AskandAnwserModel.objects.filter(is_active=True)
+        return render(request , 'ask-anwser.html' , context={
+            'divs':divs,
+        })
+
 
 # def contact_us_view(request:HttpRequest):
 #     if request.method == 'GET':

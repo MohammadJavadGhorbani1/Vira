@@ -312,7 +312,7 @@
                                     <span class="posted">
                                         <span class="detail-label">دسته : </span>
                                         <span class="detail-content">
-                                            <a href="#">
+                                            <a href="{% url 'parent-category-detail' product.category.parent_category.slug %}">
                                                 {{ product.category.parent_category }}
                                             </a>
                                             ,
@@ -335,7 +335,7 @@
                                         <li>
                                             <span>تگ های مربوطه: </span>
                                             {% for tag in tags %}
-                                                <a href="{% url 'product_tag' tag.slug %}">{{ tag.title }}</a>
+                                                <a href="{% url 'product_tag' tag.slug %}">{{ tag.title}}</a>
                                             {% endfor %}
                                         </li>
                                         <li>

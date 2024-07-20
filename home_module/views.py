@@ -3,6 +3,7 @@ from django.views import View
 from django.views.generic import TemplateView
 from product_module.models import *
 from sitesettings_module.models import *
+from article_module.models import *
 
 # Create your views here.
 
@@ -10,9 +11,13 @@ class HomePage(View):
     def get(self , request):
         sliders = SliderSettingsModel.objects.filter(is_active=True)
         ads = AdsSettingsModel.objects.filter(is_active=True).first()
+        articles = ArticleModel.objects.filter(is_active=True)
+        categories = ProductCategory.objects.filter(parent_category=None)
         return render(request , 'home.html' , {
             'sliders':sliders,
             'ads':ads,
+            'articles':articles,
+            'categories':categories,
         })
 
 # class HomePage(TemplateView):

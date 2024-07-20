@@ -30,36 +30,36 @@
                                         </a>
                                     </div>
                                 {% endfor %}
-{#                                <div class="swiper-slide">#}
-{#                                    <a href="#">#}
-{#                                        <img src="/static/images/sliderM/sliderM1.jpg" class="img-fluid"#}
-{#                                             alt="sliderMain">#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                                <div class="swiper-slide">#}
-{#                                    <a href="#">#}
-{#                                        <img src="/static/images/sliderM/sliderM2.jpg" class="img-fluid"#}
-{#                                             alt="sliderMain">#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                                <div class="swiper-slide">#}
-{#                                    <a href="#">#}
-{#                                        <img src="/static/images/sliderM/sliderM3.jpg" class="img-fluid"#}
-{#                                             alt="sliderMain">#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                                <div class="swiper-slide">#}
-{#                                    <a href="#">#}
-{#                                        <img src="/static/images/sliderM/sliderM4.jpg" class="img-fluid"#}
-{#                                             alt="sliderMain">#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                                <div class="swiper-slide">#}
-{#                                    <a href="#">#}
-{#                                        <img src="/static/images/sliderM/sliderM5.jpg" class="img-fluid"#}
-{#                                             alt="sliderMain">#}
-{#                                    </a>#}
-{#                                </div>#}
+                                {#                                <div class="swiper-slide">#}
+                                {#                                    <a href="#">#}
+                                {#                                        <img src="/static/images/sliderM/sliderM1.jpg" class="img-fluid"#}
+                                {#                                             alt="sliderMain">#}
+                                {#                                    </a>#}
+                                {#                                </div>#}
+                                {#                                <div class="swiper-slide">#}
+                                {#                                    <a href="#">#}
+                                {#                                        <img src="/static/images/sliderM/sliderM2.jpg" class="img-fluid"#}
+                                {#                                             alt="sliderMain">#}
+                                {#                                    </a>#}
+                                {#                                </div>#}
+                                {#                                <div class="swiper-slide">#}
+                                {#                                    <a href="#">#}
+                                {#                                        <img src="/static/images/sliderM/sliderM3.jpg" class="img-fluid"#}
+                                {#                                             alt="sliderMain">#}
+                                {#                                    </a>#}
+                                {#                                </div>#}
+                                {#                                <div class="swiper-slide">#}
+                                {#                                    <a href="#">#}
+                                {#                                        <img src="/static/images/sliderM/sliderM4.jpg" class="img-fluid"#}
+                                {#                                             alt="sliderMain">#}
+                                {#                                    </a>#}
+                                {#                                </div>#}
+                                {#                                <div class="swiper-slide">#}
+                                {#                                    <a href="#">#}
+                                {#                                        <img src="/static/images/sliderM/sliderM5.jpg" class="img-fluid"#}
+                                {#                                             alt="sliderMain">#}
+                                {#                                    </a>#}
+                                {#                                </div>#}
                             </div>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
@@ -86,71 +86,73 @@
                     </div>
                 </div>
                 <div class="product-categories">
-                    <div class="col-lg-2 col-6">
-                        <a href="#" class="category-card-vertical">
-                            <div class="category-icon">
-                                <i class="fal fa-phone-laptop"></i>
-                            </div>
-                            <div class="category-title">
-                                <h6>کالای دیجیتال</h6>
-                            </div>
-                        </a>
-                    </div>
+                    {% for category in categories %}
+                        <div class="col-lg-2 col-6">
+                            <a href="{% url 'parent-category-detail' category.slug %}" class="category-card-vertical">
+                                <div class="category-icon">
+                                    <i class="{{ category.icon }}"></i>
+                                </div>
+                                <div class="category-title">
+                                    <h6>{{ category.title }}</h6>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
 
-                    <div class="col-lg-2 col-6">
-                        <a href="#" class="category-card-vertical">
-                            <div class="category-icon">
-                                <i class="fal fa-print"></i>
-                            </div>
-                            <div class="category-title">
-                                <h6>ماشین های اداری</h6>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-2 col-6">
-                        <a href="#" class="category-card-vertical">
-                            <div class="category-icon">
-                                <i class="fal fa-tv-retro"></i>
-                            </div>
-                            <div class="category-title">
-                                <h6>صوتی و تصویری</h6>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-2 col-6">
-                        <a href="#" class="category-card-vertical">
-                            <div class="category-icon">
-                                <i class="fal fa-pencil"></i>
-                            </div>
-                            <div class="category-title">
-                                <h6>زیبایی و سلامت</h6>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-2 col-6">
-                        <a href="#" class="category-card-vertical">
-                            <div class="category-icon">
-                                <i class="fal fa-baseball"></i>
-                            </div>
-                            <div class="category-title">
-                                <h6>ورزش و سرگرمی</h6>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-2 col-6">
-                        <a href="#" class="category-card-vertical">
-                            <div class="category-icon">
-                                <i class="fal fa-tools"></i>
-                            </div>
-                            <div class="category-title">
-                                <h6>ابزاروآلات</h6>
-                            </div>
-                        </a>
-                    </div>
+                    {#                    <div class="col-lg-2 col-6">#}
+                    {#                        <a href="#" class="category-card-vertical">#}
+                    {#                            <div class="category-icon">#}
+                    {#                                <i class="fal fa-print"></i>#}
+                    {#                            </div>#}
+                    {#                            <div class="category-title">#}
+                    {#                                <h6>ماشین های اداری</h6>#}
+                    {#                            </div>#}
+                    {#                        </a>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <div class="col-lg-2 col-6">#}
+                    {#                        <a href="#" class="category-card-vertical">#}
+                    {#                            <div class="category-icon">#}
+                    {#                                <i class="fal fa-tv-retro"></i>#}
+                    {#                            </div>#}
+                    {#                            <div class="category-title">#}
+                    {#                                <h6>صوتی و تصویری</h6>#}
+                    {#                            </div>#}
+                    {#                        </a>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <div class="col-lg-2 col-6">#}
+                    {#                        <a href="#" class="category-card-vertical">#}
+                    {#                            <div class="category-icon">#}
+                    {#                                <i class="fal fa-pencil"></i>#}
+                    {#                            </div>#}
+                    {#                            <div class="category-title">#}
+                    {#                                <h6>زیبایی و سلامت</h6>#}
+                    {#                            </div>#}
+                    {#                        </a>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <div class="col-lg-2 col-6">#}
+                    {#                        <a href="#" class="category-card-vertical">#}
+                    {#                            <div class="category-icon">#}
+                    {#                                <i class="fal fa-baseball"></i>#}
+                    {#                            </div>#}
+                    {#                            <div class="category-title">#}
+                    {#                                <h6>ورزش و سرگرمی</h6>#}
+                    {#                            </div>#}
+                    {#                        </a>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <div class="col-lg-2 col-6">#}
+                    {#                        <a href="#" class="category-card-vertical">#}
+                    {#                            <div class="category-icon">#}
+                    {#                                <i class="fal fa-tools"></i>#}
+                    {#                            </div>#}
+                    {#                            <div class="category-title">#}
+                    {#                                <h6>ابزاروآلات</h6>#}
+                    {#                            </div>#}
+                    {#                        </a>#}
+                    {#                    </div>#}
                 </div>
             </div>
         </div>
@@ -2149,139 +2151,30 @@
                 <div class="block-content-wrap mt-3">
                     <div class="swiper mySwiper sliderProduct sliderBlog">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <div class="item-area item-general">
-                                        <div class="product-image-area">
-                                            <a href="#" class="product-image">
-                                                <img src="/static/images/blog/blog1.webp" class="img-fluid" alt="blog">
-                                            </a>
-                                            <div class="blog-category">وبلاگ</div>
-                                        </div>
-                                        <div class="product-detail-area">
-                                            <h3 class="product-name">
-                                                <a href="#">مدل مانتو ، جدیدترین مدلهای مانتوی 97</a>
-                                            </h3>
-                                            <div class="post-date">7 مرداد 1397</div>
-                                            <a href="#" class="read-more"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <div class="item-area item-general">
-                                        <div class="product-image-area">
-                                            <a href="#" class="product-image">
-                                                <img src="/static/images/blog/blog2.webp" class="img-fluid" alt="blog">
-                                            </a>
-                                            <div class="blog-category">وبلاگ</div>
-                                        </div>
-                                        <div class="product-detail-area">
-                                            <h3 class="product-name">
-                                                <a href="#">ست رنگ سال و اصول ست کردن رنگ بنفش</a>
-                                            </h3>
-                                            <div class="post-date">7 مرداد 1397</div>
-                                            <a href="#" class="read-more"></a>
+                            {% for article in articles %}
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="item-area item-general">
+                                            <div class="product-image-area">
+                                                <a href="{% url 'article-detail-page' article.slug %}"
+                                                   class="product-image">
+                                                    <img src="{{ article.image.url }}" class="img-fluid" alt="blog">
+                                                </a>
+                                                <div class="blog-category">وبلاگ</div>
+                                            </div>
+                                            <div class="product-detail-area">
+                                                <h3 class="product-name">
+                                                    <a href="{% url 'article-detail-page' article.slug %}">{{ article.title }}</a>
+                                                </h3>
+                                                <div class="post-date">7 مرداد 1397</div>
+                                                <a href="{% url 'article-detail-page' article.slug %}"
+                                                   class="read-more"></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <div class="item-area item-general">
-                                        <div class="product-image-area">
-                                            <a href="#" class="product-image">
-                                                <img src="/static/images/blog/blog3.webp" class="img-fluid" alt="blog">
-                                            </a>
-                                            <div class="blog-category">وبلاگ</div>
-                                        </div>
-                                        <div class="product-detail-area">
-                                            <h3 class="product-name">
-                                                <a href="#">“قدر تو را می‌دانم”، یک شب مادرانه و دلچسب</a>
-                                            </h3>
-                                            <div class="post-date">7 مرداد 1397</div>
-                                            <a href="#" class="read-more"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <div class="item-area item-general">
-                                        <div class="product-image-area">
-                                            <a href="#" class="product-image">
-                                                <img src="/static/images/blog/blog4.webp" class="img-fluid" alt="blog">
-                                            </a>
-                                            <div class="blog-category">وبلاگ</div>
-                                        </div>
-                                        <div class="product-detail-area">
-                                            <h3 class="product-name">
-                                                <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>
-                                            </h3>
-                                            <div class="post-date">7 مرداد 1397</div>
-                                            <a href="#" class="read-more"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <div class="item-area item-general">
-                                        <div class="product-image-area">
-                                            <a href="#" class="product-image">
-                                                <img src="/static/images/blog/blog5.webp" class="img-fluid" alt="blog">
-                                            </a>
-                                            <div class="blog-category">وبلاگ</div>
-                                        </div>
-                                        <div class="product-detail-area">
-                                            <h3 class="product-name">
-                                                <a href="#">۲۵ مدل بستن شال و روسری</a>
-                                            </h3>
-                                            <div class="post-date">7 مرداد 1397</div>
-                                            <a href="#" class="read-more"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <div class="item-area item-general">
-                                        <div class="product-image-area">
-                                            <a href="#" class="product-image">
-                                                <img src="/static/images/blog/blog2.webp" class="img-fluid" alt="blog">
-                                            </a>
-                                            <div class="blog-category">وبلاگ</div>
-                                        </div>
-                                        <div class="product-detail-area">
-                                            <h3 class="product-name">
-                                                <a href="#">ست رنگ سال و اصول ست کردن رنگ بنفش</a>
-                                            </h3>
-                                            <div class="post-date">7 مرداد 1397</div>
-                                            <a href="#" class="read-more"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <div class="item-area item-general">
-                                        <div class="product-image-area">
-                                            <a href="#" class="product-image">
-                                                <img src="/static/images/blog/blog3.webp" class="img-fluid" alt="blog">
-                                            </a>
-                                            <div class="blog-category">وبلاگ</div>
-                                        </div>
-                                        <div class="product-detail-area">
-                                            <h3 class="product-name">
-                                                <a href="#">“قدر تو را می‌دانم”، یک شب مادرانه و دلچسب</a>
-                                            </h3>
-                                            <div class="post-date">7 مرداد 1397</div>
-                                            <a href="#" class="read-more"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
+
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>

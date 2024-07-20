@@ -35,3 +35,13 @@ class AdsSettingsModel(models.Model):
         verbose_name = 'تبلیغ'
         verbose_name_plural = 'تبلیغات'
 
+class AskandAnwserModel(models.Model):
+    question = models.CharField(max_length=300 , verbose_name='سوال')
+    anwser = models.TextField(verbose_name='جواب')
+    is_active = models.BooleanField(verbose_name='فعال باشد/نباشد' , default=False)
+    def __str__(self):
+        return self.question
+    class Meta:
+        verbose_name = 'پرسش و پاسخ'
+        verbose_name_plural = 'پرسش و پاسخ ها'
+

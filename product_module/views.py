@@ -34,7 +34,7 @@ class ProductList(ListView):
 
 class ProductDetails(View):
     def get(self , request , slug):
-        product = Products.objects.get(slug=slug)
+        product = Products.objects.filter(slug=slug).first()
         tags = ProductTags.objects.filter(products=product)
         return render(request, 'product_detail.html', {
         'product': product ,
@@ -55,6 +55,13 @@ class CategoryDetails(View):
         products = Products.objects.filter(category__slug=category_slug)
         return render(request, 'products_list.html', {
             'products': products,
+        })
+
+class ParentCategoryDetails(View):
+    def get(self , request , parent_category_slug):
+        products = Products.objects.filter(category__parent_category__slug=parent_category_slug)
+        return render(request , 'products_list.html' , context={
+            'products':products,
         })
 
 class ProductTag(View):

@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    پرسش های متداول
+{% endblock %}
+
+{% block content %}
+    <main class="content">
+        <div class="container">
+            <div class="faq">
+                <div class="product-heading">
+                    <div class="title">
+                        <i class="fal fa-compress"></i> پرسش و پاسخ
+                    </div>
+                </div>
+                <div class="accordion" id="accordionExample">
+                    {% for div in divs %}
+                    	<div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-right" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        {{ div.question }}
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                 data-parent="#accordionExample">
+                                <div class="card-body">
+                                    {{ div.anwser }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+{#                    <div class="card">#}
+{#                        <div class="card-header" id="headingTwo">#}
+{#                            <h2 class="mb-0">#}
+{#                                <button class="btn btn-link btn-block text-right collapsed" type="button"#}
+{#                                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"#}
+{#                                        aria-controls="collapseTwo">#}
+{#                                    چطور میتوانم امتیاز‌ بگیریم؟#}
+{#                                </button>#}
+{#                            </h2>#}
+{#                        </div>#}
+{#                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"#}
+{#                             data-parent="#accordionExample">#}
+{#                            <div class="card-body">#}
+{#                                لطفاً پیش از خرید، موارد زیر را به‌دقت بخوانید؛ زیرا ثبت هر سفارش در ویرا به معنی موافقت#}
+{#                                با شرایط زیر است.#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="card">#}
+{#                        <div class="card-header" id="headingThree">#}
+{#                            <h2 class="mb-0">#}
+{#                                <button class="btn btn-link btn-block text-right collapsed" type="button"#}
+{#                                        data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"#}
+{#                                        aria-controls="collapseThree">#}
+{#                                    میتوانم سفارش خود را در محل پرداخت کنم؟#}
+{#                                </button>#}
+{#                            </h2>#}
+{#                        </div>#}
+{#                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"#}
+{#                             data-parent="#accordionExample">#}
+{#                            <div class="card-body">#}
+{#                                لطفاً پیش از خرید، موارد زیر را به‌دقت بخوانید؛ زیرا ثبت هر سفارش در ویرا به معنی موافقت#}
+{#                                با شرایط زیر است.#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

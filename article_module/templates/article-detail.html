@@ -1,0 +1,253 @@
+{% extends 'layout.html' %}
+{% load poll_extras %}
+
+{% block title %}
+	وبلاگ
+{% endblock %}
+
+{% block content %}
+    <main class="content">
+        <div class="container">
+            <div class="blog-posts-content">
+                <nav aria-label="breadcrumb" class="breadcrumb-nav mt-3">
+                    <ol class="breadcrumb mb-1">
+                        <li class="breadcrumb-item"><a href="#">صفحه نخست</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">وبلاگ</li>
+                    </ol>
+                </nav>
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-xs-12">
+                        <article class="post-wrapper">
+                            <div class="blog-top">
+                                <div class="blog-icon">
+                                    <i class="fal fa-rss"></i>
+                                </div>
+                                <h1 class="blog-title">{{ article.title }}</h1>
+                            </div>
+                            <div class="entry-content">
+                                <img src="{{ article.image.url }}" alt="blog" style="height: 585px;width: 900px">
+                                <p>{{ article.des }}</p>
+                            </div>
+                            <div class="blog-tag">
+                                <span class="tags-title">تگ ها : </span>
+                                    {% for tag in tags %}
+                                    	<a href="{% url 'article-tags-page' tag.slug %}">{{ tag.title }}</a>
+                                    {% endfor %}
+
+{#                                <a href="#">مد ولباس</a>#}
+                            </div>
+                            <div class="blog-bottom">
+                                <div class="meta-items">
+                                    <i class="fal fa-user"></i>
+                                    مدیر سایت
+                                </div>
+                                <div class="meta-items">
+                                    <i class="fal fa-clock"></i>
+                                    <time>{{ article.create_date|jdate }}</time>
+                                </div>
+{#                                <div class="blog-social">#}
+{#                                    <i class="fal fa-share-alt"></i>#}
+{#                                    <div class="blog-socials">#}
+{#                                        <ul>#}
+{#                                            <li class="social-item">#}
+{#                                                <a href="#"><i class="fab fa-facebook"></i></a>#}
+{#                                            </li>#}
+{#                                            <li class="social-item">#}
+{#                                                <a href="#"><i class="fab fa-fab fa-twitter"></i></a>#}
+{#                                            </li>#}
+{#                                            <li class="social-item">#}
+{#                                                <a href="#"><i class="fab fa-instagram"></i></a>#}
+{#                                            </li>#}
+{#                                            <li class="social-item">#}
+{#                                                <a href="#"><i class="fab fa-telegram"></i></a>#}
+{#                                            </li>#}
+{#                                        </ul>#}
+{#                                    </div>#}
+{#                                </div>#}
+                            </div>
+                        </article>
+                        <div class="block-content-wrap">
+{#                            <div class="product-heading mb-3">#}
+{#                                <div class="title">#}
+{#                                    <i class="fal fa-box"></i> مجلات#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="block-content-wrap">#}
+{#                                <div class="row">#}
+{#                                    <div class="col-12 col-sm-6 col-lg-6">#}
+{#                                        <div class="item">#}
+{#                                            <div class="item-area blog-line">#}
+{#                                                <h4 class="post-title">#}
+{#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
+{#                                                </h4>#}
+{#                                                <a href="#" class="read-continues">#}
+{#                                                    ادامه ...#}
+{#                                                </a>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="col-12 col-sm-6 col-lg-6">#}
+{#                                        <div class="item">#}
+{#                                            <div class="item-area blog-line">#}
+{#                                                <h4 class="post-title">#}
+{#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
+{#                                                </h4>#}
+{#                                                <a href="#" class="read-continues">#}
+{#                                                    ادامه ...#}
+{#                                                </a>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="col-12 col-sm-6 col-lg-6">#}
+{#                                        <div class="item">#}
+{#                                            <div class="item-area blog-line">#}
+{#                                                <h4 class="post-title">#}
+{#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
+{#                                                </h4>#}
+{#                                                <a href="#" class="read-continues">#}
+{#                                                    ادامه ...#}
+{#                                                </a>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="col-12 col-sm-6 col-lg-6">#}
+{#                                        <div class="item">#}
+{#                                            <div class="item-area blog-line">#}
+{#                                                <h4 class="post-title">#}
+{#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
+{#                                                </h4>#}
+{#                                                <a href="#" class="read-continues">#}
+{#                                                    ادامه ...#}
+{#                                                </a>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+                            <div class="product-heading mb-3">
+                                <div class="title">
+                                    <i class="fal fa-comment-alt-lines"></i> ارسال دیدگاه
+                                </div>
+                            </div>
+                            <div class="block-content-wrap">
+                                <form action="#" class="comment-reply-form">
+                                    <p class="logged-in-as">
+                                        <a href="#">
+                                        با عنوان حسن شجاعی وارد شده‌اید
+                                        </a>
+                                        .
+                                        <a href="#">
+                                            خارج می‌شوید؟
+                                        </a>
+                                    </p>
+                                    <div class="form-group">
+                                        <textarea id="comment" name="comment" class="form-control" cols="45" placeholder="پرسش خود را بنوسید" rows="7" required=""></textarea>
+                                        <button type="submit" class="btn btn-dark send-question">ارسال</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-12 sticky-sidebar">
+                        <div class="recent-comments">
+                            <div class="widget-title">
+                                دیدگاه ها
+                            </div>
+                            <div class="widget-content">
+                                <ul class="recentcomments">
+                                    <li class="recentcomments-item">
+                                        <span class="comment-author-link">
+                                            حسن
+
+                                        </span>
+                                        در
+                                        <a href="#">گوشي موبايل اپل مدل iPhone 8 ظرفيت 64 گيگابايت</a>
+                                    </li>
+                                    <li class="recentcomments-item">
+                                        <span class="comment-author-link">
+                                            حسن
+
+                                        </span>
+                                        در
+                                        <a href="#">گوشي موبايل اپل مدل iPhone 8 ظرفيت 64 گيگابايت</a>
+                                    </li>
+                                    <li class="recentcomments-item">
+                                        <span class="comment-author-link">
+                                            حسن
+
+                                        </span>
+                                        در
+                                        <a href="#">گوشي موبايل اپل مدل iPhone 8 ظرفيت 64 گيگابايت</a>
+                                    </li>
+                                    <li class="recentcomments-item">
+                                        <span class="comment-author-link">
+                                            حسن
+
+                                        </span>
+                                        در
+                                        <a href="#">گوشي موبايل اپل مدل iPhone 8 ظرفيت 64 گيگابايت</a>
+                                    </li>
+                                    <li class="recentcomments-item">
+                                        <span class="comment-author-link">
+                                            حسن
+
+                                        </span>
+                                        در
+                                        <a href="#">گوشي موبايل اپل مدل iPhone 8 ظرفيت 64 گيگابايت</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="recent-comments">
+                            <div class="widget-title">
+                                آخرین مطالب
+                            </div>
+                            <div class="widget-content">
+                                <div class="post-with-thumb">
+                                    <div class="post-thumb-img">
+                                        <a href="#">
+                                            <img src="/static/images/pageBlog/inRqLEr.jpg" class="img-fluid" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="inner">تاثیر هوش مصنوعی بر بازاریابی دیجیتال</div>
+                                </div>
+                                <div class="post-with-thumb">
+                                    <div class="post-thumb-img">
+                                        <a href="#">
+                                            <img src="/static/images/pageBlog/inRqLEr.jpg" class="img-fluid" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="inner">تاثیر هوش مصنوعی بر بازاریابی دیجیتال</div>
+                                </div>
+                                <div class="post-with-thumb">
+                                    <div class="post-thumb-img">
+                                        <a href="#">
+                                            <img src="/static/images/pageBlog/inRqLEr.jpg" class="img-fluid" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="inner">تاثیر هوش مصنوعی بر بازاریابی دیجیتال</div>
+                                </div>
+                                <div class="post-with-thumb">
+                                    <div class="post-thumb-img">
+                                        <a href="#">
+                                            <img src="/static/images/pageBlog/inRqLEr.jpg" class="img-fluid" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="inner">تاثیر هوش مصنوعی بر بازاریابی دیجیتال</div>
+                                </div>
+                                <div class="post-with-thumb">
+                                    <div class="post-thumb-img">
+                                        <a href="#">
+                                            <img src="/static/images/pageBlog/inRqLEr.jpg" class="img-fluid" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="inner">تاثیر هوش مصنوعی بر بازاریابی دیجیتال</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
