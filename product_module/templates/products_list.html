@@ -777,23 +777,33 @@
                                         <div class="product-image-area">
                                             <a href="#" class="product-image">
                                                 <div class="product-label">
-                                                    <span>{{ product.off }}%</span>
+                                                    {% if product.off > 1 %}
+                                                        <span>{{ product.off }}%</span>
+                                                    {% endif %}
+                                                    <img src="{{ product.image.url }}" style="width: 50%" alt="product">
                                                 </div>
-                                                <img src="{{ product.image.url }}" style="width: 50%" alt="product">
                                             </a>
                                         </div>
                                         <div class="product-detail-area">
                                             <div class="price">
-                                                <del>
-                                                            <span class="price-amount">{{ product.Discount }}
-                                                                <span class="price-currencySymbol">تومان</span>
-                                                            </span>
-                                                </del>
-                                                <ins>
+                                                {% if product.off > 1 %}
+                                                    <del>
                                                             <span class="price-amount">{{ product.price }}
                                                                 <span class="price-currencySymbol">تومان</span>
                                                             </span>
-                                                </ins>
+                                                    </del>
+                                                    <ins>
+                                                            <span class="price-amount">{{ product.Discount }}
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                    </ins>
+                                                {% else %}
+                                                    <ins>
+                                                            <span class="price-amount">{{ product.price }}
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                    </ins>
+                                                {% endif %}
                                             </div>
                                             <h3 class="product-name">
                                                 <a href="{% url 'product_details' product.slug %}">{{ product.title }}</a>
@@ -1230,7 +1240,8 @@
                     <ul class="pagination">
                         {% if page_obj.has_previous %}
                             <li class="page-item">
-                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}"
+                                   aria-label="Previous">
                                     <span aria-hidden="true">«</span>
                                 </a>
                             </li>

@@ -2,7 +2,7 @@
 {% load poll_extras %}
 
 {% block title %}
-	وبلاگ
+    وبلاگ
 {% endblock %}
 
 {% block content %}
@@ -30,122 +30,234 @@
                             </div>
                             <div class="blog-tag">
                                 <span class="tags-title">تگ ها : </span>
-                                    {% for tag in tags %}
-                                    	<a href="{% url 'article-tags-page' tag.slug %}">{{ tag.title }}</a>
-                                    {% endfor %}
+                                {% for tag in tags %}
+                                    <a href="{% url 'article-tags-page' tag.slug %}">{{ tag.title }}</a>
+                                {% endfor %}
 
-{#                                <a href="#">مد ولباس</a>#}
+                                {#                                <a href="#">مد ولباس</a>#}
                             </div>
                             <div class="blog-bottom">
                                 <div class="meta-items">
                                     <i class="fal fa-user"></i>
-                                    مدیر سایت
+                                    {{ article.author.username }}
                                 </div>
                                 <div class="meta-items">
                                     <i class="fal fa-clock"></i>
                                     <time>{{ article.create_date|jdate }}</time>
                                 </div>
-{#                                <div class="blog-social">#}
-{#                                    <i class="fal fa-share-alt"></i>#}
-{#                                    <div class="blog-socials">#}
-{#                                        <ul>#}
-{#                                            <li class="social-item">#}
-{#                                                <a href="#"><i class="fab fa-facebook"></i></a>#}
-{#                                            </li>#}
-{#                                            <li class="social-item">#}
-{#                                                <a href="#"><i class="fab fa-fab fa-twitter"></i></a>#}
-{#                                            </li>#}
-{#                                            <li class="social-item">#}
-{#                                                <a href="#"><i class="fab fa-instagram"></i></a>#}
-{#                                            </li>#}
-{#                                            <li class="social-item">#}
-{#                                                <a href="#"><i class="fab fa-telegram"></i></a>#}
-{#                                            </li>#}
-{#                                        </ul>#}
-{#                                    </div>#}
-{#                                </div>#}
+                                {#                                <div class="blog-social">#}
+                                {#                                    <i class="fal fa-share-alt"></i>#}
+                                {#                                    <div class="blog-socials">#}
+                                {#                                        <ul>#}
+                                {#                                            <li class="social-item">#}
+                                {#                                                <a href="#"><i class="fab fa-facebook"></i></a>#}
+                                {#                                            </li>#}
+                                {#                                            <li class="social-item">#}
+                                {#                                                <a href="#"><i class="fab fa-fab fa-twitter"></i></a>#}
+                                {#                                            </li>#}
+                                {#                                            <li class="social-item">#}
+                                {#                                                <a href="#"><i class="fab fa-instagram"></i></a>#}
+                                {#                                            </li>#}
+                                {#                                            <li class="social-item">#}
+                                {#                                                <a href="#"><i class="fab fa-telegram"></i></a>#}
+                                {#                                            </li>#}
+                                {#                                        </ul>#}
+                                {#                                    </div>#}
+                                {#                                </div>#}
                             </div>
                         </article>
                         <div class="block-content-wrap">
-{#                            <div class="product-heading mb-3">#}
-{#                                <div class="title">#}
-{#                                    <i class="fal fa-box"></i> مجلات#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="block-content-wrap">#}
-{#                                <div class="row">#}
-{#                                    <div class="col-12 col-sm-6 col-lg-6">#}
-{#                                        <div class="item">#}
-{#                                            <div class="item-area blog-line">#}
-{#                                                <h4 class="post-title">#}
-{#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
-{#                                                </h4>#}
-{#                                                <a href="#" class="read-continues">#}
-{#                                                    ادامه ...#}
-{#                                                </a>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="col-12 col-sm-6 col-lg-6">#}
-{#                                        <div class="item">#}
-{#                                            <div class="item-area blog-line">#}
-{#                                                <h4 class="post-title">#}
-{#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
-{#                                                </h4>#}
-{#                                                <a href="#" class="read-continues">#}
-{#                                                    ادامه ...#}
-{#                                                </a>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="col-12 col-sm-6 col-lg-6">#}
-{#                                        <div class="item">#}
-{#                                            <div class="item-area blog-line">#}
-{#                                                <h4 class="post-title">#}
-{#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
-{#                                                </h4>#}
-{#                                                <a href="#" class="read-continues">#}
-{#                                                    ادامه ...#}
-{#                                                </a>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="col-12 col-sm-6 col-lg-6">#}
-{#                                        <div class="item">#}
-{#                                            <div class="item-area blog-line">#}
-{#                                                <h4 class="post-title">#}
-{#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
-{#                                                </h4>#}
-{#                                                <a href="#" class="read-continues">#}
-{#                                                    ادامه ...#}
-{#                                                </a>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-                            <div class="product-heading mb-3">
-                                <div class="title">
-                                    <i class="fal fa-comment-alt-lines"></i> ارسال دیدگاه
+                            {#                            <div class="product-heading mb-3">#}
+                            {#                                <div class="title">#}
+                            {#                                    <i class="fal fa-box"></i> مجلات#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                            {#                            <div class="block-content-wrap">#}
+                            {#                                <div class="row">#}
+                            {#                                    <div class="col-12 col-sm-6 col-lg-6">#}
+                            {#                                        <div class="item">#}
+                            {#                                            <div class="item-area blog-line">#}
+                            {#                                                <h4 class="post-title">#}
+                            {#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
+                            {#                                                </h4>#}
+                            {#                                                <a href="#" class="read-continues">#}
+                            {#                                                    ادامه ...#}
+                            {#                                                </a>#}
+                            {#                                            </div>#}
+                            {#                                        </div>#}
+                            {#                                    </div>#}
+                            {#                                    <div class="col-12 col-sm-6 col-lg-6">#}
+                            {#                                        <div class="item">#}
+                            {#                                            <div class="item-area blog-line">#}
+                            {#                                                <h4 class="post-title">#}
+                            {#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
+                            {#                                                </h4>#}
+                            {#                                                <a href="#" class="read-continues">#}
+                            {#                                                    ادامه ...#}
+                            {#                                                </a>#}
+                            {#                                            </div>#}
+                            {#                                        </div>#}
+                            {#                                    </div>#}
+                            {#                                    <div class="col-12 col-sm-6 col-lg-6">#}
+                            {#                                        <div class="item">#}
+                            {#                                            <div class="item-area blog-line">#}
+                            {#                                                <h4 class="post-title">#}
+                            {#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
+                            {#                                                </h4>#}
+                            {#                                                <a href="#" class="read-continues">#}
+                            {#                                                    ادامه ...#}
+                            {#                                                </a>#}
+                            {#                                            </div>#}
+                            {#                                        </div>#}
+                            {#                                    </div>#}
+                            {#                                    <div class="col-12 col-sm-6 col-lg-6">#}
+                            {#                                        <div class="item">#}
+                            {#                                            <div class="item-area blog-line">#}
+                            {#                                                <h4 class="post-title">#}
+                            {#                                                    <a href="#">از دکمه تا جیب، همه چیز در مورد مدل کت مردانه</a>#}
+                            {#                                                </h4>#}
+                            {#                                                <a href="#" class="read-continues">#}
+                            {#                                                    ادامه ...#}
+                            {#                                                </a>#}
+                            {#                                            </div>#}
+                            {#                                        </div>#}
+                            {#                                    </div>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                            {#                            <div class="product-heading mb-3">#}
+                            {#                                <div class="title">#}
+                            {#                                    <i class="fal fa-comment-alt-lines"></i> ارسال دیدگاه#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                            <div class="block-content-wrap">
+                                <div class="comment-override">
+                                    <div class="product-heading mb-3">
+                                        <div class="title">
+                                            <strong>{{ comments.count }} دیدگاه برای </strong>
+                                            {{ article.title }}
+                                        </div>
+                                    </div>
+                                    <div class="block-content-wrap">
+                                        <div class="comment-reply-form mb-3">
+                                            <ol class="text-black-50">
+                                                <li class="px-3">
+                                                    {% for comment in comments %}
+                                                        <div class="row">
+                                                            <div class="col-12 col-sm-12">
+                                                                <div class="comment-content">
+                                                                    <p class="logged-in-as rounded py-1 px-3 bg-light">
+                                                                        <a>
+                                                                            توسط
+                                                                            <strong> {{ comment.user.username }} </strong>
+                                                                            در
+                                                                            تاریخ {{ comment.create_date|jdate }}
+                                                                        </a>
+                                                                    </p>
+                                                                    <div class="description font-size-14">
+                                                                        <p>{{ comment.text }}</p>
+                                                                    </div>
+                                                                    <div class="mt-4 mb-2 d-flex justify-content-between align-items-center font-size-12">
+                                                                        <span>آیا این نظر برایتان مفید بود؟</span>
+                                                                        <div>
+                                                                            <a href="#"
+                                                                               class="rounded text-black-50 b-solid-gray mx-1 px-2">
+                                                                                {{ comment.comment_like }}
+                                                                                <i class="fal fa-thumbs-up"></i>
+                                                                            </a>
+                                                                            <a href="#"
+                                                                               class="rounded text-black-50 b-solid-gray mx-1 px-2">
+                                                                                {{ comment.comment_dislike }}
+                                                                                <i class="fal fa-thumbs-down ml-1"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row mx-2" dir="ltr">
+                                                                        <a href="#"
+                                                                           class="btn btn-outline-primary d-none d-md-flex align-items-center align-self-stretch px-3 rounded-pill font-size-14 mb-3">
+                                        <span>
+                                            <i class="fal fa-share"></i>
+                                            پاسخ
+                                        </span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {% for sub_comment in comment.articlecommentmodel_set.all %}
+                                                            <div class="row mb-2" dir="ltr">
+                                                                <div class="col-12 col-sm-11 p-3 bg-light mx-4 rounded">
+                                                                    <div class="comment-content">
+                                                                        <p class="logged-in-as rounded py-1 px-3 bg-white">
+                                                                            <a dir="rtl">
+                                                                                توسط
+                                                                                <strong> {{ sub_comment.user.username }} </strong>
+                                                                                در
+                                                                                تاریخ {{ sub_comment.create_date|jdate }}
+                                                                            </a>
+                                                                        </p>
+                                                                        <div class="description font-size-14">
+                                                                            <p>{{ sub_comment.text }}</p>
+                                                                        </div>
+                                                                        <div class="mt-4 mb-2 d-flex justify-content-between align-items-center font-size-12">
+                                                                            <span>آیا این نظر برایتان مفید بود؟</span>
+                                                                            <div>
+                                                                                <a href="#"
+                                                                                   class="rounded text-black-50 b-solid-gray mx-1 px-2">
+                                                                                    {{ sub_comment.comment_like }}
+                                                                                    <i class="fal fa-thumbs-up"></i>
+                                                                                </a>
+                                                                                <a href="#"
+                                                                                   class="rounded text-black-50 b-solid-gray mx-1 px-2">
+                                                                                    {{ sub_comment.comment_dislike }}
+                                                                                    <i class="fal fa-thumbs-down ml-1"></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+{#                                                                        <div class="row mx-2" dir="ltr">#}
+{#                                                                            <a href="#"#}
+{#                                                                               class="btn btn-outline-primary d-none d-md-flex align-items-center align-self-stretch px-3 rounded-pill font-size-14 mb-3">#}
+{#                                        <span>#}
+{#                                            <i class="fal fa-share"></i>#}
+{#                                            پاسخ#}
+{#                                        </span>#}
+{#                                                                            </a>#}
+{#                                                                        </div>#}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {% endfor %}
+
+                                                    {% endfor %}
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="block-content-wrap">
-                                <form action="#" class="comment-reply-form">
-                                    <p class="logged-in-as">
-                                        <a href="#">
-                                        با عنوان حسن شجاعی وارد شده‌اید
-                                        </a>
-                                        .
-                                        <a href="#">
-                                            خارج می‌شوید؟
-                                        </a>
-                                    </p>
-                                    <div class="form-group">
-                                        <textarea id="comment" name="comment" class="form-control" cols="45" placeholder="پرسش خود را بنوسید" rows="7" required=""></textarea>
-                                        <button type="submit" class="btn btn-dark send-question">ارسال</button>
-                                    </div>
-                                </form>
-                            </div>
+                            {% if request.user.is_authenticated %}
+                                <div class="block-content-wrap">
+                                    <form action="#" class="comment-reply-form">
+                                        <p class="logged-in-as">
+                                            <a href="#">
+                                                با عنوان {{ user.username }} وارد شده‌اید
+                                            </a>
+                                            .
+                                            <a href="{% url 'logout-page' %}">
+                                                خارج می‌شوید؟
+                                            </a>
+                                        </p>
+                                        <div class="form-group">
+                                        <textarea id="comment" name="comment" class="form-control" cols="45"
+                                                  placeholder="نظر خود را بنوسید" rows="7" required=""></textarea>
+                                            <button type="submit" class="btn btn-dark send-question">ارسال</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            {% else %}
+                                <div class="alert-warning" style="text-align: center">برای نظر دادن ابتدا باید <a
+                                        href="{% url 'login_page' %}">وارد</a> شوید
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-xs-12 sticky-sidebar">

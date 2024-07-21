@@ -19,34 +19,36 @@
                         <div class="col-lg-4 col-md-4 col-xs-12">
                             <div class="product-gallery">
                                 <div class="gallery">
-                                    <div class="gallery-item mb-2">
-                                        <div class="single-countdown">
-                                            <div class="deal-title">
-                                                <span class="deal-title-main">پیشنـهاد شگفت انگیـز</span>
-                                                <span class="deal-title-sub">فرصت باقی مانده</span>
-                                            </div>
-                                            <div class="countdown countdown-style-3 h4"
-                                                 data-date-time="2025-10-31 20:29:59"
-                                                 data-labels="{&quot;label-second&quot;: &quot;ثانیه&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-day&quot;: &quot;روز&quot;}">
-                                                <div class="countdown-item">
-                                                    <div class="countdown-value">483</div>
-                                                    <div class="countdown-label">روز</div>
+                                    {% if product.off > 1 %}
+                                        <div class="gallery-item mb-2">
+                                            <div class="single-countdown">
+                                                <div class="deal-title">
+                                                    <span class="deal-title-main">پیشنـهاد شگفت انگیـز</span>
+                                                    <span class="deal-title-sub">فرصت باقی مانده</span>
                                                 </div>
-                                                <div class="countdown-item">
-                                                    <div class="countdown-value">06</div>
-                                                    <div class="countdown-label">ساعت</div>
-                                                </div>
-                                                <div class="countdown-item">
-                                                    <div class="countdown-value">46</div>
-                                                    <div class="countdown-label">دقیقه</div>
-                                                </div>
-                                                <div class="countdown-item">
-                                                    <div class="countdown-value">50</div>
-                                                    <div class="countdown-label">ثانیه</div>
+                                                <div class="countdown countdown-style-3 h4"
+                                                     data-date-time="2025-10-31 20:29:59"
+                                                     data-labels="{&quot;label-second&quot;: &quot;ثانیه&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-day&quot;: &quot;روز&quot;}">
+                                                    <div class="countdown-item">
+                                                        <div class="countdown-value">483</div>
+                                                        <div class="countdown-label">روز</div>
+                                                    </div>
+                                                    <div class="countdown-item">
+                                                        <div class="countdown-value">06</div>
+                                                        <div class="countdown-label">ساعت</div>
+                                                    </div>
+                                                    <div class="countdown-item">
+                                                        <div class="countdown-value">46</div>
+                                                        <div class="countdown-label">دقیقه</div>
+                                                    </div>
+                                                    <div class="countdown-item">
+                                                        <div class="countdown-value">50</div>
+                                                        <div class="countdown-label">ثانیه</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    {% endif %}
                                     <div class="gallery-item">
                                         <div class="products-gallery">
                                             <div class="product-tools">
@@ -82,9 +84,11 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="triangle">
-                                                <span>{{ product.off }}%</span>
-                                            </div>
+                                            {% if product.off > 1 %}
+                                                <div class="triangle">
+                                                    <span>{{ product.off }}%</span>
+                                                </div>
+                                            {% endif %}
                                             <div class="swiper-container gallery-slider pb-md-0 pb-3 swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl">
                                                 <div class="swiper-wrapper" id="swiper-wrapper-dbe76366c99848d3"
                                                      aria-live="polite"
@@ -335,7 +339,7 @@
                                         <li>
                                             <span>تگ های مربوطه: </span>
                                             {% for tag in tags %}
-                                                <a href="{% url 'product_tag' tag.slug %}">{{ tag.title}}</a>
+                                                <a href="{% url 'product_tag' tag.slug %}">{{ tag.title }}</a>
                                             {% endfor %}
                                         </li>
                                         <li>
@@ -345,19 +349,24 @@
                                     </ul>
                                 </div>
                                 <div class="price">
-                                    <del>
+                                    {% if product.off > 1 %}
+                                        <del>
                                         <span class="price-amount">{{ product.price }}
                                             <span class="price-currencySymbol">تومان</span>
                                         </span>
-                                    </del>
-                                    <ins>
+                                        </del>
+                                        <ins>
                                          <span class="price-amount">{{ product.Discount }}
                                              <span class="price-currencySymbol">تومان</span>
                                          </span>
-                                        {#                                        <span class="price-amount">{{ product.price }}#}
-                                        {#                                            <span class="price-currencySymbol">تومان</span>#}
-                                        {#                                        </span>#}
-                                    </ins>
+                                        </ins>
+                                    {% else %}
+                                        <ins>
+                                         <span class="price-amount">{{ product.Discount }}
+                                             <span class="price-currencySymbol">تومان</span>
+                                         </span>
+                                        </ins>
+                                    {% endif %}
                                 </div>
                                 <div class="add-to-cart">
                                     <div class="quantity">

@@ -15,10 +15,12 @@ class ArticleListView(ListView):
 class ArticleDetailView(View):
     def get(self , request , slug):
         article = ArticleModel.objects.filter(slug=slug).first()
+        comments = ArticleCommentModel.objects.filter(article__slug=slug , is_publish=True , parent_comment=None)
         tags = ArticleTagModel.objects.filter(articlemodel=article)
         return render(request , 'article-detail.html' , context={
             'article':article,
             'tags':tags,
+            'comments':comments,
         })
 
 class ArticleTagsView(View):
