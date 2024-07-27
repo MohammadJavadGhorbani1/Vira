@@ -98,61 +98,6 @@
                             </a>
                         </div>
                     {% endfor %}
-
-                    {#                    <div class="col-lg-2 col-6">#}
-                    {#                        <a href="#" class="category-card-vertical">#}
-                    {#                            <div class="category-icon">#}
-                    {#                                <i class="fal fa-print"></i>#}
-                    {#                            </div>#}
-                    {#                            <div class="category-title">#}
-                    {#                                <h6>ماشین های اداری</h6>#}
-                    {#                            </div>#}
-                    {#                        </a>#}
-                    {#                    </div>#}
-                    {##}
-                    {#                    <div class="col-lg-2 col-6">#}
-                    {#                        <a href="#" class="category-card-vertical">#}
-                    {#                            <div class="category-icon">#}
-                    {#                                <i class="fal fa-tv-retro"></i>#}
-                    {#                            </div>#}
-                    {#                            <div class="category-title">#}
-                    {#                                <h6>صوتی و تصویری</h6>#}
-                    {#                            </div>#}
-                    {#                        </a>#}
-                    {#                    </div>#}
-                    {##}
-                    {#                    <div class="col-lg-2 col-6">#}
-                    {#                        <a href="#" class="category-card-vertical">#}
-                    {#                            <div class="category-icon">#}
-                    {#                                <i class="fal fa-pencil"></i>#}
-                    {#                            </div>#}
-                    {#                            <div class="category-title">#}
-                    {#                                <h6>زیبایی و سلامت</h6>#}
-                    {#                            </div>#}
-                    {#                        </a>#}
-                    {#                    </div>#}
-                    {##}
-                    {#                    <div class="col-lg-2 col-6">#}
-                    {#                        <a href="#" class="category-card-vertical">#}
-                    {#                            <div class="category-icon">#}
-                    {#                                <i class="fal fa-baseball"></i>#}
-                    {#                            </div>#}
-                    {#                            <div class="category-title">#}
-                    {#                                <h6>ورزش و سرگرمی</h6>#}
-                    {#                            </div>#}
-                    {#                        </a>#}
-                    {#                    </div>#}
-                    {##}
-                    {#                    <div class="col-lg-2 col-6">#}
-                    {#                        <a href="#" class="category-card-vertical">#}
-                    {#                            <div class="category-icon">#}
-                    {#                                <i class="fal fa-tools"></i>#}
-                    {#                            </div>#}
-                    {#                            <div class="category-title">#}
-                    {#                                <h6>ابزاروآلات</h6>#}
-                    {#                            </div>#}
-                    {#                        </a>#}
-                    {#                    </div>#}
                 </div>
             </div>
         </div>
@@ -344,527 +289,95 @@
                             <div class="title">
                                 <i class="fal fa-layer-plus"></i> جدیـدترین محصـولات
                             </div>
-                            <a href="#" class="view-more">
+                            <a href="{% url 'new-products-page' %}" class="view-more">
                                 <i class="fal fa-angle-left"></i> مشاهده همه
                             </a>
                         </div>
-                        <div class="block-content-wrap mt-3">
-                            <div class="swiper mySwiper sliderProduct">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="item">
-                                            <div class="item-area item-general">
-                                                <div class="product-image-area">
-                                                    <a href="#" class="product-image">
-                                                        <div class="product-label">
-                                                            <span>3%</span>
+                            <div class="block-content-wrap mt-3">
+                                <div class="swiper mySwiper sliderProduct">
+                                    <div class="swiper-wrapper">
+                                        {% for product in products_new %}
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <div class="item-area item-general">
+                                                        <div class="product-image-area">
+                                                            <a href="#" class="product-image">
+                                                                <div class="product-label">
+                                                                    <span>{{ product.off }}%</span>
+                                                                </div>
+                                                                <img src="{{ product.image.url }}"
+                                                                     alt="sliderProduct" style="height: 100px;width: 100px">
+                                                            </a>
                                                         </div>
-                                                        <img src="/static/images/sliderP/camera.jpg"
-                                                             alt="sliderProduct">
-                                                    </a>
-                                                </div>
-                                                <div class="product-detail-area">
-                                                    <div class="price">
-                                                        <del>
-                                                            <span class="price-amount">71,000,000
+                                                        <div class="product-detail-area">
+                                                            <div class="price">
+                                                                <del>
+                                                            <span class="price-amount">{{ product.price }}
                                                                 <span class="price-currencySymbol">تومان</span>
                                                             </span>
-                                                        </del>
-                                                        <ins>
-                                                            <span class="price-amount">69,000,000
+                                                                </del>
+                                                                <ins>
+                                                            <span class="price-amount">{{ product.Discount }}
                                                                 <span class="price-currencySymbol">تومان</span>
                                                             </span>
-                                                        </ins>
-                                                    </div>
-                                                    <h3 class="product-name">
-                                                        <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
-                                                            ظرفیت 128 گیگابایت</a>
-                                                    </h3>
-                                                    <div class="actions">
-                                                        <div class="star-rating">
+                                                                </ins>
+                                                            </div>
+                                                            <h3 class="product-name">
+                                                                <a href="{% url 'product_details' product.slug %}">{{ product.title }}</a>
+                                                            </h3>
+                                                            <div class="actions">
+                                                                <div class="star-rating">
                                                             <span class="star active">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
-                                                            <span class="star active">
+                                                                    <span class="star active">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
-                                                            <span class="star active">
+                                                                    <span class="star active">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
-                                                            <span class="star active">
+                                                                    <span class="star active">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
-                                                            <span class="star">
+                                                                    <span class="star">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
+                                                                </div>
+                                                                <ul class="add-to-links">
+                                                                    <li>
+                                                                        <div class="add-to-wishlist">
+                                                                            <a href="#wishlist"
+                                                                               title="افزودن به علاقه مندی ها">
+                                                                                <i class="fal fa-heart"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="add-to-compare">
+                                                                            <a href="#compare" title="مقایسه">
+                                                                                <i class="fal fa-random"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="add-to-cart">
+                                                                            <a href="#cart" title="افزودن به سبد">
+                                                                                <i class="fal fa-shopping-cart"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <div class="add-to-wishlist">
-                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
-                                                                        <i class="fal fa-heart"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="add-to-compare">
-                                                                    <a href="#compare" title="مقایسه">
-                                                                        <i class="fal fa-random"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#cart" title="افزودن به سبد">
-                                                                        <i class="fal fa-shopping-cart"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="item-area item-general">
-                                            <div class="product-image-area">
-                                                <a href="#" class="product-image">
-                                                    <div class="product-label">
-                                                        <span>3%</span>
-                                                    </div>
-                                                    <img src="/static/images/sliderP/laptopaleen.jpg"
-                                                         alt="sliderProduct">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail-area">
-                                                <div class="price">
-                                                    <del>
-                                                        <span class="price-amount">71,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </del>
-                                                    <ins>
-                                                        <span class="price-amount">69,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </ins>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت ظرفیت
-                                                        128 گیگابایت</a>
-                                                </h3>
-                                                <div class="actions">
-                                                    <div class="star-rating">
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <div class="add-to-wishlist">
-                                                                <a href="#wishlist" title="افزودن به علاقه مندی ها">
-                                                                    <i class="fal fa-heart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-compare">
-                                                                <a href="#compare" title="مقایسه">
-                                                                    <i class="fal fa-random"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-cart">
-                                                                <a href="#cart" title="افزودن به سبد">
-                                                                    <i class="fal fa-shopping-cart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="item-area item-general">
-                                            <div class="product-image-area">
-                                                <a href="#" class="product-image">
-                                                    <div class="product-label">
-                                                        <span>3%</span>
-                                                    </div>
-                                                    <img src="/static/images/sliderP/iphone8.jpg" alt="sliderProduct">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail-area">
-                                                <div class="price">
-                                                    <del>
-                                                        <span class="price-amount">71,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </del>
-                                                    <ins>
-                                                        <span class="price-amount">69,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </ins>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت ظرفیت
-                                                        128 گیگابایت</a>
-                                                </h3>
-                                                <div class="actions">
-                                                    <div class="star-rating">
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <div class="add-to-wishlist">
-                                                                <a href="#wishlist" title="افزودن به علاقه مندی ها">
-                                                                    <i class="fal fa-heart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-compare">
-                                                                <a href="#compare" title="مقایسه">
-                                                                    <i class="fal fa-random"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-cart">
-                                                                <a href="#cart" title="افزودن به سبد">
-                                                                    <i class="fal fa-shopping-cart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="item-area item-general">
-                                            <div class="product-image-area">
-                                                <a href="#" class="product-image">
-                                                    <div class="product-label">
-                                                        <span>3%</span>
-                                                    </div>
-                                                    <img src="/static/images/sliderP/iphone12.webp" alt="sliderProduct">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail-area">
-                                                <div class="price">
-                                                    <del>
-                                                        <span class="price-amount">71,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </del>
-                                                    <ins>
-                                                        <span class="price-amount">69,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </ins>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت ظرفیت
-                                                        128 گیگابایت</a>
-                                                </h3>
-                                                <div class="actions">
-                                                    <div class="star-rating">
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <div class="add-to-wishlist">
-                                                                <a href="#wishlist" title="افزودن به علاقه مندی ها">
-                                                                    <i class="fal fa-heart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-compare">
-                                                                <a href="#compare" title="مقایسه">
-                                                                    <i class="fal fa-random"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-cart">
-                                                                <a href="#cart" title="افزودن به سبد">
-                                                                    <i class="fal fa-shopping-cart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="item-area item-general">
-                                            <div class="product-image-area">
-                                                <a href="#" class="product-image">
-                                                    <div class="product-label">
-                                                        <span>3%</span>
-                                                    </div>
-                                                    <img src="/static/images/sliderP/iphone8.jpg" alt="sliderProduct">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail-area">
-                                                <div class="price">
-                                                    <del>
-                                                        <span class="price-amount">71,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </del>
-                                                    <ins>
-                                                        <span class="price-amount">69,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </ins>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت ظرفیت
-                                                        128 گیگابایت</a>
-                                                </h3>
-                                                <div class="actions">
-                                                    <div class="star-rating">
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <div class="add-to-wishlist">
-                                                                <a href="#wishlist" title="افزودن به علاقه مندی ها">
-                                                                    <i class="fal fa-heart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-compare">
-                                                                <a href="#compare" title="مقایسه">
-                                                                    <i class="fal fa-random"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-cart">
-                                                                <a href="#cart" title="افزودن به سبد">
-                                                                    <i class="fal fa-shopping-cart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="item-area item-general">
-                                            <div class="product-image-area">
-                                                <a href="#" class="product-image">
-                                                    <div class="product-label">
-                                                        <span>3%</span>
-                                                    </div>
-                                                    <img src="/static/images/sliderP/iphone8.jpg" alt="sliderProduct">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail-area">
-                                                <div class="price">
-                                                    <del>
-                                                        <span class="price-amount">71,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </del>
-                                                    <ins>
-                                                        <span class="price-amount">69,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </ins>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت ظرفیت
-                                                        128 گیگابایت</a>
-                                                </h3>
-                                                <div class="actions">
-                                                    <div class="star-rating">
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <div class="add-to-wishlist">
-                                                                <a href="#wishlist" title="افزودن به علاقه مندی ها">
-                                                                    <i class="fal fa-heart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-compare">
-                                                                <a href="#compare" title="مقایسه">
-                                                                    <i class="fal fa-random"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-cart">
-                                                                <a href="#cart" title="افزودن به سبد">
-                                                                    <i class="fal fa-shopping-cart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="item-area item-general">
-                                            <div class="product-image-area">
-                                                <a href="#" class="product-image">
-                                                    <div class="product-label">
-                                                        <span>3%</span>
-                                                    </div>
-                                                    <img src="/static/images/sliderP/galaxys8-plus.jpg"
-                                                         alt="sliderProduct">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail-area">
-                                                <div class="price">
-                                                    <del>
-                                                        <span class="price-amount">71,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </del>
-                                                    <ins>
-                                                        <span class="price-amount">69,000,000
-                                                            <span class="price-currencySymbol">تومان</span>
-                                                        </span>
-                                                    </ins>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت ظرفیت
-                                                        128 گیگابایت</a>
-                                                </h3>
-                                                <div class="actions">
-                                                    <div class="star-rating">
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star active">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                        <span class="star">
-                                                            <i class="fal fa-star"></i>
-                                                        </span>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <div class="add-to-wishlist">
-                                                                <a href="#wishlist" title="افزودن به علاقه مندی ها">
-                                                                    <i class="fal fa-heart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-compare">
-                                                                <a href="#compare" title="مقایسه">
-                                                                    <i class="fal fa-random"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="add-to-cart">
-                                                                <a href="#cart" title="افزودن به سبد">
-                                                                    <i class="fal fa-shopping-cart"></i>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {% endfor %}
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
                             </div>
-                        </div>
                     </section>
                 </div>
                 <div class="col-lg-3">

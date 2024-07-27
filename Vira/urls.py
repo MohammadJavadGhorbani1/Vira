@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('contact_module.urls')),
     path('user/' , include('user_module.urls')),
     path('article/' , include('article_module.urls')),
+    path('dashbord/' , include('userpanel_module.urls')),
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL , document_root= settings.MEDIA_ROOT)

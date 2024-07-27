@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load poll_extras %}
 
 {% block title %}
     جزئیات محصول
@@ -27,10 +28,10 @@
                                                     <span class="deal-title-sub">فرصت باقی مانده</span>
                                                 </div>
                                                 <div class="countdown countdown-style-3 h4"
-                                                     data-date-time="2025-10-31 20:29:59"
+                                                     data-date-time={{ product.off_endtime|date }} {{ product.off_endtime|time }}
                                                      data-labels="{&quot;label-second&quot;: &quot;ثانیه&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-day&quot;: &quot;روز&quot;}">
                                                     <div class="countdown-item">
-                                                        <div class="countdown-value">483</div>
+                                                        <div class="countdown-value">486</div>
                                                         <div class="countdown-label">روز</div>
                                                     </div>
                                                     <div class="countdown-item">

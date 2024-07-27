@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'user_module.apps.UserModuleConfig',
     'sitesettings_module.apps.SitesettingsModuleConfig',
     'article_module.apps.ArticleModuleConfig',
+    'userpanel_module.apps.UserpanelModuleConfig',
 ]
 
 MIDDLEWARE = [

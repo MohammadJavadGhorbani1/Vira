@@ -1,0 +1,342 @@
+{% extends 'user_layout.html' %}
+{% load poll_extras %}
+
+{% block title %}
+    حساب کاربری
+{% endblock %}
+
+{% block content %}
+    <main class="content mt-0">
+        <div class="container">
+            <div class="row">
+                {% if request.user.is_authenticated %}
+                    <nav class="sidebar">
+                        <div class="woocommerce-MyAccount-navigation">
+                            <div class="my-account-info">
+                                <a href="#" class="gravatar">
+                                    <img src="
+                                            {% if user.profile_img %}{{ user.profile_img.url }}{% else %}/static/images/avatar/avatar.jpg{% endif %}"
+                                         alt="avatar" class="img-fluid avatar">
+                                </a>
+                                <span class="username">{{ user.first_name }} {{ user.last_name }}</span>
+                            </div>
+                            <div class="my-account-menu">
+                                <div class="item-menu">
+                                    <a href="{% url 'product_list' %}">
+                                        <i class="fal fa-store"></i>
+                                        فروشگاه
+                                    </a>
+                                </div>
+                                <div class="item-menu">
+                                    <a href="#">
+                                        <i class="fal fa-shopping-bag"></i>
+                                        سبد خرید من
+                                    </a>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-dashboard is-active">
+                                    <a href="{% url 'main-dashbord-page' %}">
+                                        <i class="fal fa-tachometer"></i>
+                                        پیشخوان
+                                    </a>
+                                </li>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-orders">
+                                    <a href="#">
+                                        <i class="fal fa-shopping-basket"></i>
+                                        سفارش ها
+                                    </a>
+                                </li>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-wishlists">
+                                    <a href="#">
+                                        <i class="fal fa-heart"></i>
+                                        علاقه مندی ها
+                                    </a>
+                                </li>
+{#                                <li class="MyAccount-navigation-link MyAccount-navigation-link-notify">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fal fa-file-alt"></i>#}
+{#                                        اطلاعیه ها#}
+{#                                    </a>#}
+{#                                </li>#}
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-review">
+                                    <a href="#">
+                                        <i class="fal fa-comment-dots"></i>
+                                        دیدگاه ها
+                                    </a>
+                                </li>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-notification">
+                                    <a href="#">
+                                        <i class="fal fa-bell"></i>
+                                        اطلاع رسانی ها
+                                    </a>
+                                </li>
+{#                                <li class="MyAccount-navigation-link MyAccount-navigation-link-edit-address">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fal fa-home"></i>#}
+{#                                        آدرس‌ها#}
+{#                                    </a>#}
+{#                                </li>#}
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-edit-account">
+                                    <a href="#">
+                                        <i class="fal fa-user"></i>
+                                        اطلاعات حساب كاربری
+                                    </a>
+                                </li>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-customer-logout">
+                                    <a href="{% url 'logout-page' %}">
+                                        <i class="fal fa-sign-in"></i>
+                                        خروج از سیستم
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="nav-btn nav-slider nav-profile">
+                        <span class="linee1"></span>
+                        <span class="linee2"></span>
+                        <span class="linee3"></span>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="col-lg-3">
+                        <nav class="woocommerce-MyAccount-navigation MyAccount-navigation-none">
+                            <div class="my-account-info">
+                                <a href="#" class="gravatar">
+                                    <img src="{% if user.profile_img %}{{ user.profile_img.url }}{% else %}/static/images/avatar/avatar.jpg{% endif %}" alt="avatar" class="img-fluid avatar">
+                                </a>
+                                <span class="username">{{ user.first_name }} {{ user.last_name }}</span>
+                            </div>
+                            <div class="my-account-menu">
+                                <div class="item-menu">
+                                    <a href="{% url 'product_list' %}">
+                                        <i class="fal fa-store"></i>
+                                        فروشگاه
+                                    </a>
+                                </div>
+                                <div class="item-menu">
+                                    <a href="#">
+                                        <i class="fal fa-shopping-bag"></i>
+                                        سبد خرید من
+                                    </a>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-dashboard is-active">
+                                    <a href="#">
+                                        <i class="fal fa-tachometer"></i>
+                                        پیشخوان
+                                    </a>
+                                </li>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-orders">
+                                    <a href="#">
+                                        <i class="fal fa-shopping-basket"></i>
+                                        سفارش ها
+                                    </a>
+                                </li>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-wishlists">
+                                    <a href="#">
+                                        <i class="fal fa-heart"></i>
+                                        علاقه مندی ها
+                                    </a>
+                                </li>
+{#                                <li class="MyAccount-navigation-link MyAccount-navigation-link-notify">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fal fa-file-alt"></i>#}
+{#                                        اطلاعیه ها#}
+{#                                    </a>#}
+{#                                </li>#}
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-review">
+                                    <a href="#">
+                                        <i class="fal fa-comment-dots"></i>
+                                        دیدگاه ها
+                                    </a>
+                                </li>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-notification">
+                                    <a href="#">
+                                        <i class="fal fa-bell"></i>
+                                        اطلاع رسانی ها
+                                    </a>
+                                </li>
+{#                                <li class="MyAccount-navigation-link MyAccount-navigation-link-edit-address">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fal fa-home"></i>#}
+{#                                        آدرس‌ها#}
+{#                                    </a>#}
+{#                                </li>#}
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-edit-account">
+                                    <a href="#">
+                                        <i class="fal fa-user"></i>
+                                        اطلاعات حساب كاربری
+                                    </a>
+                                </li>
+                                <li class="MyAccount-navigation-link MyAccount-navigation-link-customer-logout">
+                                    <a href="{% url 'logout-page' %}">
+                                        <i class="fal fa-sign-in"></i>
+                                        خروج از سیستم
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-9 col-xs-12">
+                        <div class="woocommerce-MyAccount-content">
+                            <header class="user-header">
+                                <div class="account-head-icon">
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'logout-page' %}" class="logout">
+                                                <i class="fal fa-power-off"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="notify">
+                                                <i class="fal fa-bell"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="setting">
+                                                <i class="fal fa-cog"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'home_page' %}" class="home">
+                                                <i class="fal fa-house-flood"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </header>
+                            <div class="row">
+                                <div class="col-lg-6 col-xs-12">
+                                    <div class="widget">
+                                        <div class="widget-title">
+                                            اطلاعات شخصی
+                                            <a href="#" class="widget-link">ویرایش اطلاعات</a>
+                                        </div>
+                                        <div class="widget-content user-detail-dashboad">
+                                            <div class="widget-content-item">
+                                                <strong>نام و نام خانوادگی</strong>
+                                                <span>{{ user.first_name }} {{ user.last_name }}</span>
+                                            </div>
+                                            <div class="widget-content-item">
+                                                <strong>نام کاربری</strong>
+                                                <span>{{ user.username }}</span>
+                                            </div>
+                                            <div class="widget-content-item">
+                                                <strong>شماره موبایل</strong>
+                                                <span>{{ user.phone_number }}</span>
+                                            </div>
+                                            <div class="widget-content-item">
+                                                <strong>ایمیل</strong>
+                                                <span>{% if user.email %}{{ user.email }}{% else %}ندارید{% endif %} </span>
+                                            </div>
+                                            <div class="widget-content-item">
+                                                <strong>عضویت</strong>
+                                                <span>{{ user.date_joined|jdate }}</span>
+                                            </div>
+{#                                            <div class="widget-content-item">#}
+{#                                                <strong>کد پستی</strong>#}
+{#                                                <span>9419512345</span>#}
+{#                                            </div>#}
+{#                                            <div class="widget-content-item">#}
+{#                                                <strong>آدرس</strong>#}
+{#                                                <span>خراسان شمالی، بجنورد</span>#}
+{#                                            </div>#}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xs-12">
+                                    <div class="widget">
+                                        <div class="widget-title">
+                                            آخرین علاقه مندی ها
+                                            <a href="#" class="widget-link">مشاهده همه</a>
+                                        </div>
+                                        <div class="widget-content user-wishlist-dashboad">
+                                            <div class="horizontal-scroll">
+                                                <div class="item">
+                                                    <div class="item-area">
+                                                        <div class="product-image-area">
+                                                            <a href="#" class="product-image">
+                                                                <img src="/static/images/product/apple-iphone12.webp"
+                                                                     alt="profile" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                        <div class="product-detail-area">
+                                                            <h3 class="product-name">
+                                                                گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                                ظرفیت 128 گیگابایت
+                                                            </h3>
+                                                            <div class="wishlist-act">
+                                                                <a href="#" class="view">مشاهده</a>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#" class="remove">حذف</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <div class="widget-title">
+                                    آخرین سفارشات
+                                    <a href="#" class="widget-link">ویرایش اطلاعات</a>
+                                </div>
+                                <div class="widget-content">
+                                    <table class="table table-orders table-responsive">
+                                        <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">نام محصول</th>
+                                            <th scope="col">تاریخ ثبت سفارش</th>
+                                            <th scope="col">مبلغ قابل پرداخت</th>
+                                            <th scope="col">مبلغ کل</th>
+                                            <th scope="col">عملیات پرداخت</th>
+                                            <th scope="col">جزئیات</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="order-code">
+                                                گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                ظرفیت 128 گیگابایت
+                                            </td>
+                                            <td>1 آذر 1400</td>
+                                            <td>
+                                                <span class="price text-primary">9,700,000
+                                                    <span class="amount text-secondary">تومان</span>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="price text-primary">9,700,000
+                                                    <span class="amount text-secondary">تومان</span>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="success-payment">
+                                                    پرداخت موفق
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="details">
+                                                    <i class="fal fa-angle-left"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="errorq">برای دیدن این بخش ابتدا <a href="{% url 'login_page' %}">وارد</a> شوید</div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

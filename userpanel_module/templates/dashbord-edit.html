@@ -1,0 +1,295 @@
+{% extends 'user_layout.html' %}
+
+{% block title %}
+	ویرایش حساب کاربری
+{% endblock %}
+
+{% block content %}
+	<main class="content mt-0">
+        <div class="container">
+            <div class="row">
+                <nav class="sidebar">
+                    <div class="woocommerce-MyAccount-navigation">
+                        <div class="my-account-info">
+                            <a href="#" class="gravatar">
+                                <img src="/static/images/avatar/avatar.jpg" alt="avatar" class="img-fluid avatar">
+                            </a>
+                            <span class="username">حسن شجاعی</span>
+                        </div>
+                        <div class="my-account-menu">
+                            <div class="item-menu">
+                                <a href="#">
+                                    <i class="fal fa-store"></i>
+                                    فروشگاه
+                                </a>
+                            </div>
+                            <div class="item-menu">
+                                <a href="#">
+                                    <i class="fal fa-shopping-bag"></i>
+                                    سبد خرید من
+                                </a>
+                            </div>
+                        </div>
+                        <ul>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-dashboard is-active">
+                                <a href="#">
+                                    <i class="fal fa-tachometer"></i>
+                                    پیشخوان
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-orders">
+                                <a href="#">
+                                    <i class="fal fa-shopping-basket"></i>
+                                    سفارش ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-wishlists">
+                                <a href="#">
+                                    <i class="fal fa-heart"></i>
+                                    علاقه مندی ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-notify">
+                                <a href="#">
+                                    <i class="fal fa-file-alt"></i>
+                                    اطلاعیه ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-review">
+                                <a href="#">
+                                    <i class="fal fa-comment-dots"></i>
+                                    دیدگاه ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-notification">
+                                <a href="#">
+                                    <i class="fal fa-bell"></i>
+                                    اطلاع رسانی ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-edit-address">
+                                <a href="#">
+                                    <i class="fal fa-home"></i>
+                                    آدرس‌ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-edit-account">
+                                <a href="#">
+                                    <i class="fal fa-user"></i>
+                                    اطلاعات حساب كاربری
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-customer-logout">
+                                <a href="#">
+                                    <i class="fal fa-sign-in"></i>
+                                    خروج از سیستم
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="nav-btn nav-slider nav-profile">
+                    <span class="linee1"></span>
+                    <span class="linee2"></span>
+                    <span class="linee3"></span>
+                </div>
+                <div class="overlay"></div>
+                <div class="col-lg-3">
+                    <nav class="woocommerce-MyAccount-navigation MyAccount-navigation-none">
+                        <div class="my-account-info">
+                            <a href="#" class="gravatar">
+                                <img src="/static/images/avatar/avatar.jpg" alt="avatar" class="img-fluid avatar">
+                            </a>
+                            <span class="username">حسن شجاعی</span>
+                        </div>
+                        <div class="my-account-menu">
+                            <div class="item-menu">
+                                <a href="#">
+                                    <i class="fal fa-store"></i>
+                                    فروشگاه
+                                </a>
+                            </div>
+                            <div class="item-menu">
+                                <a href="#">
+                                    <i class="fal fa-shopping-bag"></i>
+                                    سبد خرید من
+                                </a>
+                            </div>
+                        </div>
+                        <ul>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-dashboard is-active">
+                                <a href="#">
+                                    <i class="fal fa-tachometer"></i>
+                                    پیشخوان
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-orders">
+                                <a href="#">
+                                    <i class="fal fa-shopping-basket"></i>
+                                    سفارش ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-wishlists">
+                                <a href="#">
+                                    <i class="fal fa-heart"></i>
+                                    علاقه مندی ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-notify">
+                                <a href="#">
+                                    <i class="fal fa-file-alt"></i>
+                                    اطلاعیه ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-review">
+                                <a href="#">
+                                    <i class="fal fa-comment-dots"></i>
+                                    دیدگاه ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-notification">
+                                <a href="#">
+                                    <i class="fal fa-bell"></i>
+                                    اطلاع رسانی ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-edit-address">
+                                <a href="#">
+                                    <i class="fal fa-home"></i>
+                                    آدرس‌ها
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-edit-account">
+                                <a href="#">
+                                    <i class="fal fa-user"></i>
+                                    اطلاعات حساب كاربری
+                                </a>
+                            </li>
+                            <li class="MyAccount-navigation-link MyAccount-navigation-link-customer-logout">
+                                <a href="#">
+                                    <i class="fal fa-sign-in"></i>
+                                    خروج از سیستم
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-9 col-xs-12">
+                    <div class="woocommerce-MyAccount-content">
+                        <header class="user-header">
+                            <div class="account-head-icon">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="logout">
+                                            <i class="fal fa-power-off"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="notify">
+                                            <i class="fal fa-bell"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="setting">
+                                            <i class="fal fa-cog"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="home">
+                                            <i class="fal fa-house-flood"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </header>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="widget">
+                                    <div class="widget-content account-edit d-block p-0">
+                                        <div class="checkout">
+                                            <form action="#" class="checkout-form woocommerce-checkout">
+                                                <div class="customer-details">
+                                                    <div class="woocommerce-billing-fields">
+                                                        <h3>جزئیات پرداخت</h3>
+                                                        <div class="woocommerce-billing-fields-field-wrapper">
+                                                            <!-- item -->
+                                                            <div class="form-row form-row-first validate-required">
+                                                                <label for="billing-first-name" class="first-name">نام
+                                                                    <abbr class="required" title="ضروری">*</abbr>
+                                                                </label>
+                                                                <span class="woocommerce-input-wrapper">
+                                                                    <input type="text" class="input-first-name" name="billing-first-name" id="billing-first-name">
+                                                                </span>
+                                                            </div>
+                                                            <!-- item -->
+                                                            <div class="form-row form-row-first validate-required">
+                                                                <label for="billing-last-name" class="last-name">نام خانوادگی
+                                                                    <abbr class="required" title="ضروری">*</abbr>
+                                                                </label>
+                                                                <span class="woocommerce-input-wrapper">
+                                                                    <input type="text" class="input-last-name" name="billing-last-name" id="billing-last-name">
+                                                                </span>
+                                                            </div>
+                                                            <!-- item -->
+                                                            <div class="form-row form-row-first validate-required">
+                                                                <label for="billing-display-name" class="display-name">نام نمایشی 
+                                                                    <abbr class="required" title="ضروری">*</abbr>
+                                                                </label>
+                                                                <span class="woocommerce-input-wrapper">
+                                                                    <input type="text" class="input-display-name" name="billing-display-name" id="billing-display-name">
+                                                                </span>
+                                                                <span>
+                                                                    <em>به این صورت اسم شما در حساب کاربری و نظرات دیده خواهد شد</em>
+                                                                </span>
+                                                            </div>
+                                                            <!-- item -->
+                                                            <div class="form-row form-row-first validate-required">
+                                                                <label for="billing-email" class="">آدرس ایمیل
+                                                                    <abbr class="required" title="ضروری">*</abbr>
+                                                                </label>
+                                                                <span class="woocommerce-input-wrapper">
+                                                                    <input type="text" class="input-billing-email" name="billing-email" id="billing-email" placeholder="vira@gmail.com">
+                                                                </span>
+                                                            </div>
+                                                            <!-- item -->
+                                                            <div class="form-row form-row-first validate-required">
+                                                                <legend>تغییر گذرواژه</legend>
+                                                                <label for="billing-password" class="">رمز عبور پیشین (در صورتی که قصد تغییر ندارید خالی بگذارید)
+                                                                </label>
+                                                                <span class="woocommerce-input-wrapper">
+                                                                    <input type="text" class="input-billing-password" name="billing-password" id="billing-password">
+                                                                </span>
+                                                            </div>
+                                                            <!-- item -->
+                                                            <div class="form-row form-row-first validate-required">
+                                                                <label for="billing-password" class="">تکرار رمز عبور 
+                                                                </label>
+                                                                <span class="woocommerce-input-wrapper">
+                                                                    <input type="text" class="input-billing-password" name="billing-password" id="billing-password">
+                                                                </span>
+                                                            </div>
+                                                            <!-- item -->
+                                                            <div class="form-row form-row-first validate-required">
+                                                                <label for="billing-phone" class="">تلفن
+                                                                    <abbr class="required" title="ضروری">*</abbr>
+                                                                </label>
+                                                                <span class="woocommerce-input-wrapper">
+                                                                    <input type="text" class="input-billing-phone" name="billing-phone" id="billing-phone" placeholder="0991*******">
+                                                                </span>
+                                                            </div>
+                                                            <button type="submit" class="mt-3 btn btn-secondary save-account" name="save-account-details">ذخیره تغییرات</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

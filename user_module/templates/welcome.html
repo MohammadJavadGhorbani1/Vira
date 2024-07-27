@@ -1,0 +1,38 @@
+{% extends 'user_layout.html' %}
+
+{% block title %}
+    خوش آمدید
+{% endblock %}
+
+{% block content %}
+    <main class="content mt-3">
+        <div class="container">
+            <div class="my-account-login">
+                <div class="col-lg-4 col-md-5 mx-auto">
+                    <div class="account-box">
+                        <section class="account-login-logo">
+                            <a href="#">
+                                <img src="/static/images/logo.png" alt="فروشگاه اینترنتی ویرا" class="img-fluid">
+                            </a>
+                        </section>
+                        <div class="title">به ویرا خوش آمدید</div>
+                        <div class="user-account-welcome">
+                            <i class="fal fa-user"></i>
+                        </div>
+                        <div class="made-account">
+                            <h2>حساب کاربری شما در ویرا ساخته شد</h2>
+                            <p>اکنون می‌توانید به صفحه‌ای که در آن بودید بازگردید و یا با تکمیل اطلاعات حساب کاربری
+                                خود به کلیه امکانات و
+                                سرویس‌های ویرا و سرویس‌های وابسته به آن دسترسی داشته باشید</p>
+                        </div>
+                        <form action="{% url 'home_page' %}">
+                            <div class="action-account">
+                                <button type="submit" class="loginBtn">بازگشت به صفحه اصلی</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

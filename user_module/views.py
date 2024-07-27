@@ -111,11 +111,12 @@ class RegisterConfirmView(View):
                     user.active_mobile = Random_Code.random_code()
                     user.token = get_random_string(70)
                     user.save()
+                    login(request , user)
                     try:
                         RegisterConfirmView.error_dict.pop(user.phone_number)
                     except:
                         pass
-                    return redirect('home_page')
+                    return redirect('welcome-page')
                 else:
                     if user.phone_number in RegisterConfirmView.error_dict.keys():
                         error_num = RegisterConfirmView.error_dict[user.phone_number] + 1
@@ -143,6 +144,12 @@ class RegisterConfirmView(View):
             # user.token = get_random_string(70)
             # user.save()
             raise Http404
+
+class Welcome(View):
+    def get(self, request):
+        return render(request , 'welcome.html' , context={
+
+        })
 
 
 class LoginView(View):

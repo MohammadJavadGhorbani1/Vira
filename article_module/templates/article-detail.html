@@ -159,12 +159,12 @@
                                                                     <div class="mt-4 mb-2 d-flex justify-content-between align-items-center font-size-12">
                                                                         <span>آیا این نظر برایتان مفید بود؟</span>
                                                                         <div>
-                                                                            <a href="#"
+                                                                            <a id="comments-likes" onclick="comment_likes({{ comment.id }} , true)"
                                                                                class="rounded text-black-50 b-solid-gray mx-1 px-2">
                                                                                 {{ comment.comment_like }}
                                                                                 <i class="fal fa-thumbs-up"></i>
                                                                             </a>
-                                                                            <a href="#"
+                                                                            <a id="comments-likes" onclick="comment_likes({{ comment.id }} , false)"
                                                                                class="rounded text-black-50 b-solid-gray mx-1 px-2">
                                                                                 {{ comment.comment_dislike }}
                                                                                 <i class="fal fa-thumbs-down ml-1"></i>
@@ -172,8 +172,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="row mx-2" dir="ltr">
-                                                                        <a href="#"
-                                                                           class="btn btn-outline-primary d-none d-md-flex align-items-center align-self-stretch px-3 rounded-pill font-size-14 mb-3">
+                                                                        <a class="btn btn-outline-primary d-none d-md-flex align-items-center align-self-stretch px-3 rounded-pill font-size-14 mb-3"
+                                                                           onclick="set_parent({{ comment.id }})">
                                         <span>
                                             <i class="fal fa-share"></i>
                                             پاسخ
@@ -184,47 +184,49 @@
                                                             </div>
                                                         </div>
                                                         {% for sub_comment in comment.articlecommentmodel_set.all %}
-                                                            <div class="row mb-2" dir="ltr">
-                                                                <div class="col-12 col-sm-11 p-3 bg-light mx-4 rounded">
-                                                                    <div class="comment-content">
-                                                                        <p class="logged-in-as rounded py-1 px-3 bg-white">
-                                                                            <a dir="rtl">
-                                                                                توسط
-                                                                                <strong> {{ sub_comment.user.username }} </strong>
-                                                                                در
-                                                                                تاریخ {{ sub_comment.create_date|jdate }}
-                                                                            </a>
-                                                                        </p>
-                                                                        <div class="description font-size-14">
-                                                                            <p>{{ sub_comment.text }}</p>
-                                                                        </div>
-                                                                        <div class="mt-4 mb-2 d-flex justify-content-between align-items-center font-size-12">
-                                                                            <span>آیا این نظر برایتان مفید بود؟</span>
-                                                                            <div>
-                                                                                <a href="#"
-                                                                                   class="rounded text-black-50 b-solid-gray mx-1 px-2">
-                                                                                    {{ sub_comment.comment_like }}
-                                                                                    <i class="fal fa-thumbs-up"></i>
+                                                            {% if sub_comment.is_publish %}
+                                                                <div class="row mb-2" dir="ltr">
+                                                                    <div class="col-12 col-sm-11 p-3 bg-light mx-4 rounded">
+                                                                        <div class="comment-content">
+                                                                            <p class="logged-in-as rounded py-1 px-3 bg-white">
+                                                                                <a dir="rtl">
+                                                                                    توسط
+                                                                                    <strong> {{ sub_comment.user.username }} </strong>
+                                                                                    در
+                                                                                    تاریخ {{ sub_comment.create_date|jdate }}
                                                                                 </a>
-                                                                                <a href="#"
-                                                                                   class="rounded text-black-50 b-solid-gray mx-1 px-2">
-                                                                                    {{ sub_comment.comment_dislike }}
-                                                                                    <i class="fal fa-thumbs-down ml-1"></i>
-                                                                                </a>
+                                                                            </p>
+                                                                            <div class="description font-size-14">
+                                                                                <p>{{ sub_comment.text }}</p>
                                                                             </div>
+                                                                            <div class="mt-4 mb-2 d-flex justify-content-between align-items-center font-size-12" dir="rtl">
+                                                                                <span>آیا این نظر برایتان مفید بود؟</span>
+                                                                                <div>
+                                                                                    <a id="comments-likes" onclick="subcomment_likes({{ sub_comment.id }} , true)"
+                                                                                       class="rounded text-black-50 b-solid-gray mx-1 px-2">
+                                                                                        {{ sub_comment.comment_like }}
+                                                                                        <i class="fal fa-thumbs-up"></i>
+                                                                                    </a>
+                                                                                    <a id="comments-likes" onclick="subcomment_likes({{ sub_comment.id }} , false)"
+                                                                                       class="rounded text-black-50 b-solid-gray mx-1 px-2">
+                                                                                        {{ sub_comment.comment_dislike }}
+                                                                                        <i class="fal fa-thumbs-down ml-1"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            {#                                                                        <div class="row mx-2" dir="ltr">#}
+                                                                            {#                                                                            <a href="#"#}
+                                                                            {#                                                                               class="btn btn-outline-primary d-none d-md-flex align-items-center align-self-stretch px-3 rounded-pill font-size-14 mb-3">#}
+                                                                            {#                                        <span>#}
+                                                                            {#                                            <i class="fal fa-share"></i>#}
+                                                                            {#                                            پاسخ#}
+                                                                            {#                                        </span>#}
+                                                                            {#                                                                            </a>#}
+                                                                            {#                                                                        </div>#}
                                                                         </div>
-{#                                                                        <div class="row mx-2" dir="ltr">#}
-{#                                                                            <a href="#"#}
-{#                                                                               class="btn btn-outline-primary d-none d-md-flex align-items-center align-self-stretch px-3 rounded-pill font-size-14 mb-3">#}
-{#                                        <span>#}
-{#                                            <i class="fal fa-share"></i>#}
-{#                                            پاسخ#}
-{#                                        </span>#}
-{#                                                                            </a>#}
-{#                                                                        </div>#}
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            {% endif %}
                                                         {% endfor %}
 
                                                     {% endfor %}
@@ -235,23 +237,29 @@
                                 </div>
                             </div>
                             {% if request.user.is_authenticated %}
-                                <div class="block-content-wrap">
-                                    <form action="#" class="comment-reply-form">
-                                        <p class="logged-in-as">
-                                            <a href="#">
-                                                با عنوان {{ user.username }} وارد شده‌اید
-                                            </a>
-                                            .
-                                            <a href="{% url 'logout-page' %}">
-                                                خارج می‌شوید؟
-                                            </a>
-                                        </p>
-                                        <div class="form-group">
+                                <div class="block-content-wrap" , id="scroll-to">
+                                    {#                                    <form action="#" class="comment-reply-form">#}
+                                    <p class="logged-in-as">
+                                        <a href="#">
+                                            با عنوان {{ user.username }} وارد شده‌اید
+                                        </a>
+                                        .
+                                        <a href="{% url 'logout-page' %}">
+                                            خارج می‌شوید؟
+                                        </a>
+                                    </p>
+{#                                    {% if success %}#}
+{#                                    	<div class="successq">با تکشر از شما کامنتتان ثبت شد</div>#}
+{#                                    {% endif %}#}
+                                    <input type="hidden" id="set_parent_comment" value="">
+                                    <div class="form-group">
                                         <textarea id="comment" name="comment" class="form-control" cols="45"
                                                   placeholder="نظر خود را بنوسید" rows="7" required=""></textarea>
-                                            <button type="submit" class="btn btn-dark send-question">ارسال</button>
-                                        </div>
-                                    </form>
+                                        <button type="submit" class="btn btn-dark send-question"
+                                                onclick="send_comment({{ article.id }})" style="margin-top: 10px">ارسال
+                                        </button>
+                                    </div>
+                                    {#                                    </form>#}
                                 </div>
                             {% else %}
                                 <div class="alert-warning" style="text-align: center">برای نظر دادن ابتدا باید <a

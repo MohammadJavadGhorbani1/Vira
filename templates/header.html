@@ -21,7 +21,7 @@
                                 <div class="profile-detail">
                                     <div class="d-flex align-items-center">
                                         <div class="avatar ml-3">
-                                            <img src="/static/images/avatar/avatar.jpg" class="img-fluid" alt="avatar">
+                                            <img src="{% if user.profile_img %}{{ user.profile_img.url }}{% else %}/static/images/avatar/avatar.jpg{% endif %}" class="img-fluid" alt="avatar">
                                         </div>
                                         <div class="profile-info text-right">
                                             <a>{{ user.username }}</a>
@@ -56,7 +56,7 @@
                                 </div>
                                 <ul>
                                     <li class="account-item">
-                                        <a href="#">
+                                        <a href="{% url 'main-dashbord-page' %}">
                                             <i class="fal fa-user-plus"></i>
                                             حساب کاربری
                                         </a>
@@ -304,7 +304,7 @@
                     {% endfor %}
                     <li class="level-0 menuItem">
                         <a href="{% url 'ask-anwser-page' %}">
-                            <i class="fal fa-certificate"></i>پرسش های متداول
+                            <i class="fal fa-question-circle" style="padding-left: 5px"></i>پرسش های متداول
                         </a>
                     </li>
                 </ul>
