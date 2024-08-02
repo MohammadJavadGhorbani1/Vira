@@ -1,0 +1,97 @@
+{% load render_partial %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% include 'header_refrense.html' %}
+    {% block header_links %}
+
+    {% endblock %}
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+
+
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="/static/css/plugins/nice-select.css">
+    <link rel="stylesheet" href="/static/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/static/css/plugins/sweetalert2.min.css">
+    <!-- mainStyle -->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
+
+</head>
+<body>
+
+    
+<main class="content mt-0">
+    <div class="container">
+        <div class="row">
+            {% render_partial 'userpanel_module.views.basedashbord' %}
+            <div class="col-lg-9 col-xs-12">
+                <div class="woocommerce-MyAccount-content">
+                    <header class="user-header">
+                        <div class="account-head-icon">
+                            <ul>
+                                <li>
+                                    <a href="{% url 'logout-page' %}" class="logout">
+                                        <i class="fal fa-power-off"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'dashbord-notifs-page' %}" class="notify">
+                                        <i class="fal fa-bell"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="setting">
+                                        <i class="fal fa-cog"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'home_page' %}" class="home">
+                                        <i class="fal fa-house-flood"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </header>
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+            </div>
+            {#                <div class="errorq">برای دیدن این بخش ابتدا <a href="{% url 'login_page' %}">وارد</a> شوید</div>#}
+        </div>
+    </div>
+</main>
+
+<!-- JS Global Compulsory -->
+<script src="/static/js/plugins/jquery-3.6.0.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/plugins/popper.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script src="/static/js/plugins/jquery.nice-select.min.js"></script>
+<script src="/static/js/plugins/swiper-bundle.min.js"></script>
+<script src="/static/js/plugins/countdown.min.js"></script>
+<script src="/static/js/plugins/jquery.countdown.min.js"></script>
+<script src="/static/js/plugins/sweetalert2.all.min.js"></script>
+<!-- JS Template -->
+<script src="/static/js/main.js"></script>
+<script src="/static/js/custom.js"></script>
+
+{% include 'footer_refrense.html' %}
+{% block footer_links %}
+
+{% endblock %}
+
+</body>
+</html>

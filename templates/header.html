@@ -288,7 +288,7 @@
                     {% for category in categories %}
                         <li class="level-0 menuItem">
                             <a href="#" class="iconUnderMenu">
-                                <i class="{{ category.icon }}"></i> {{ category.title }}
+                                <i class="fal {{ category.icon }}"></i> {{ category.title }}
                             </a>
                             <ul class="sub-menu">
                                 {% for part in category.productcategory_set.all %}

@@ -1,0 +1,42 @@
+{% extends 'dashbord-layout.html' %}
+
+{% block title %}
+    اطلاع رسانی ها
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div class="woocommerce-MyAccount-content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="notification-list">
+                            {% for notif_product in notif_products %}
+                                <div class="item">
+                                    <div class="item-area">
+                                        <div class="product-image-area">
+                                            <a href="#">
+                                                <img src="{{ notif_product.product.image.url }}"
+                                                     alt="product" class="img-fluid">
+                                            </a>
+                                        </div>
+                                        <div class="product-detail-area">
+                                            <h3 class="product-name">{{ notif_product.product.title }}</h3>
+                                            <span>محصول موجود شد!</span>
+                                            <ul>
+                                                <li class="edit-alert">
+                                                    <a href="{% url 'product_details' notif_product.product.slug %}">مشاهده</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

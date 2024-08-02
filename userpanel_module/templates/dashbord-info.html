@@ -1,0 +1,168 @@
+{% extends 'dashbord-layout.html' %}
+{% load poll_extras %}
+
+{% block header_links %}
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="/static/css/plugins/nice-select.css">
+    <link rel="stylesheet" href="/static/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/static/css/plugins/sweetalert2.min.css">
+    <!-- mainStyle -->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
+{% endblock %}
+
+{% block title %}
+    حساب کاربری
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div class="woocommerce-MyAccount-content">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="widget">
+                            <div class="widget-title">
+                                اطلاعات شخصی
+                                <a href="{% url 'edit-dashbord-page' %}" class="widget-link">ویرایش اطلاعات</a>
+                            </div>
+                            <div class="widget-content user-detail-dashboad">
+                                <div class="widget-content-item">
+                                    <strong>نام و نام خانوادگی</strong>
+                                    <span>{{ user.first_name }} {{ user.last_name }}</span>
+                                </div>
+                                <div class="widget-content-item">
+                                    <strong>نام کاربری</strong>
+                                    <span>{{ user.username }}</span>
+                                </div>
+                                <div class="widget-content-item">
+                                    <strong>شماره موبایل</strong>
+                                    <span>{{ user.phone_number }}</span>
+                                </div>
+                                <div class="widget-content-item">
+                                    <strong>ایمیل</strong>
+                                    <span>{% if user.email %}{{ user.email }}{% else %}ندارید{% endif %} </span>
+                                </div>
+                                <div class="widget-content-item">
+                                    <strong>عضویت</strong>
+                                    <span>{{ user.date_joined|jdate }}</span>
+                                </div>
+                                {#                                            <div class="widget-content-item">#}
+                                {#                                                <strong>کد پستی</strong>#}
+                                {#                                                <span>9419512345</span>#}
+                                {#                                            </div>#}
+                                {#                                            <div class="widget-content-item">#}
+                                {#                                                <strong>آدرس</strong>#}
+                                {#                                                <span>خراسان شمالی، بجنورد</span>#}
+                                {#                                            </div>#}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="widget">
+                            <div class="widget-title">
+                                آخرین علاقه مندی ها
+                                <a href="{% url 'dashbord-wishlist-page' %}" class="widget-link">مشاهده همه</a>
+                            </div>
+                            <div class="widget-content user-wishlist-dashboad">
+                                <div class="horizontal-scroll">
+                                    {% for wishlist_product in wishlist_products %}
+                                        <div class="item">
+                                            <div class="item-area">
+                                                <div class="product-image-area">
+                                                    <a href="{% url 'product_details' wishlist_product.product.slug %}" class="product-image">
+                                                        <img src="{{ wishlist_product.product.image.url }}"
+                                                             alt="profile" class="img-fluid">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <h3 class="product-name">{{ wishlist_product.product.title }}</h3>
+                                                    <div class="wishlist-act">
+                                                        <a href="{% url 'product_details' wishlist_product.product.slug %}" class="view">مشاهده</a>
+                                                        <div class="add-to-wishlist">
+                                                            <a href="#" class="remove" onclick="delete_wishlist({{ wishlist_product.product_id }})">حذف</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="widget-title">
+                        آخرین سفارشات
+                        <a href="#" class="widget-link">ویرایش اطلاعات</a>
+                    </div>
+                    <div class="widget-content">
+                        <table class="table table-orders table-responsive">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">نام محصول</th>
+                                <th scope="col">تاریخ ثبت سفارش</th>
+                                <th scope="col">مبلغ قابل پرداخت</th>
+                                <th scope="col">مبلغ کل</th>
+                                <th scope="col">عملیات پرداخت</th>
+                                <th scope="col">جزئیات</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="order-code">
+                                    گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                    ظرفیت 128 گیگابایت
+                                </td>
+                                <td>1 آذر 1400</td>
+                                <td>
+                                                <span class="price text-primary">9,700,000
+                                                    <span class="amount text-secondary">تومان</span>
+                                                </span>
+                                </td>
+                                <td>
+                                                <span class="price text-primary">9,700,000
+                                                    <span class="amount text-secondary">تومان</span>
+                                                </span>
+                                </td>
+                                <td>
+                                    <div class="success-payment">
+                                        پرداخت موفق
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#" class="details">
+                                        <i class="fal fa-angle-left"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer_links %}
+    <!-- JS Global Compulsory -->
+    <script src="/static/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/plugins/popper.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="/static/js/plugins/jquery.nice-select.min.js"></script>
+    <script src="/static/js/plugins/swiper-bundle.min.js"></script>
+    <script src="/static/js/plugins/countdown.min.js"></script>
+    <script src="/static/js/plugins/jquery.countdown.min.js"></script>
+    <script src="/static/js/plugins/sweetalert2.all.min.js"></script>
+    <!-- JS Template -->
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/custom.js"></script>
+{% endblock %}

@@ -6,7 +6,7 @@ register = template.Library()
 
 @register.filter('jdate')
 def jalalidate(value):
-    return date2jalali(value).strftime("%d  %B  %Y")
+    return date2jalali(value)
 
 @register.filter('jtime')
 def jalalidatetime(value):

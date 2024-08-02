@@ -15,678 +15,547 @@
 {% endblock %}
 
 {% block content %}
-    <main class="content mt-3" style="transform: none;">
-        <div class="container" style="transform: none;">
+    <main class="content mt-3">
+        <div class="container">
             <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">خانه</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'home_page' %}">خانه</a></li>
                     <li class="breadcrumb-item active" aria-current="page">دیجیتال</li>
                 </ol>
             </nav>
-            <div class="sidebar-listing" style="transform: none;">
-                <div class="row mb-5" style="transform: none;">
-                    <div class="col-lg-3 sticky-sidebar"
-                         style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
-
-                        <div class="theiaStickySidebar"
-                             style="padding-top: 1px; padding-bottom: 1px; position: static; transform: none;">
-                            <div class="sidebar-widget sidebar-widget-filter">
-                                <div class="widget woocommerce widget-price-filter">
-                                    <div class="widget-title">فیلتر براساس قیمت :</div>
-                                    <div class="widget-content">
-                                        <form action="">
-                                            <div class="mt-5 mb-4">
-                                                <div id="slider-non-linear-step"
-                                                     class="noUi-target noUi-rtl noUi-horizontal">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect"
-                                                                 style="transform: translate(0%, 0px) scale(1, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin"
-                                                             style="transform: translate(1000%, 0px); z-index: 5;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0"
-                                                                 tabindex="0" role="slider"
-                                                                 aria-orientation="horizontal" aria-valuemin="0.0"
-                                                                 aria-valuemax="19000000.0" aria-valuenow="0.0"
-                                                                 aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="noUi-origin"
-                                                             style="transform: translate(0%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-upper" data-handle="1"
-                                                                 tabindex="0" role="slider"
-                                                                 aria-orientation="horizontal" aria-valuemin="0.0"
-                                                                 aria-valuemax="19000000.0" aria-valuenow="19000000.0"
-                                                                 aria-valuetext="19,000,000">
-                                                                <div class="noUi-touch-area"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+            <div class="sidebar-listing">
+                <div class="row mb-5">
+                    <div class="col-lg-3 sticky-sidebar">
+                        <div class="sidebar-widget sidebar-widget-filter">
+                            <div class="widget woocommerce widget-price-filter">
+                                <div class="widget-title">فیلتر براساس قیمت :</div>
+                                <div class="widget-content">
+                                    <form action="">
+                                        <div class="mt-5 mb-4">
+                                            <div id="slider-non-linear-step"></div>
+                                        </div>
+                                        <div class="filter-range mt-2 mb-2">
+                                            <div class="mt-2">
+                                                <div class="filter-content">
+                                                    <button class="btn btn-range applyPriceFilterBtn">
+                                                        صافی
+                                                    </button>
+                                                    <span>قیمت: از</span>
+                                                    <span class="example-val" id="slider-non-linear-step-value"></span>
+                                                    تومان
                                                 </div>
                                             </div>
-                                            <div class="filter-range mt-2 mb-2">
-                                                <div class="mt-2">
-                                                    <div class="filter-content">
-                                                        <button class="btn btn-range applyPriceFilterBtn">
-                                                            صافی
-                                                        </button>
-                                                        <span>قیمت: از</span>
-                                                        <span class="example-val" id="slider-non-linear-step-value">0 - 19,000,000</span>
-                                                        تومان
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="widget woocommerce widget-product-categories">
-                                    <div class="accr-header" data-toggle="collapse" data-target="#headingOne"
-                                         aria-expanded="false" aria-controls="headingOne">
-                                        <a href="#cat">دسته بندی آیفون تصویری
-                                            <i class="fal fa-angle-down"></i>
-                                        </a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <div class="product-categories">
-                                            <div class="collapse" id="headingOne">
-                                                <div class="accr-content">
-                                                    <ul>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">ترانس</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">تک یا جا جاسوئیچی</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">دیکودر</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">قفل</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">مانیتور</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">پنل</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">پکیج 1 واحدی</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">پکیج 2 واحدی</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                            </div>
+                            <div class="widget woocommerce widget-product-categories">
+                                <div class="accr-header" data-toggle="collapse" data-target="#headingOne"
+                                     aria-expanded="false" aria-controls="headingOne">
+                                    <a href="#cat">دسته بندی آیفون تصویری
+                                        <i class="fal fa-angle-down"></i>
+                                    </a>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="product-categories">
+                                        <div class="collapse" id="headingOne">
+                                            <div class="accr-content">
+                                                <ul>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">ترانس</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">تک یا جا جاسوئیچی</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">دیکودر</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">قفل</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">مانیتور</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">پنل</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">پکیج 1 واحدی</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">پکیج 2 واحدی</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="widget woocommerce widget-product-categories">
-                                    <div class="accr-header" data-toggle="collapse" data-target="#headingTwo"
-                                         aria-expanded="false" aria-controls="headingTwo">
-                                        <a href="#cat">محصولات جک برقی
-                                            <i class="fal fa-angle-down"></i>
-                                        </a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <div class="product-categories">
-                                            <div class="collapse" id="headingTwo">
-                                                <div class="accr-content">
-                                                    <ul>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">ترانس</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">تک یا جا جاسوئیچی</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">دیکودر</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">قفل</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                            </div>
+                            <div class="widget woocommerce widget-product-categories">
+                                <div class="accr-header" data-toggle="collapse" data-target="#headingTwo"
+                                     aria-expanded="false" aria-controls="headingTwo">
+                                    <a href="#cat">محصولات جک برقی
+                                        <i class="fal fa-angle-down"></i>
+                                    </a>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="product-categories">
+                                        <div class="collapse" id="headingTwo">
+                                            <div class="accr-content">
+                                                <ul>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">ترانس</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">تک یا جا جاسوئیچی</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">دیکودر</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">قفل</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="widget woocommerce widget-product-categories">
-                                    <div class="accr-header" data-toggle="collapse" data-target="#headingThree"
-                                         aria-expanded="false" aria-controls="headingThree">
-                                        <a href="#cat">شرکت سازنده
-                                            <i class="fal fa-angle-down"></i>
-                                        </a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <div class="product-categories">
-                                            <div class="collapse" id="headingThree">
-                                                <div class="accr-content">
-                                                    <ul>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">ترانس</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">تک یا جا جاسوئیچی</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">دیکودر</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">قفل</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                            </div>
+                            <div class="widget woocommerce widget-product-categories">
+                                <div class="accr-header" data-toggle="collapse" data-target="#headingThree"
+                                     aria-expanded="false" aria-controls="headingThree">
+                                    <a href="#cat">شرکت سازنده
+                                        <i class="fal fa-angle-down"></i>
+                                    </a>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="product-categories">
+                                        <div class="collapse" id="headingThree">
+                                            <div class="accr-content">
+                                                <ul>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">ترانس</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">تک یا جا جاسوئیچی</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">دیکودر</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">قفل</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="widget woocommerce widget-product-categories">
-                                    <div class="accr-header" data-toggle="collapse" data-target="#headingFour"
-                                         aria-expanded="false" aria-controls="headingFour">
-                                        <a href="#cat">محصول کشور
-                                            <i class="fal fa-angle-down"></i>
-                                        </a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <div class="product-categories">
-                                            <div class="collapse" id="headingFour">
-                                                <div class="accr-content">
-                                                    <ul>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">ترانس</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">تک یا جا جاسوئیچی</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">دیکودر</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="cat-item">
-                                                            <a href="#remember">
-                                                                <div class="form-auth-row">
-                                                                    <label for="#" class="ui-checkbox">
-                                                                        <input type="checkbox" value="1" name="login"
-                                                                               id="remember">
-                                                                        <span class="ui-checkbox-check"></span>
-                                                                    </label>
-                                                                    <label class="remember-me">قفل</label>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                            </div>
+                            <div class="widget woocommerce widget-product-categories">
+                                <div class="accr-header" data-toggle="collapse" data-target="#headingFour"
+                                     aria-expanded="false" aria-controls="headingFour">
+                                    <a href="#cat">محصول کشور
+                                        <i class="fal fa-angle-down"></i>
+                                    </a>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="product-categories">
+                                        <div class="collapse" id="headingFour">
+                                            <div class="accr-content">
+                                                <ul>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">ترانس</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">تک یا جا جاسوئیچی</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">دیکودر</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="cat-item">
+                                                        <a href="#remember">
+                                                            <div class="form-auth-row">
+                                                                <label for="#" class="ui-checkbox">
+                                                                    <input type="checkbox" value="1" name="login"
+                                                                           id="remember">
+                                                                    <span class="ui-checkbox-check"></span>
+                                                                </label>
+                                                                <label class="remember-me">قفل</label>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="widget woocommerce widget-product-categories">
-                                    <div class="sliderMoments pb-4">
-                                        <div class="slider-heading">
-                                            <h5>پیشنهاد لحظه ای</h5>
-                                        </div>
-                                        <div class="slider-content">
-                                            <div class="realtime-slider-wrap">
-                                                <div class="swiper mySwiper slider-moments swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl">
-                                                    <div class="swiper-progress-bar active">
-                                                        <span class="slide-progress-bar"></span>
-                                                    </div>
-                                                    <div class="swiper-wrapper" id="swiper-wrapper-35e10cde1b46baaa0"
-                                                         aria-live="off"
-                                                         style="transform: translate3d(1144px, 0px, 0px); transition-duration: 500ms;">
-                                                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
-                                                             data-swiper-slide-index="4" role="group" aria-label="5 / 5"
-                                                             style="width: 286px;">
-                                                            <div class="item">
-                                                                <div class="realtime-product">
-                                                                    <div class="is-image product-image">
-                                                                        <a href="#">
-                                                                            <img src="/static/images/sliderP/galaxys8-plus.jpg"
-                                                                                 alt="sliderProduct">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="product-detail-area">
-                                                                        <h3 class="product-name">
-                                                                            <a href="#">جاروبرقی فيليپس مدل
-                                                                                FC9176/01</a>
-                                                                        </h3>
-                                                                    </div>
-                                                                    <div class="realtime-info">
-                                                                        <div class="realtime-price d-inline-block">
-                                                                            <div class="price">
-                                                                                <del>
-                                                                                <span class="price-amount">71,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </del>
-                                                                                <ins>
-                                                                                <span class="price-amount">69,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </ins>
-                                                                            </div>
-                                                                        </div>
-                                                                        <a href="#" class="realtime-more">
-                                                                            <i class="fal fa-long-arrow-alt-left"></i>
-                                                                        </a>
-                                                                    </div>
+                            </div>
+                            <div class="widget woocommerce widget-product-categories">
+                                <div class="sliderMoments pb-4">
+                                    <div class="slider-heading">
+                                        <h5>پیشنهاد لحظه ای</h5>
+                                    </div>
+                                    <div class="slider-content">
+                                        <div class="realtime-slider-wrap">
+                                            <div class="swiper mySwiper slider-moments">
+                                                <div class="swiper-progress-bar">
+                                                    <span class="slide-progress-bar"></span>
+                                                </div>
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="item">
+                                                            <div class="realtime-product">
+                                                                <div class="is-image product-image">
+                                                                    <a href="#">
+                                                                        <img src="/static/images/sliderP/camera.jpg"
+                                                                             alt="sliderProduct">
+                                                                    </a>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="swiper-slide" data-swiper-slide-index="0"
-                                                             role="group" aria-label="1 / 5" style="width: 286px;">
-                                                            <div class="item">
-                                                                <div class="realtime-product">
-                                                                    <div class="is-image product-image">
-                                                                        <a href="#">
-                                                                            <img src="/static/images/sliderP/camera.jpg"
-                                                                                 alt="sliderProduct">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="product-detail-area">
-                                                                        <h3 class="product-name">
-                                                                            <a href="#">جاروبرقی فيليپس مدل
-                                                                                FC9176/01</a>
-                                                                        </h3>
-                                                                    </div>
-                                                                    <div class="realtime-info">
-                                                                        <div class="realtime-price d-inline-block">
-                                                                            <div class="price">
-                                                                                <del>
-                                                                                <span class="price-amount">71,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </del>
-                                                                                <ins>
-                                                                                <span class="price-amount">69,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </ins>
-                                                                            </div>
-                                                                        </div>
-                                                                        <a href="#" class="realtime-more">
-                                                                            <i class="fal fa-long-arrow-alt-left"></i>
-                                                                        </a>
-                                                                    </div>
+                                                                <div class="product-detail-area">
+                                                                    <h3 class="product-name">
+                                                                        <a href="#">جاروبرقی فيليپس مدل FC9176/01</a>
+                                                                    </h3>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="swiper-slide" data-swiper-slide-index="1"
-                                                             role="group" aria-label="2 / 5" style="width: 286px;">
-                                                            <div class="item">
-                                                                <div class="realtime-product">
-                                                                    <div class="is-image product-image">
-                                                                        <a href="#">
-                                                                            <img src="/static/images/sliderP/laptopaleen.jpg"
-                                                                                 alt="sliderProduct">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="product-detail-area">
-                                                                        <h3 class="product-name">
-                                                                            <a href="#">جاروبرقی فيليپس مدل
-                                                                                FC9176/01</a>
-                                                                        </h3>
-                                                                    </div>
-                                                                    <div class="realtime-info">
-                                                                        <div class="realtime-price d-inline-block">
-                                                                            <div class="price">
-                                                                                <del>
+                                                                <div class="realtime-info">
+                                                                    <div class="realtime-price d-inline-block">
+                                                                        <div class="price">
+                                                                            <del>
                                                                                 <span class="price-amount">71,000,000
                                                                                     <span class="price-currencySymbol">تومان</span>
                                                                                 </span>
-                                                                                </del>
-                                                                                <ins>
+                                                                            </del>
+                                                                            <ins>
                                                                                 <span class="price-amount">69,000,000
                                                                                     <span class="price-currencySymbol">تومان</span>
                                                                                 </span>
-                                                                                </ins>
-                                                                            </div>
+                                                                            </ins>
                                                                         </div>
-                                                                        <a href="#" class="realtime-more">
-                                                                            <i class="fal fa-long-arrow-alt-left"></i>
-                                                                        </a>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="swiper-slide swiper-slide-prev"
-                                                             data-swiper-slide-index="2" role="group" aria-label="3 / 5"
-                                                             style="width: 286px;">
-                                                            <div class="item">
-                                                                <div class="realtime-product">
-                                                                    <div class="is-image product-image">
-                                                                        <a href="#">
-                                                                            <img src="/static/images/sliderP/iphone8.jpg"
-                                                                                 alt="sliderProduct">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="product-detail-area">
-                                                                        <h3 class="product-name">
-                                                                            <a href="#">جاروبرقی فيليپس مدل
-                                                                                FC9176/01</a>
-                                                                        </h3>
-                                                                    </div>
-                                                                    <div class="realtime-info">
-                                                                        <div class="realtime-price d-inline-block">
-                                                                            <div class="price">
-                                                                                <del>
-                                                                                <span class="price-amount">71,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </del>
-                                                                                <ins>
-                                                                                <span class="price-amount">69,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </ins>
-                                                                            </div>
-                                                                        </div>
-                                                                        <a href="#" class="realtime-more">
-                                                                            <i class="fal fa-long-arrow-alt-left"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="swiper-slide swiper-slide-active"
-                                                             data-swiper-slide-index="3" role="group" aria-label="4 / 5"
-                                                             style="width: 286px;">
-                                                            <div class="item">
-                                                                <div class="realtime-product">
-                                                                    <div class="is-image product-image">
-                                                                        <a href="#">
-                                                                            <img src="/static/images/sliderP/iphone12.webp"
-                                                                                 alt="sliderProduct">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="product-detail-area">
-                                                                        <h3 class="product-name">
-                                                                            <a href="#">جاروبرقی فيليپس مدل
-                                                                                FC9176/01</a>
-                                                                        </h3>
-                                                                    </div>
-                                                                    <div class="realtime-info">
-                                                                        <div class="realtime-price d-inline-block">
-                                                                            <div class="price">
-                                                                                <del>
-                                                                                <span class="price-amount">71,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </del>
-                                                                                <ins>
-                                                                                <span class="price-amount">69,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </ins>
-                                                                            </div>
-                                                                        </div>
-                                                                        <a href="#" class="realtime-more">
-                                                                            <i class="fal fa-long-arrow-alt-left"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="swiper-slide swiper-slide-next"
-                                                             data-swiper-slide-index="4" role="group" aria-label="5 / 5"
-                                                             style="width: 286px;">
-                                                            <div class="item">
-                                                                <div class="realtime-product">
-                                                                    <div class="is-image product-image">
-                                                                        <a href="#">
-                                                                            <img src="/static/images/sliderP/galaxys8-plus.jpg"
-                                                                                 alt="sliderProduct">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="product-detail-area">
-                                                                        <h3 class="product-name">
-                                                                            <a href="#">جاروبرقی فيليپس مدل
-                                                                                FC9176/01</a>
-                                                                        </h3>
-                                                                    </div>
-                                                                    <div class="realtime-info">
-                                                                        <div class="realtime-price d-inline-block">
-                                                                            <div class="price">
-                                                                                <del>
-                                                                                <span class="price-amount">71,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </del>
-                                                                                <ins>
-                                                                                <span class="price-amount">69,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </ins>
-                                                                            </div>
-                                                                        </div>
-                                                                        <a href="#" class="realtime-more">
-                                                                            <i class="fal fa-long-arrow-alt-left"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="swiper-slide swiper-slide-duplicate"
-                                                             data-swiper-slide-index="0" role="group" aria-label="1 / 5"
-                                                             style="width: 286px;">
-                                                            <div class="item">
-                                                                <div class="realtime-product">
-                                                                    <div class="is-image product-image">
-                                                                        <a href="#">
-                                                                            <img src="/static/images/sliderP/camera.jpg"
-                                                                                 alt="sliderProduct">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="product-detail-area">
-                                                                        <h3 class="product-name">
-                                                                            <a href="#">جاروبرقی فيليپس مدل
-                                                                                FC9176/01</a>
-                                                                        </h3>
-                                                                    </div>
-                                                                    <div class="realtime-info">
-                                                                        <div class="realtime-price d-inline-block">
-                                                                            <div class="price">
-                                                                                <del>
-                                                                                <span class="price-amount">71,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </del>
-                                                                                <ins>
-                                                                                <span class="price-amount">69,000,000
-                                                                                    <span class="price-currencySymbol">تومان</span>
-                                                                                </span>
-                                                                                </ins>
-                                                                            </div>
-                                                                        </div>
-                                                                        <a href="#" class="realtime-more">
-                                                                            <i class="fal fa-long-arrow-alt-left"></i>
-                                                                        </a>
-                                                                    </div>
+                                                                    <a href="#" class="realtime-more">
+                                                                        <i class="fal fa-long-arrow-alt-left"></i>
+                                                                    </a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="swiper-button-next" tabindex="0" role="button"
-                                                         aria-label="Next slide"
-                                                         aria-controls="swiper-wrapper-35e10cde1b46baaa0"></div>
-                                                    <div class="swiper-button-prev" tabindex="0" role="button"
-                                                         aria-label="Previous slide"
-                                                         aria-controls="swiper-wrapper-35e10cde1b46baaa0"></div>
-                                                    <span class="swiper-notification" aria-live="assertive"
-                                                          aria-atomic="true"></span></div>
+                                                    <div class="swiper-slide">
+                                                        <div class="item">
+                                                            <div class="realtime-product">
+                                                                <div class="is-image product-image">
+                                                                    <a href="#">
+                                                                        <img src="/static/images/sliderP/laptopaleen.jpg"
+                                                                             alt="sliderProduct">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-detail-area">
+                                                                    <h3 class="product-name">
+                                                                        <a href="#">جاروبرقی فيليپس مدل FC9176/01</a>
+                                                                    </h3>
+                                                                </div>
+                                                                <div class="realtime-info">
+                                                                    <div class="realtime-price d-inline-block">
+                                                                        <div class="price">
+                                                                            <del>
+                                                                                <span class="price-amount">71,000,000
+                                                                                    <span class="price-currencySymbol">تومان</span>
+                                                                                </span>
+                                                                            </del>
+                                                                            <ins>
+                                                                                <span class="price-amount">69,000,000
+                                                                                    <span class="price-currencySymbol">تومان</span>
+                                                                                </span>
+                                                                            </ins>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="#" class="realtime-more">
+                                                                        <i class="fal fa-long-arrow-alt-left"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="item">
+                                                            <div class="realtime-product">
+                                                                <div class="is-image product-image">
+                                                                    <a href="#">
+                                                                        <img src="/static/images/sliderP/iphone8.jpg"
+                                                                             alt="sliderProduct">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-detail-area">
+                                                                    <h3 class="product-name">
+                                                                        <a href="#">جاروبرقی فيليپس مدل FC9176/01</a>
+                                                                    </h3>
+                                                                </div>
+                                                                <div class="realtime-info">
+                                                                    <div class="realtime-price d-inline-block">
+                                                                        <div class="price">
+                                                                            <del>
+                                                                                <span class="price-amount">71,000,000
+                                                                                    <span class="price-currencySymbol">تومان</span>
+                                                                                </span>
+                                                                            </del>
+                                                                            <ins>
+                                                                                <span class="price-amount">69,000,000
+                                                                                    <span class="price-currencySymbol">تومان</span>
+                                                                                </span>
+                                                                            </ins>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="#" class="realtime-more">
+                                                                        <i class="fal fa-long-arrow-alt-left"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="item">
+                                                            <div class="realtime-product">
+                                                                <div class="is-image product-image">
+                                                                    <a href="#">
+                                                                        <img src="/static/images/sliderP/iphone12.webp"
+                                                                             alt="sliderProduct">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-detail-area">
+                                                                    <h3 class="product-name">
+                                                                        <a href="#">جاروبرقی فيليپس مدل FC9176/01</a>
+                                                                    </h3>
+                                                                </div>
+                                                                <div class="realtime-info">
+                                                                    <div class="realtime-price d-inline-block">
+                                                                        <div class="price">
+                                                                            <del>
+                                                                                <span class="price-amount">71,000,000
+                                                                                    <span class="price-currencySymbol">تومان</span>
+                                                                                </span>
+                                                                            </del>
+                                                                            <ins>
+                                                                                <span class="price-amount">69,000,000
+                                                                                    <span class="price-currencySymbol">تومان</span>
+                                                                                </span>
+                                                                            </ins>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="#" class="realtime-more">
+                                                                        <i class="fal fa-long-arrow-alt-left"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="item">
+                                                            <div class="realtime-product">
+                                                                <div class="is-image product-image">
+                                                                    <a href="#">
+                                                                        <img src="/static/images/sliderP/galaxys8-plus.jpg"
+                                                                             alt="sliderProduct">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-detail-area">
+                                                                    <h3 class="product-name">
+                                                                        <a href="#">جاروبرقی فيليپس مدل FC9176/01</a>
+                                                                    </h3>
+                                                                </div>
+                                                                <div class="realtime-info">
+                                                                    <div class="realtime-price d-inline-block">
+                                                                        <div class="price">
+                                                                            <del>
+                                                                                <span class="price-amount">71,000,000
+                                                                                    <span class="price-currencySymbol">تومان</span>
+                                                                                </span>
+                                                                            </del>
+                                                                            <ins>
+                                                                                <span class="price-amount">69,000,000
+                                                                                    <span class="price-currencySymbol">تومان</span>
+                                                                                </span>
+                                                                            </ins>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="#" class="realtime-more">
+                                                                        <i class="fal fa-long-arrow-alt-left"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-button-next"></div>
+                                                <div class="swiper-button-prev"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -750,14 +619,14 @@
                                                href="#Bestselling" role="tab" aria-controls="Bestselling"
                                                aria-selected="false">پرفروش‌ترین‌</a>
                                         </li>
+                                        {#                                        <li class="nav-item" role="presentation">#}
+                                        {#                                            <a class="nav-link" id="Most-Popular-tab" data-toggle="tab"#}
+                                        {#                                               href="#Most-Popular" role="tab" aria-controls="Most-Popular"#}
+                                        {#                                               aria-selected="false">محبوب‌ترین</a>#}
+                                        {#                                        </li>#}
                                         <li class="nav-item" role="presentation">
-                                            <a class="nav-link" id="Most-Popular-tab" data-toggle="tab"
-                                               href="#Most-Popular" role="tab" aria-controls="Most-Popular"
-                                               aria-selected="false">محبوب‌ترین</a>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <a class="nav-link" id="newest-tab" data-toggle="tab" href="#newest"
-                                               role="tab" aria-controls="newest" aria-selected="false">جدیدترین</a>
+                                            <a href="{% url 'new-products-page' %}" class="nav-link" id="newest-tab" data-toggle="tab"
+                                               role="tab" aria-controls="newest" aria-selected="{% if request.resolver_match.url_name == 'new-products-page' %}true{% endif %} ">جدیدترین</a>
                                         </li>
                                         <li class="nav-item" role="presentation">
                                             <a class="nav-link" id="cheapest-tab" data-toggle="tab" href="#cheapest"
@@ -771,89 +640,781 @@
                                     </ul>
                                 </div>
                             </div>
-                            {% for product in page_obj %}
-                                <div class="col-lg-3 col-md-4 col-xs-12 fr">
-                                    <div class="product-card">
-                                        <div class="product-image-area">
-                                            <a href="#" class="product-image">
-                                                <div class="product-label">
-                                                    {% if product.off > 1 %}
-                                                        <span>{{ product.off }}%</span>
-                                                    {% endif %}
-                                                    <img src="{{ product.image.url }}" style="width: 50%" alt="product">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="product-detail-area">
-                                            <div class="price">
-                                                {% if product.off > 1 %}
-                                                    <del>
+                            <div class="products">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="Most-visited" role="tabpanel"
+                                         aria-labelledby="Most-visited-tab">
+                                        {% for product in page_obj %}
+                                            <div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                                <div class="product-card">
+                                                    <div class="product-image-area">
+                                                        <a href="{% url 'product_details' product.slug %}"
+                                                           class="product-image">
+                                                            {% if product.off > 1 %}
+                                                                <div class="product-label">
+                                                                    <span>{{ product.off }}%</span>
+                                                                </div>
+                                                            {% endif %}
+                                                            <img src="{{ product.image.url }}"
+                                                                 alt="product" style="height: 150px">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-detail-area">
+                                                        {% if product.off > 1 %}
+                                                            <div class="price">
+                                                                <del>
                                                             <span class="price-amount">{{ product.price }}
                                                                 <span class="price-currencySymbol">تومان</span>
                                                             </span>
-                                                    </del>
-                                                    <ins>
+                                                                </del>
+                                                                <ins>
                                                             <span class="price-amount">{{ product.Discount }}
                                                                 <span class="price-currencySymbol">تومان</span>
                                                             </span>
-                                                    </ins>
-                                                {% else %}
-                                                    <ins>
+                                                                </ins>
+                                                            </div>
+                                                        {% else %}
+                                                            <div class="price">
+                                                                <del>
                                                             <span class="price-amount">{{ product.price }}
                                                                 <span class="price-currencySymbol">تومان</span>
                                                             </span>
-                                                    </ins>
-                                                {% endif %}
-                                            </div>
-                                            <h3 class="product-name">
-                                                <a href="{% url 'product_details' product.slug %}">{{ product.title }}</a>
-                                            </h3>
-                                            <div class="actions">
-                                                <div class="star-rating">
+                                                                </del>
+                                                            </div>
+                                                        {% endif %}
+                                                        <h3 class="product-name">
+                                                            <a href="{% url 'product_details' product.slug %}">{{ product.title }}</a>
+                                                        </h3>
+                                                        <div class="actions">
+                                                            <div class="star-rating">
                                                             <span class="star active">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
-                                                    <span class="star active">
+                                                                <span class="star active">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
-                                                    <span class="star active">
+                                                                <span class="star active">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
-                                                    <span class="star active">
+                                                                <span class="star active">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
-                                                    <span class="star">
+                                                                <span class="star">
                                                                 <i class="fal fa-star"></i>
                                                             </span>
+                                                            </div>
+                                                            <ul class="add-to-links">
+                                                                <li>
+                                                                    <div class="add-to-wishlist">
+                                                                        <a href="#"
+                                                                           title="افزودن به علاقه مندی ها">
+                                                                            <i class="fal fa-heart"
+                                                                               onclick="product_wishlist({{ product.id }})"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="add-to-compare">
+                                                                        <a href="#compare" title="مقایسه">
+                                                                            <i class="fal fa-random"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="add-to-cart">
+                                                                        <a href="#cart" title="افزودن به سبد">
+                                                                            <i class="fal fa-shopping-cart"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <ul class="add-to-links">
-                                                    <li>
-                                                        <div class="add-to-wishlist">
-                                                            <a href="#wishlist" title="افزودن به علاقه مندی ها">
-                                                                <i class="fal fa-heart"></i>
-                                                            </a>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="tab-pane fade" id="Bestselling" role="tabpanel"
+                                         aria-labelledby="Bestselling-tab">
+                                        <div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                            <div class="product-card">
+                                                <div class="product-image-area">
+                                                    <a href="#" class="product-image">
+                                                        <div class="product-label">
+                                                            <span>3%</span>
                                                         </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="add-to-compare">
-                                                            <a href="#compare" title="مقایسه">
-                                                                <i class="fal fa-random"></i>
-                                                            </a>
+                                                        <img src="/static/images/product/pocox3.webp" alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <div class="price">
+                                                        <del>
+                                                            <span class="price-amount">71,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="price-amount">69,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </ins>
+                                                    </div>
+                                                    <h3 class="product-name">
+                                                        <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                            ظرفیت
+                                                            128 گیگابایت</a>
+                                                    </h3>
+                                                    <div class="actions">
+                                                        <div class="star-rating">
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
                                                         </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="add-to-cart">
-                                                            <a href="#cart" title="افزودن به سبد">
-                                                                <i class="fal fa-shopping-cart"></i>
-                                                            </a>
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
+                                                                        <i class="fal fa-heart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-compare">
+                                                                    <a href="#compare" title="مقایسه">
+                                                                        <i class="fal fa-random"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-cart">
+                                                                    <a href="#cart" title="افزودن به سبد">
+                                                                        <i class="fal fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                            <div class="product-card">
+                                                <div class="product-image-area">
+                                                    <a href="#" class="product-image">
+                                                        <div class="product-label">
+                                                            <span>3%</span>
                                                         </div>
-                                                    </li>
-                                                </ul>
+                                                        <img src="/static/images/product/apple-iphone12.webp"
+                                                             alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <div class="price">
+                                                        <del>
+                                                            <span class="price-amount">71,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="price-amount">69,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </ins>
+                                                    </div>
+                                                    <h3 class="product-name">
+                                                        <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                            ظرفیت
+                                                            128 گیگابایت</a>
+                                                    </h3>
+                                                    <div class="actions">
+                                                        <div class="star-rating">
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                        </div>
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
+                                                                        <i class="fal fa-heart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-compare">
+                                                                    <a href="#compare" title="مقایسه">
+                                                                        <i class="fal fa-random"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-cart">
+                                                                    <a href="#cart" title="افزودن به سبد">
+                                                                        <i class="fal fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Most-Popular" role="tabpanel"
+                                         aria-labelledby="Most-Popular-tab">
+                                        <div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                            <div class="product-card">
+                                                <div class="product-image-area">
+                                                    <a href="#" class="product-image">
+                                                        <div class="product-label">
+                                                            <span>3%</span>
+                                                        </div>
+                                                        <img src="/static/images/product/apple-iphone8.jpg"
+                                                             alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <div class="price">
+                                                        <del>
+                                                            <span class="price-amount">71,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="price-amount">69,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </ins>
+                                                    </div>
+                                                    <h3 class="product-name">
+                                                        <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                            ظرفیت
+                                                            128 گیگابایت</a>
+                                                    </h3>
+                                                    <div class="actions">
+                                                        <div class="star-rating">
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                        </div>
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
+                                                                        <i class="fal fa-heart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-compare">
+                                                                    <a href="#compare" title="مقایسه">
+                                                                        <i class="fal fa-random"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-cart">
+                                                                    <a href="#cart" title="افزودن به سبد">
+                                                                        <i class="fal fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                            <div class="product-card">
+                                                <div class="product-image-area">
+                                                    <a href="#" class="product-image">
+                                                        <div class="product-label">
+                                                            <span>3%</span>
+                                                        </div>
+                                                        <img src="/static/images/product/nikon.jpg" alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <div class="price">
+                                                        <del>
+                                                            <span class="price-amount">71,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="price-amount">69,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </ins>
+                                                    </div>
+                                                    <h3 class="product-name">
+                                                        <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                            ظرفیت
+                                                            128 گیگابایت</a>
+                                                    </h3>
+                                                    <div class="actions">
+                                                        <div class="star-rating">
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                        </div>
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
+                                                                        <i class="fal fa-heart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-compare">
+                                                                    <a href="#compare" title="مقایسه">
+                                                                        <i class="fal fa-random"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-cart">
+                                                                    <a href="#cart" title="افزودن به سبد">
+                                                                        <i class="fal fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+{#                                    <div class="tab-pane fade" id="newest" role="tabpanel" aria-labelledby="newest-tab">#}
+{#                                        {% for new_product in new_products %}#}
+{#                                            <div class="col-lg-3 col-md-4 col-xs-12 fr">#}
+{#                                                <div class="product-card">#}
+{#                                                    <div class="product-image-area">#}
+{#                                                        <a href="{% url 'product_details' new_product.slug %}" class="product-image">#}
+{#                                                            <div class="product-label">#}
+{#                                                                <span>{{ new_product.off }}%</span>#}
+{#                                                            </div>#}
+{#                                                            <img src="{{ new_product.image.url }}"#}
+{#                                                                 alt="product">#}
+{#                                                        </a>#}
+{#                                                    </div>#}
+{#                                                    <div class="product-detail-area">#}
+{#                                                        <div class="price">#}
+{#                                                            <del>#}
+{#                                                            <span class="price-amount">71,000,000#}
+{#                                                                <span class="price-currencySymbol">تومان</span>#}
+{#                                                            </span>#}
+{#                                                            </del>#}
+{#                                                            <ins>#}
+{#                                                            <span class="price-amount">69,000,000#}
+{#                                                                <span class="price-currencySymbol">تومان</span>#}
+{#                                                            </span>#}
+{#                                                            </ins>#}
+{#                                                        </div>#}
+{#                                                        <h3 class="product-name">#}
+{#                                                            <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت#}
+{#                                                                ظرفیت#}
+{#                                                                128 گیگابایت</a>#}
+{#                                                        </h3>#}
+{#                                                        <div class="actions">#}
+{#                                                            <div class="star-rating">#}
+{#                                                            <span class="star active">#}
+{#                                                                <i class="fal fa-star"></i>#}
+{#                                                            </span>#}
+{#                                                                <span class="star active">#}
+{#                                                                <i class="fal fa-star"></i>#}
+{#                                                            </span>#}
+{#                                                                <span class="star active">#}
+{#                                                                <i class="fal fa-star"></i>#}
+{#                                                            </span>#}
+{#                                                                <span class="star active">#}
+{#                                                                <i class="fal fa-star"></i>#}
+{#                                                            </span>#}
+{#                                                                <span class="star">#}
+{#                                                                <i class="fal fa-star"></i>#}
+{#                                                            </span>#}
+{#                                                            </div>#}
+{#                                                            <ul class="add-to-links">#}
+{#                                                                <li>#}
+{#                                                                    <div class="add-to-wishlist">#}
+{#                                                                        <a href="#wishlist"#}
+{#                                                                           title="افزودن به علاقه مندی ها">#}
+{#                                                                            <i class="fal fa-heart"></i>#}
+{#                                                                        </a>#}
+{#                                                                    </div>#}
+{#                                                                </li>#}
+{#                                                                <li>#}
+{#                                                                    <div class="add-to-compare">#}
+{#                                                                        <a href="#compare" title="مقایسه">#}
+{#                                                                            <i class="fal fa-random"></i>#}
+{#                                                                        </a>#}
+{#                                                                    </div>#}
+{#                                                                </li>#}
+{#                                                                <li>#}
+{#                                                                    <div class="add-to-cart">#}
+{#                                                                        <a href="#cart" title="افزودن به سبد">#}
+{#                                                                            <i class="fal fa-shopping-cart"></i>#}
+{#                                                                        </a>#}
+{#                                                                    </div>#}
+{#                                                                </li>#}
+{#                                                            </ul>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        {% endfor %}#}
+{##}
+{#                                    </div>#}
+                                    <div class="tab-pane fade" id="cheapest" role="tabpanel"
+                                         aria-labelledby="cheapest-tab">
+                                        <div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                            <div class="product-card">
+                                                <div class="product-image-area">
+                                                    <a href="#" class="product-image">
+                                                        <div class="product-label">
+                                                            <span>3%</span>
+                                                        </div>
+                                                        <img src="/static/images/product/nikon.jpg" alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <div class="price">
+                                                        <del>
+                                                            <span class="price-amount">71,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="price-amount">69,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </ins>
+                                                    </div>
+                                                    <h3 class="product-name">
+                                                        <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                            ظرفیت
+                                                            128 گیگابایت</a>
+                                                    </h3>
+                                                    <div class="actions">
+                                                        <div class="star-rating">
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                        </div>
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
+                                                                        <i class="fal fa-heart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-compare">
+                                                                    <a href="#compare" title="مقایسه">
+                                                                        <i class="fal fa-random"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-cart">
+                                                                    <a href="#cart" title="افزودن به سبد">
+                                                                        <i class="fal fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                            <div class="product-card">
+                                                <div class="product-image-area">
+                                                    <a href="#" class="product-image">
+                                                        <div class="product-label">
+                                                            <span>3%</span>
+                                                        </div>
+                                                        <img src="/static/images/product/pocox3.webp" alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <div class="price">
+                                                        <del>
+                                                            <span class="price-amount">71,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="price-amount">69,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </ins>
+                                                    </div>
+                                                    <h3 class="product-name">
+                                                        <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                            ظرفیت
+                                                            128 گیگابایت</a>
+                                                    </h3>
+                                                    <div class="actions">
+                                                        <div class="star-rating">
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                        </div>
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
+                                                                        <i class="fal fa-heart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-compare">
+                                                                    <a href="#compare" title="مقایسه">
+                                                                        <i class="fal fa-random"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-cart">
+                                                                    <a href="#cart" title="افزودن به سبد">
+                                                                        <i class="fal fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="most-expensive" role="tabpanel"
+                                         aria-labelledby="most-expensive-tab">
+                                        <div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                            <div class="product-card">
+                                                <div class="product-image-area">
+                                                    <a href="#" class="product-image">
+                                                        <div class="product-label">
+                                                            <span>3%</span>
+                                                        </div>
+                                                        <img src="/static/images/product/apple-iphone12.webp"
+                                                             alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <div class="price">
+                                                        <del>
+                                                            <span class="price-amount">71,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="price-amount">69,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </ins>
+                                                    </div>
+                                                    <h3 class="product-name">
+                                                        <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                            ظرفیت
+                                                            128 گیگابایت</a>
+                                                    </h3>
+                                                    <div class="actions">
+                                                        <div class="star-rating">
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                        </div>
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
+                                                                        <i class="fal fa-heart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-compare">
+                                                                    <a href="#compare" title="مقایسه">
+                                                                        <i class="fal fa-random"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-cart">
+                                                                    <a href="#cart" title="افزودن به سبد">
+                                                                        <i class="fal fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-xs-12 fr">
+                                            <div class="product-card">
+                                                <div class="product-image-area">
+                                                    <a href="#" class="product-image">
+                                                        <div class="product-label">
+                                                            <span>3%</span>
+                                                        </div>
+                                                        <img src="/static/images/product/nikon.jpg" alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="product-detail-area">
+                                                    <div class="price">
+                                                        <del>
+                                                            <span class="price-amount">71,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="price-amount">69,000,000
+                                                                <span class="price-currencySymbol">تومان</span>
+                                                            </span>
+                                                        </ins>
+                                                    </div>
+                                                    <h3 class="product-name">
+                                                        <a href="#">گوشی موبایل اپل مدل iPhone 12 A2404 دو سیم‌ کارت
+                                                            ظرفیت
+                                                            128 گیگابایت</a>
+                                                    </h3>
+                                                    <div class="actions">
+                                                        <div class="star-rating">
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star active">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                            <span class="star">
+                                                                <i class="fal fa-star"></i>
+                                                            </span>
+                                                        </div>
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <div class="add-to-wishlist">
+                                                                    <a href="#wishlist" title="افزودن به علاقه مندی ها">
+                                                                        <i class="fal fa-heart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-compare">
+                                                                    <a href="#compare" title="مقایسه">
+                                                                        <i class="fal fa-random"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="add-to-cart">
+                                                                    <a href="#cart" title="افزودن به سبد">
+                                                                        <i class="fal fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
                     </div>
                     <div class="togglesidebar filter-sidebar">
@@ -872,35 +1433,7 @@
                                     <div class="widget-content">
                                         <form action="">
                                             <div class="mt-5 mb-4">
-                                                <div id="slider-non-linear-step2"
-                                                     class="noUi-target noUi-rtl noUi-horizontal">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect"
-                                                                 style="transform: translate(0%, 0px) scale(1, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin"
-                                                             style="transform: translate(1000%, 0px); z-index: 5;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0"
-                                                                 tabindex="0" role="slider"
-                                                                 aria-orientation="horizontal" aria-valuemin="0.0"
-                                                                 aria-valuemax="19000000.0" aria-valuenow="0.0"
-                                                                 aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="noUi-origin"
-                                                             style="transform: translate(0%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-upper" data-handle="1"
-                                                                 tabindex="0" role="slider"
-                                                                 aria-orientation="horizontal" aria-valuemin="0.0"
-                                                                 aria-valuemax="19000000.0" aria-valuenow="19000000.0"
-                                                                 aria-valuetext="19,000,000">
-                                                                <div class="noUi-touch-area"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <div id="slider-non-linear-step2"></div>
                                             </div>
                                             <div class="filter-range mt-2 mb-2">
                                                 <div class="mt-2">
@@ -909,7 +1442,8 @@
                                                             صافی
                                                         </button>
                                                         <span>قیمت: از</span>
-                                                        <span class="example-val" id="slider-non-linear-step-value2">0 - 19,000,000</span>
+                                                        <span class="example-val"
+                                                              id="slider-non-linear-step-value2"></span>
                                                         تومان
                                                     </div>
                                                 </div>
@@ -1242,17 +1776,17 @@
                             <li class="page-item">
                                 <a class="page-link" href="?page={{ page_obj.previous_page_number }}"
                                    aria-label="Previous">
-                                    <span aria-hidden="true">«</span>
+                                    <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
                         {% endif %}
-                        {% for pagenum in paginator.page_range %}
-                            <li class="page-item"><a class="page-link" href="?page={{ pagenum }}">{{ pagenum }}</a></li>
+                        {% for number in paginator.page_range %}
+                            <li class="page-item"><a class="page-link" href="?page={{ number }}">{{ number }}</a></li>
                         {% endfor %}
                         {% if page_obj.has_next %}
                             <li class="page-item">
                                 <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                                    <span aria-hidden="true">»</span>
+                                    <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
                         {% endif %}

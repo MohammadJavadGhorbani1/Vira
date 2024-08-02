@@ -1,0 +1,77 @@
+{% extends 'dashbord-layout.html' %}
+{% load poll_extras %}
+
+{% block title %}
+    دیدگاه های شما
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-9 col-xs-12">
+            <div class="woocommerce-MyAccount-content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="review-list">
+                            {% for product_comment in product_comments %}
+                                <div class="item">
+                                    <div class="item-area">
+                                        <div class="review-right">
+                                            <a href="{% url 'article-detail-page' product_comment.product.slug %}">
+                                                <img src="{{ product_comment.product.image.url }}" alt="product"
+                                                     class="img-fluid">
+                                                <h3>{{ product_comment.product.title }}</h3>
+                                            </a>
+                                        </div>
+                                        <div class="review-left">
+                                            <p>{{ product_comment.text }}</p>
+                                            <div class="review-left-down">
+                                                {#                                                <div class="average">#}
+                                                {#                                                    <i class="fal fa-star"></i>#}
+                                                {#                                                    میانگین امتیاز شما 4.6 از 5#}
+                                                {#                                                </div>#}
+                                                <time>{{ product_comment.create_date|jdate }}</time>
+                                                {% if product_comment.is_publish %}
+                                                    <span class="success">تایید شده</span>
+                                                {% else %}
+                                                    <span class="errors">تایید نشده</span>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            {% for article_comment in article_comments %}
+                                <div class="item">
+                                    <div class="item-area">
+                                        <div class="review-right">
+                                            <a href="{% url 'article-detail-page' article_comment.article.slug %}">
+                                                <img src="{{ article_comment.article.image.url }}" alt="product"
+                                                     class="img-fluid">
+                                                <h3>{{ article_comment.article.title }}</h3>
+                                            </a>
+                                        </div>
+                                        <div class="review-left">
+                                            <p>{{ article_comment.text }}</p>
+                                            <div class="review-left-down">
+                                                {#                                                <div class="average">#}
+                                                {#                                                    <i class="fal fa-star"></i>#}
+                                                {#                                                    میانگین امتیاز شما 4.6 از 5#}
+                                                {#                                                </div>#}
+                                                <time>{{ article_comment.create_date|jdate }}</time>
+                                                {% if article_comment.is_publish %}
+                                                    <span class="success">تایید شده</span>
+                                                {% else %}
+                                                    <span class="errors">تایید نشده</span>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

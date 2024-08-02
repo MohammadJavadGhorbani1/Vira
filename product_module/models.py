@@ -1,4 +1,5 @@
 from django.db import models
+from user_module.models import *
 
 # Create your models here.
 
@@ -27,13 +28,14 @@ class Products(models.Model):
     image = models.ImageField(upload_to='product_imgs' , verbose_name='تصویر محصول' , null=True)
     title = models.CharField(max_length= 100 , verbose_name='عنوان محصول')
     price = models.IntegerField(verbose_name='قیمت محصول')
+    count = models.IntegerField(default=0 , verbose_name='تعداد محصول موجود')
     des = models.TextField(max_length= 1000 , null=True , verbose_name='توضیحات')
     off = models.IntegerField(verbose_name='مقدار تخفیف')
     off_endtime = models.DateTimeField(verbose_name='زمان اتمام تخفیف' , null=True , blank=True)
     is_active = models.BooleanField(verbose_name='فعال باشد/نباشد')
     category = models.ForeignKey(ProductCategory , on_delete= models.CASCADE , verbose_name='دسته بندی')
     tags = models.ManyToManyField(ProductTags , verbose_name='تگ های مربوطه')
-    # visit = models.IntegerField(default=0 , verbose_name='تعداد بازدید محصول')
+    visit = models.IntegerField(default=0 , verbose_name='تعداد بازدید محصول')
     slug = models.SlugField(unique=True, allow_unicode=True, verbose_name='آدرس محصول در مرورگر')
     def __str__(self):
         return self.title
@@ -50,3 +52,18 @@ class Products(models.Model):
     class Meta:
         verbose_name = 'محصول'
         verbose_name_plural = 'محصولات'
+
+class ProductCommentsModel(models.Model):
+    product = models.ForeignKey(Products , on_delete=models.CASCADE , verbose_name='محصول')
+    user = models.ForeignKey(User , on_delete=models.CASCADE , verbose_name='کاربر')
+    create_date = models.DateField(auto_now_add=True , verbose_name='تاریخ ساخته شدن')
+    text = models.TextField(verbose_name='پیام')
+    parent_comment = models.ForeignKey('ProductCommentsModel' , on_delete=models.CASCADE , null=True , blank=True , verbose_name='والد')
+    is_publish = models.BooleanField(default=False , verbose_name='تایید شده/نشده')
+    comment_like = models.IntegerField(default=0 , verbose_name='تعداد لایک ها')
+    comment_dislike = models.IntegerField(default=0 , verbose_name='تعداد دیس لایک ها')
+    def __str__(self):
+        return self.user.username
+    class Meta:
+        verbose_name = 'کامنت'
+        verbose_name_plural = 'کامنت ها'

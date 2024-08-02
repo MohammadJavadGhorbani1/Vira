@@ -7,46 +7,90 @@
 {% block content %}
     <main class="content">
         <div class="container">
-            {% if request.user.is_authenticated %}
-                <div class="contact-us">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-xs-12">
-                            <div class="contact-right">
-                                <h1>تماس با ما</h1>
-                                <div class="contact-item">
-                                    <i class="fal fa-envelope"></i>
-                                    <h4>پست الکترونیک
-                                        <span>info@vira.com</span>
-                                    </h4>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fal fa-phone"></i>
-                                    <h4>شماره تماس
-                                        <span>0211234567</span>
-                                    </h4>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fal fa-map"></i>
-                                    <h4>آدرس
-                                        <span>خراسان شمالی، بجنورد</span>
-                                    </h4>
-                                </div>
+            <div class="contact-us">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-xs-12">
+                        <div class="contact-right">
+                            <h1>تماس با ما</h1>
+                            <div class="contact-item">
+                                <i class="fal fa-envelope"></i>
+                                <h4>پست الکترونیک
+                                    <span>{{ setting.email }}</span>
+                                </h4>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fal fa-phone"></i>
+                                <h4>شماره تماس
+                                    <span>{{ setting.phone }}</span>
+                                </h4>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fal fa-map"></i>
+                                <h4>آدرس
+                                    <span>{{ setting.location }}</span>
+                                </h4>
                             </div>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-xs-12">
-                            <div class="contact-left">
-                                {% if error %}
-                                    <div class="errorq">
-                                        لطفا تمامی مشخصات را کامل کنید
-                                    </div>
-                                {% elif success %}
-                                    <div class="successq rounded-pill">
-                                        پیغام شما با موفقیت ارسال شد
-                                    </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-xs-12">
+                        <div class="contact-left">
+                            {% if error %}
+                                <div class="errorq">
+                                    لطفا تمامی مشخصات را کامل کنید
+                                </div>
+                            {% elif success %}
+                                <div class="successq rounded-pill">
+                                    پیغام شما با موفقیت ارسال شد
+                                </div>
 
-                                {% endif %}
-                                <form method="post">
-                                    {% csrf_token %}
+                            {% endif %}
+                            <form method="post">
+                                {% csrf_token %}
+                                {% if request.user.is_authenticated %}
+                                    {% if request.user.email %}
+                                        <div class="contact-item">
+                                            <label for="#">
+                                                موضوع(اجباری)
+                                            </label>
+                                            <br>
+                                            {{ no_email_contact.subject }}
+                                            {#                                    <input type="text" name="subject" class="input-contact your-subject">#}
+                                        </div>
+                                        <div class="contact-item">
+                                            <label for="#">
+                                                پیام شما
+                                            </label>
+                                            <br>
+                                            {{ no_email_contact.message }}
+                                            {#                                    <textarea cols="40" rows="10" name="message" class="textarea-contact your-message"></textarea>#}
+                                        </div>
+                                    {% else %}
+                                        <div class="contact-item">
+                                            <label for="#">
+                                                ایمیل (اجباری)
+                                            </label>
+                                            <br>
+                                            {{ email_contact.email }}
+                                            {#                                    <input type="email" name="email" class="input-contact your-email">#}
+                                        </div>
+                                        <div class="contact-item">
+                                            <label for="#">
+                                                موضوع(اجباری)
+                                            </label>
+                                            <br>
+                                            {{ email_contact.subject }}
+                                            {#                                    <input type="text" name="subject" class="input-contact your-subject">#}
+                                        </div>
+                                        <div class="contact-item">
+                                            <label for="#">
+                                                پیام شما
+                                            </label>
+                                            <br>
+                                            {{ email_contact.message }}
+                                            {#                                    <textarea cols="40" rows="10" name="message" class="textarea-contact your-message"></textarea>#}
+                                        </div>
+                                    {% endif %}
+                                {% else %}
                                     <div class="contact-item">
                                         <label for="#">
                                             نام (اجباری)
@@ -79,17 +123,15 @@
                                         {{ contact.message }}
                                         {#                                    <textarea cols="40" rows="10" name="message" class="textarea-contact your-message"></textarea>#}
                                     </div>
-                                    <div class="contact-item">
-                                        <button type="submit" class="btn btn-dark send-contact">ارسال</button>
-                                    </div>
-                                </form>
-                            </div>
+                                {% endif %}
+                                <div class="contact-item">
+                                    <button type="submit" class="btn btn-dark send-contact">ارسال</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            {% else %}
-                <div class="errorq">برای ارتباط با ما لطفا ابتدا وارد شوید</div>
-            {% endif %}
+            </div>
             {#            <div class="contact-us">#}
             {#                <div class="row">#}
             {#                    <div class="col-lg-3 col-md-3 col-xs-12">#}

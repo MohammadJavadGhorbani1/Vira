@@ -21,3 +21,4 @@ class TagsAdmin(admin.ModelAdmin):
 admin.site.register(Products , ProductAdmin)
 admin.site.register(ProductCategory , CategoryAdmin)
 admin.site.register(ProductTags , TagsAdmin)
+admin.site.register(ProductCommentsModel)
